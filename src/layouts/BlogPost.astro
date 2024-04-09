@@ -5,6 +5,8 @@ import BaseLayout from '@/layouts/BaseLayout'
 import Tag from '@/components/Tag'
 import type { MarkdownHeading } from 'astro'
 import { Image } from 'astro:assets'
+import { ViewTransitions } from 'astro:transitions'
+import { fade } from 'astro:transitions'
 
 type Props = {
 	id: CollectionEntry<'blog'>['id']
@@ -36,7 +38,10 @@ const articleDate = pubDate.toISOString()
 						- {readTime}
 					</p>
 				</div>
-				<h1 class='text-center text-4xl md:text-6xl md:pb-2.5 font-semibold'>
+				<h1
+					transition:animate='slide'
+					class='text-center text-4xl md:text-6xl md:pb-2.5 font-semibold'
+				>
 					{title}
 				</h1>
 			</div>
@@ -50,6 +55,7 @@ const articleDate = pubDate.toISOString()
 			{
 				heroImage && (
 					<Image
+						transition:animate={fade({ duration: '1s' })}
 						src={heroImage}
 						width={1000}
 						height={500}

@@ -10,7 +10,7 @@ interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
 	author: 'SergeiKrk', // Site author
-	title: 'SamogonCalc - нлайн-калькуляторов самогонщика', // Site title.
+	title: 'SamogonCalc - онлайн-калькуляторов самогонщика', // Site title.
 	description: 'Набор быстрых онлайн-калькуляторов для винокуров и самогонщиков', // Description to display in the meta tags
 	lang: '	ru-RU',
 	ogLocale: 'ru_RU',
