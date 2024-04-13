@@ -1,7 +1,42 @@
 ---
+import { Image } from 'astro:assets'
+import SamogonCalcLogo from '../assets/images/kalkulyator-samogonshchika.png'
+import HeaderLink from '@/components/HeaderLink'
+import TagIcon from './icons/TagIcon.astro'
 const today = new Date()
 ---
 
-<footer class='flex justify-center items-center w-full px-16 h-28 border-t-2'>
-	&copy; {today.getFullYear()} Your Name. All rights reserved.
+<footer class='relative mt-12 bottom-0 text-center w-full bottom-0;'>
+	<div class='text-white bg-slate-700'>
+		<div class='w-full lg:w-2/4 mx-auto py-3 grid grid-cols-1 md:grid-cols-3 gap-3'>
+			<div class='pt-6 py-6 max-h-64 md:text-xl self-center leading-normal'>
+				<h4 class='uppercase text-2xl font-bold my-4'>SAMOGONCALC</h4>
+				<p>Набор быстрых онлайн-калькуляторов для винокуров и самогонщиков</p>
+			</div>
+			<div class='pt-6 py-6 max-h-64 md:text-xl self-center leading-normal'>
+				<Image
+					src={SamogonCalcLogo}
+					alt='Калькулятор самогонщика Samogoncalc'
+					width={150}
+					height={150}
+				/>
+			</div>
+			<div class='pt-6 py-6 max-h-64 md:text-xl self-center leading-normal'>
+				<h4 class='uppercase text-2xl font-bold my-4'>Контакты</h4>
+				<p>Подписывайтесь на наш канал</p>
+				<p>"Самогон и самогонщики"</p>
+				<p class='m-4'>
+					<HeaderLink
+						href='https://telegram.me/samogonco'
+						class='inline animate-ping text-2xl rounded-2xl text-sky-400 mr-2'
+					>
+						<TagIcon class='text-sky-500' /> @samogonco
+					</HeaderLink>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class='bg-slate-800 text-white py-6 text-xs md:text-sm'>
+		SamogonCalc.ru &copy; 2021-{today.getFullYear()}
+	</div>
 </footer>

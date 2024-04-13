@@ -10841,7 +10841,7 @@ thenify-all@^1.0.0:
   dependencies:
     any-promise "^1.0.0"
 
-tinacms@1.6.1, tinacms@^1.5.21:
+tinacms@1.6.1:
   version "1.6.1"
   resolved "https://registry.npmjs.org/tinacms/-/tinacms-1.6.1.tgz"
   integrity sha512-3FddzJqqPUWv3Wt0kNTPIS0EsEvHYMxJPQFUCZiFP1oHj/1atbHmoy89Yr/pHsNHtu2dkzqeph+9wEvPPxI6ew==

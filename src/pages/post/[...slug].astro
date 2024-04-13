@@ -44,7 +44,7 @@ const disqusEnabled = disqusConfig.enabled
 	headings={headings}
 	readTime={remarkPluginFrontmatter.minutesRead}
 >
-	<div class='grid grid-cols-1 md:grid-cols-[20%_auto] gap-10 mt-8'>
+	<div class='grid grid-cols-1 md:grid-cols-[20%_auto] gap-10 mt-8 lg:max-w-[960px]'>
 		<!-- aside  -->
 		<aside class='md:flex flex-col gap-8 hidden'>
 			<Share />
@@ -61,7 +61,7 @@ const disqusEnabled = disqusConfig.enabled
 
 			<!-- related posts -->
 			<footer>
-				<h2 class='font-bold text-lg dark:text-white mb-6'>Related Posts</h2>
+				<h2 class='font-bold text-lg dark:text-white mb-6'>Ещё статьи по теме</h2>
 				<ListRelatedPosts posts={relatedPosts} />
 			</footer>
 		</article>

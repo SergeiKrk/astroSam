@@ -5,8 +5,8 @@ import Footer from '@/components/Footer'
 import ProviderTheme from '@/components/ProviderTheme'
 import ProviderAnimations from '@/components/ProviderAnimations'
 import TwSizeIndicator from '@/components/TwSizeIndicator'
-import EditBlog from '@/components/editBlog'
 import { ViewTransitions } from 'astro:transitions'
+import NaShavuhu from '@/components/NaShavuhu'
 const { title, description, image, articleDate } = Astro.props
 ---
 
@@ -24,10 +24,10 @@ const { title, description, image, articleDate } = Astro.props
 		>
 			<Header />
 			<slot />
-			<Footer />
+			<NaShavuhu />
 		</main>
+		<Footer />
 		<TwSizeIndicator />
-		<EditBlog />
 		<style>
 			body {
 				margin-left: calc(100vw - 100%); /* prevent layout shift */
