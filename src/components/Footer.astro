@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets'
 import SamogonCalcLogo from '../assets/images/kalkulyator-samogonshchika.png'
 import HeaderLink from '@/components/HeaderLink'
-import TagIcon from './icons/TagIcon.astro'
+import Telegram from './icons/Telegram.astro'
 const today = new Date()
 ---
 
@@ -26,11 +26,9 @@ const today = new Date()
 				<p>Подписывайтесь на наш канал</p>
 				<p>"Самогон и самогонщики"</p>
 				<p class='m-4'>
-					<HeaderLink
-						href='https://telegram.me/samogonco'
-						class='inline animate-ping text-2xl rounded-2xl text-sky-400 mr-2'
-					>
-						<TagIcon class='text-sky-500' /> @samogonco
+					<HeaderLink href='https://telegram.me/samogonco'>
+						<div class='inline animate-ping w-12 h-12 mr-2'><Telegram /></div>
+						<div class='inline'>@samogonco</div>
 					</HeaderLink>
 				</p>
 			</div>
