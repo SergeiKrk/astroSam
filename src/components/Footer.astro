@@ -26,15 +26,18 @@ const today = new Date()
 				<p>Подписывайтесь на наш канал</p>
 				<p>"Самогон и самогонщики"</p>
 				<p class='m-4'>
-					<HeaderLink href='https://telegram.me/samogonco'>
-						<div class='inline animate-ping w-12 h-12 mr-2'><Telegram /></div>
-						<div class='inline'>@samogonco</div>
-					</HeaderLink>
+					<a
+						href='https://telegram.me/samogonco'
+						class='font-medium text-gray-900 hover:text-gray-700'
+					>
+						<span class='h-4 inline-block' aria-hidden='true'><Telegram /></span>
+						<span class='t-6 inline-block' aria-hidden='true'>@samogonco</span></a
+					>
 				</p>
 			</div>
 		</div>
 	</div>
-	<div class='bg-slate-800 text-white py-6 text-xs md:text-sm'>
-		SamogonCalc.ru &copy; 2021-{today.getFullYear()}
-	</div>
 </footer>
+<div class='bg-slate-800 text-white py-6 text-xs md:text-sm'>
+	SamogonCalc.ru &copy; 2021-{today.getFullYear()}
+</div>
