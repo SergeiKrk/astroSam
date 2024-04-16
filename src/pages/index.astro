@@ -1,15 +1,20 @@
 ---
+import Hero from '@/components/Hero'
 import ListCategories from '@/components/ListCategories'
 import ListPosts from '@/components/ListPosts'
 import TitlePage from '@/components/TitlePage'
 import BaseLayout from '@/layouts/BaseLayout'
 import { getPosts } from '@/utils'
+import { getEntryBySlug } from 'astro:content'
+const homepage = await getEntryBySlug('calcPages', 'home')
+const { title, description, headImg, titlePage, descriptionPage, urlSeo } = homepage.data
 
 const MAX_POSTS = 5 // max number of posts to show on the home page
 const posts = await getPosts(MAX_POSTS)
 ---
 
-<BaseLayout title='Главная'>
+<BaseLayout title={title} description={description}>
+	<Hero headImg={headImg} titlePage={titlePage} descriptionPage={descriptionPage} urlSeo={urlSeo} />
 	<TitlePage title='Полезно знать' />
 	<ListCategories />
 
