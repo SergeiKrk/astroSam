@@ -5,9 +5,10 @@ import ListPosts from '@/components/ListPosts'
 import TitlePage from '@/components/TitlePage'
 import BaseLayout from '@/layouts/BaseLayout'
 import { getPosts } from '@/utils'
-import { getEntryBySlug } from 'astro:content'
-const homepage = await getEntryBySlug('calcPages', 'home')
-const { title, description, headImg, titlePage, descriptionPage, urlSeo } = homepage.data
+import { getEntry } from 'astro:content'
+import headImg from '../assets/images/kalkulyator-samogonshchika.png'
+const homepage = await getEntry('calcPages', 'home')
+const { title, description, titlePage, descriptionPage, urlSeo } = homepage.data
 
 const MAX_POSTS = 5 // max number of posts to show on the home page
 const posts = await getPosts(MAX_POSTS)
