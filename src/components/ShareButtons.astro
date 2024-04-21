@@ -1,5 +1,44 @@
 ---
-
+const { urlSeo, titlePage, headImg, descriptionPage } = Astro.props
 ---
 
-<div class='drop-shadow-md'></div>
+<div class='drop-shadow-md'>
+	<div class='mx-6 my-2 flex flex-row'>
+		<a
+			href={`http://vk.com/share.php?url=https://samogoncalc.ru/${urlSeo}&title=${titlePage}&image=https://samogoncalc.ru${headImg}&noparse=true`}
+			class={`hover:bg-cyan-800 m-1 p-2 rounded-full border-2`}
+		>
+			123
+		</a>
+		<a
+			href={`https://t.me/share/url?url=https://samogoncalc.ru/${urlSeo}&text=${titlePage}`}
+			class='hover:bg-cyan-500 m-1 p-2 rounded-full border-2'
+		>
+			111
+		</a>
+		<a
+			href={`viber://forward?text=https://samogoncalc.ru/${urlSeo} | ${titlePage}`}
+			class='hover:bg-[#25D366] m-1 p-2 rounded-full border-2'
+		>
+			111
+		</a>
+		<a
+			href={`viber://forward?text=${titlePage} | https://samogoncalc.ru/${urlSeo}`}
+			class='hover:bg-purple-800 m-1 p-2 rounded-full border-2'
+		>
+			111
+		</a>
+		<a
+			href={`http://www.fb.com/sharer.php?s=100&p[title]=${titlePage}&p[summary]=${descriptionPage}&p[url]=https://samogoncalc.ru/${urlSeo}&p[images][0]=https://samogoncalc.ru${headImg}`}
+			class='hover:bg-indigo-900 m-1 p-2 rounded-full border-2'
+		>
+			111
+		</a>
+		<a
+			href={`https://twitter.com/intent/tweet?original_referer=https://samogoncalc.ru/${urlSeo}&text=${titlePage}&url=https://samogoncalc.ru`}
+			class='hover:bg-blue-500 m-1 p-2 rounded-full border-2'
+		>
+			111
+		</a>
+	</div>
+</div>

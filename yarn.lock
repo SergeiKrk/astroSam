@@ -2696,14 +2696,7 @@
   dependencies:
     "@types/unist" "^2"
 
-"@types/node@*":
-  version "20.12.6"
-  resolved "https://registry.npmjs.org/@types/node/-/node-20.12.6.tgz"
-  integrity sha512-3KurE8taB8GCvZBPngVbp0lk5CKi8M9f9k1rsADh0Evdz5SzJ+Q+Hx9uHoFGsLnLnd1xmkDQr2hVhlA0Mn0lKQ==
-  dependencies:
-    undici-types "~5.26.4"
-
-"@types/node@^17.0.5":
+"@types/node@*", "@types/node@^17.0.5":
   version "17.0.45"
   resolved "https://registry.npmjs.org/@types/node/-/node-17.0.45.tgz"
   integrity sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==
@@ -4491,7 +4484,7 @@ css-box-model@^1.2.0:
 
 css-selector-tokenizer@^0.8:
   version "0.8.0"
-  resolved "https://registry.yarnpkg.com/css-selector-tokenizer/-/css-selector-tokenizer-0.8.0.tgz#88267ef6238e64f2215ea2764b3e2cf498b845dd"
+  resolved "https://registry.npmjs.org/css-selector-tokenizer/-/css-selector-tokenizer-0.8.0.tgz"
   integrity sha512-Jd6Ig3/pe62/qe5SBPTN8h8LeUg/pT4lLgtavPf7updwwHpvFzxvOQBHYj2LZDMjUnBzgvIUSjRcf6oT5HzHFg==
   dependencies:
     cssesc "^3.0.0"
@@ -4509,13 +4502,13 @@ csstype@^3.0.2:
 
 culori@^3:
   version "3.3.0"
-  resolved "https://registry.yarnpkg.com/culori/-/culori-3.3.0.tgz#e33530adbd124d53bd6550394397e695eaaed739"
+  resolved "https://registry.npmjs.org/culori/-/culori-3.3.0.tgz"
   integrity sha512-pHJg+jbuFsCjz9iclQBqyL3B2HLCBF71BwVNujUYEvCeQMvV97R59MNK3R2+jgJ3a1fcZgI9B3vYgz8lzr/BFQ==
 
 daisyui@^4.10.1:
-  version "4.10.1"
-  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-4.10.1.tgz#6e601470f498fee9756afebfa9a921e24a37d9e4"
-  integrity sha512-Ds0Z0Fv+Xf6ZEqV4Q5JIOeKfg83xxnww0Lzid0V94vPtlQ0yYmucEa33zSctsX2VEgBALtmk5zVEqd59pnUbuQ==
+  version "4.10.2"
+  resolved "https://registry.npmjs.org/daisyui/-/daisyui-4.10.2.tgz"
+  integrity sha512-eCWS1W/JPyxW9IvlgW5m0R6rp9ZhRsBTW37rvEUthckkjsV04u8XipV519OoccSA46ixhSJa3q7XLI1WUFtRCA==
   dependencies:
     css-selector-tokenizer "^0.8"
     culori "^3"
@@ -5397,7 +5390,7 @@ fast-xml-parser@^4.2.7:
 
 fastparse@^1.1.2:
   version "1.1.2"
-  resolved "https://registry.yarnpkg.com/fastparse/-/fastparse-1.1.2.tgz#91728c5a5942eced8531283c79441ee4122c35a9"
+  resolved "https://registry.npmjs.org/fastparse/-/fastparse-1.1.2.tgz"
   integrity sha512-483XLLxTVIwWK3QTrMGRqUfUpoOs/0hbQrl2oz4J0pAcm3A3bu84wxTFqGqkJzewCLdME38xJLJAxBABfQT8sQ==
 
 fastq@^1.6.0:
@@ -11172,11 +11165,6 @@ unc-path-regex@^0.1.2:
   version "0.1.2"
   resolved "https://registry.npmjs.org/unc-path-regex/-/unc-path-regex-0.1.2.tgz"
   integrity sha512-eXL4nmJT7oCpkZsHZUOJo8hcX3GbsiDOa0Qu9F646fi8dT3XuSVopVqAcEiVzSKKH7UoDti23wNX3qGFxcW5Qg==
-
-undici-types@~5.26.4:
-  version "5.26.5"
-  resolved "https://registry.npmjs.org/undici-types/-/undici-types-5.26.5.tgz"
-  integrity sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==
 
 unherit@^3.0.0:
   version "3.0.1"
