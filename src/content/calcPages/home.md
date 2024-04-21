@@ -1,8 +1,8 @@
 ---
-headImg: '/assets/images/kalkulyator-samogonshchika.png'
+headImg: '../../assets/images/kalkulyator-samogonshchika.png'
 titlePage: 'Калькулятор самогонщика'
 descriptionPage: 'Калькулятор винокура и самогонщика: онлайн расчет всех важных параметров'
-urlSeo: 'urlSeo'
+urlSeo: ''
 title: 'Калькулятор Самогонщика: Онлайн расчет'
 description: 'Точные алкогольные онлайн калькуляторы помогут самогонщику рассчитать нужные параметры спирта, дистиллята и браги.'
 ---
