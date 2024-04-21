@@ -10,10 +10,10 @@ const today = new Date()
 	<div class='text-white bg-slate-700'>
 		<div class='w-full lg:w-2/4 mx-auto py-3 grid grid-cols-1 md:grid-cols-3 gap-3'>
 			<div class='pt-6 py-6 max-h-64 md:text-xl self-center leading-normal'>
-				<h4 class='uppercase text-2xl font-bold my-4'>SAMOGONCALC</h4>
+				<div class='uppercase text-2xl font-bold my-4'>SAMOGONCALC</div>
 				<p>Набор быстрых онлайн-калькуляторов для винокуров и самогонщиков</p>
 			</div>
-			<div class='pt-6 py-6 max-h-64 md:text-xl self-center leading-normal'>
+			<div class='pt-6 py-6 max-h-64 md:text-xl flex items-center justify-center'>
 				<Image
 					src={SamogonCalcLogo}
 					alt='Калькулятор самогонщика Samogoncalc'
@@ -22,22 +22,16 @@ const today = new Date()
 				/>
 			</div>
 			<div class='pt-6 py-6 max-h-64 md:text-xl self-center leading-normal'>
-				<h4 class='uppercase text-2xl font-bold my-4'>Контакты</h4>
+				<div class='uppercase text-2xl font-bold my-4'>Контакты</div>
 				<p>Подписывайтесь на наш канал</p>
-				<p>"Самогон и самогонщики"</p>
-				<p class='m-4'>
-					<a
-						href='https://telegram.me/samogonco'
-						class='font-medium text-gray-900 hover:text-gray-700'
-					>
-						<span class='h-4 inline-block' aria-hidden='true'><Telegram /></span>
-						<span class='t-6 inline-block' aria-hidden='true'>@samogonco</span></a
-					>
+				<p><a href='https://telegram.me/samogonco'>"Самогон и самогонщики"</a></p>
+				<p class='content text-text'>
+					Разработано 🚀 <a href='https://kryukovs.ru'>kryukovs.ru</a>
 				</p>
 			</div>
 		</div>
 	</div>
 </footer>
-<div class='bg-slate-800 text-white py-6 text-xs md:text-sm'>
+<div class='bg-slate-800 text-center text-white py-6 text-xs md:text-sm'>
 	SamogonCalc.ru &copy; 2021-{today.getFullYear()}
 </div>
