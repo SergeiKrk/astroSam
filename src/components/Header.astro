@@ -1,9 +1,6 @@
 ---
 import HeaderLink from '@/components/HeaderLink'
 import TelegramIcon from './icons/Telegram.astro'
-import SamogonIcon from './icons/SamogonIcon.astro'
-import LabTubeBottle from './icons/LabTubeBottle.astro'
-import Information from './icons/Information.astro'
 import Search from '@/components/Search'
 import ToggleTheme from './ToggleTheme.astro'
 import { Image } from 'astro:assets'
@@ -111,31 +108,28 @@ const itemNav = [
 const itemNavInfo = [
 	{
 		name: 'Про самогон',
-		href: '/samogon',
-		icon: SamogonIcon
+		href: '/samogon'
 	},
 	{
 		name: 'Про оборудование',
-		href: '#',
-		icon: LabTubeBottle
+		href: '#'
 	},
 	{
 		name: 'О проекте',
-		href: '/about',
-		icon: Information
+		href: '/about'
 	}
 ]
 ---
 
 <div
-	class='navbar mx-auto lg:w-[1152px] text-center fixed top-0 left-0 right-0 z-50 bg-gray-50/50 dark:bg-gray-950/50 backdrop-blur-sm'
+	class='navbar mx-auto w-full md:px-32 lg:px-52 2xl:px-96 text-center fixed top-0 left-0 right-0 z-50 bg-gray-950/50 backdrop-blur-sm'
 >
 	<div class='navbar-start'>
 		<div class='dropdown'>
 			<div tabindex='0' role='button' class='btn btn-ghost lg:hidden' aria-label='dropdown'>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
-					class='h-5 w-5'
+					class='h-5 w-5 text-white'
 					fill='none'
 					viewBox='0 0 24 24'
 					stroke='currentColor'
@@ -148,10 +142,10 @@ const itemNavInfo = [
 			</div>
 			<ul
 				tabindex='0'
-				class='menu dropdown-content mt-3 z-50 p-2 shadow bg-base-100 rounded-box w-[300px] max-w-[350px] dark:bg-indigo-950'
+				class='menu dropdown-content mt-3 z-50 p-2 shadow bg-base-100 rounded-box w-[300px] max-w-[350px]'
 			>
 				<li>
-					<div>Калькуляторы</div>
+					<div class='text-gray-900 font-medium'>Калькуляторы</div>
 					<ul class='p-2 z-50'>
 						{
 							itemNav.map((item) => (
@@ -161,9 +155,7 @@ const itemNavInfo = [
 										class='m-1 flex items-start rounded-lg p-1 hover:bg-gray-100 dark:hover:bg-green-700'
 									>
 										<div class='ml-1'>
-											<p class='lg:text-xs text-md font-medium text-gray-900 dark:text-gray-100'>
-												- {item.name}
-											</p>
+											<p class='lg:text-xs text-md font-medium text-gray-900'>- {item.name}</p>
 										</div>
 									</a>
 								</li>
@@ -174,10 +166,7 @@ const itemNavInfo = [
 				{
 					itemNavInfo.map((itm) => (
 						<li>
-							<a
-								href={itm.href}
-								class='text-base font-medium  text-gray-900 dark:text-gray-100 hover:text-[#0B6552]'
-							>
+							<a href={itm.href} class='text-base font-medium  text-gray-900 hover:text-[#0B6552]'>
 								{itm.name}
 							</a>
 						</li>
@@ -185,15 +174,13 @@ const itemNavInfo = [
 				}
 			</ul>
 		</div>
-		<a href='/' class='btn btn-ghost text-xl'>SamagonCalc</a>
+		<a href='/' class='btn btn-ghost text-xl text-gray-200 hover:text-green-200'>SamagonCalc</a>
 	</div>
 	<div class='navbar-center hidden lg:flex'>
 		<ul class='menu menu-horizontal px-1'>
 			<li>
 				<details>
-					<summary class='font-medium text-gray-900 dark:text-gray-200 hover:text-gray-700'
-						>Калькуляторы</summary
-					>
+					<summary class='font-medium text-gray-200 hover:text-green-200'>Калькуляторы</summary>
 					<ul class='p-1 -left-[50px] z-50 w-[700px] dark:bg-indigo-950'>
 						{
 							itemNav.map((item) => (
@@ -230,13 +217,7 @@ const itemNavInfo = [
 			{
 				itemNavInfo.map((itm) => (
 					<li>
-						<a
-							href={itm.href}
-							class='font-medium text-gray-900 hover:text-gray-700 dark:text-gray-200'
-						>
-							<span class=''>
-								<itm.icon class='inline-block' aria-hidden='true' />
-							</span>{' '}
+						<a href={itm.href} class='font-medium text-gray-200 hover:text-green-200'>
 							{itm.name}
 						</a>
 					</li>
@@ -258,7 +239,7 @@ const itemNavInfo = [
 					))
 				}
 			</div>
-			<div>
+			<div class='ml-6'>
 				<Search />
 			</div>
 			<ToggleTheme />
