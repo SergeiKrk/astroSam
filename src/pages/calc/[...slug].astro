@@ -1,0 +1,39 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content'
+import Code from '@/components/mdx/Code'
+import Share from '@/components/Share'
+import { getCalcs } from '@/utils'
+import SButton from '@/components/mdx/SButton'
+import CalcPost from '@/layouts/CalcPost'
+
+const calcs = await getCollection('calcs')
+export async function getStaticPaths() {
+	const calcs = await getCalcs()
+
+	return calcs.map((calc) => ({
+		params: { slug: calc.slug },
+		props: calc
+	}))
+}
+type Props = CollectionEntry<'calcs'>
+
+const calc = Astro.props
+
+const { Content } = await calc.render()
+---
+
+<CalcPost id={calc.id} data={calc.data}>
+	<div class='grid grid-cols-1 md:grid-cols-[20%_auto] gap-10 mt-8 lg:max-w-[960px]'>
+		<!-- aside  -->
+		<aside class='md:flex flex-col gap-8 hidden'>
+			<Share />
+		</aside>
+
+		<!-- calc -->
+		<article class='max-w-full w-full'>
+			<div class='prose prose-lg md:prose-xl dark:prose-invert mb-12 min-w-full'>
+				<Content components={{ pre: Code, SButton }} />
+			</div>
+		</article>
+	</div>
+</CalcPost>

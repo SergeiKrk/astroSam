@@ -19,6 +19,8 @@ const calcs = await getCalcs()
 
 <BaseLayout title={title} description={description}>
 	<Hero headImg={headImg} titlePage={titlePage} descriptionPage={descriptionPage} urlSeo={urlSeo} />
+
+	<ListCalcs {calcs} />
 	<TitlePage title='Полезно знать' />
 	<ListCategories />
 
@@ -26,7 +28,6 @@ const calcs = await getCalcs()
 		<h2 class='text-lg font-medium tracking-wide text-end'>Новые статьи</h2>
 		<ListPosts FirstBig={true} posts={posts} />
 	</div>
-	<ListCalcs calcs={calcs} />
 </BaseLayout>
 
 <script>

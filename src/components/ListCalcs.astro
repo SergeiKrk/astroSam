@@ -4,17 +4,14 @@ import CalcCard from '@/components/CalcCard'
 
 type Props = {
 	calcs: CollectionEntry<'calcs'>[]
-	FirstBig?: boolean
 }
 
-const { calcs, FirstBig = false } = Astro.props
+const { calcs } = Astro.props
 ---
 
 <section class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-3'>
 	{
 		calcs.map(async (calc) => {
-			const { remarkPluginFrontmatter } = await calc.render()
-
 			return <CalcCard id={calc.id} data={calc.data} slug={calc.slug} />
 		})
 	}
