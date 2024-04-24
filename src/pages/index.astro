@@ -2,9 +2,11 @@
 import Hero from '@/components/Hero'
 import ListCategories from '@/components/ListCategories'
 import ListPosts from '@/components/ListPosts'
+import ListCalcs from '@/components/ListCalcs'
 import TitlePage from '@/components/TitlePage'
 import BaseLayout from '@/layouts/BaseLayout'
 import { getPosts } from '@/utils'
+import { getCalcs } from '@/utils'
 import { getEntry } from 'astro:content'
 import headImg from '../assets/images/kalkulyator-samogonshchika.png'
 const homepage = await getEntry('calcPages', 'home')
@@ -12,6 +14,7 @@ const { title, description, titlePage, descriptionPage, urlSeo } = homepage.data
 
 const MAX_POSTS = 5 // max number of posts to show on the home page
 const posts = await getPosts(MAX_POSTS)
+const calcs = await getCalcs()
 ---
 
 <BaseLayout title={title} description={description}>
@@ -23,6 +26,7 @@ const posts = await getPosts(MAX_POSTS)
 		<h2 class='text-lg font-medium tracking-wide text-end'>Новые статьи</h2>
 		<ListPosts FirstBig={true} posts={posts} />
 	</div>
+	<ListCalcs calcs={calcs} />
 </BaseLayout>
 
 <script>
