@@ -1,10 +1,10 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 import BaseLayout from '@/layouts/BaseLayout'
-import type { MarkdownHeading } from 'astro'
 import { Image } from 'astro:assets'
-import { ViewTransitions } from 'astro:transitions'
 import { fade } from 'astro:transitions'
+import Hero from '@/components/Hero'
+import { ViewTransitions } from 'astro:transitions'
 
 type Props = {
 	id: CollectionEntry<'calcs'>['id']
@@ -16,86 +16,10 @@ const { title, description, heroImage } = data
 ---
 
 <BaseLayout title={title} description={description} image={heroImage?.src}>
+	<Hero headImg={heroImage} titlePage={title} descriptionPage={description} urlSeo={id} />
 	<article class='min-w-full md:py-4 sm:max-w-none md:max-w-none'>
-		<header class='mb-3 flex flex-col justify-center items-center gap-6'>
-			<div class='flex flex-col gap-2'>
-				<h1
-					transition:animate='slide'
-					class='text-center text-4xl md:text-6xl md:pb-2.5 font-semibold'
-				>
-					{title}
-				</h1>
-			</div>
-		</header>
-
-		<>
-			{
-				heroImage && (
-					<Image
-						transition:animate={fade({ duration: '1.5s' })}
-						src={heroImage}
-						width={1000}
-						height={500}
-						quality={100}
-						format='webp'
-						loading='eager'
-						quality='high'
-						class='rounded-md w-full max-h-[300px]  md:max-h-[500px] my-8 object-cover'
-						alt={`img of ${title}`}
-					/>
-				)
-			}
-		</>
-
-		<hr />
-
 		<div>
 			<slot />
 		</div>
 	</article>
 </BaseLayout>
-
-<script>
-	const fnObserver = () => {
-		function handleIntersection(
-			entries: IntersectionObserverEntry[],
-			observer: IntersectionObserver
-		) {
-			entries.forEach((entry) => {
-				const index = document.querySelector(`aside a[href="#${entry.target.id}"]`)
-
-				if (entry.isIntersecting) {
-					index?.classList.remove('bg-slate-200', 'dark:bg-slate-800') // remove bg
-					index?.classList.add(
-						'bg-indigo-400',
-						'dark:bg-indigo-700',
-						'text-white',
-						'font-bold',
-						'transition-colors',
-						'duration-200'
-					)
-				} else {
-					index?.classList.add('bg-slate-200', 'dark:bg-slate-800') // add bg
-					index?.classList.remove(
-						'bg-indigo-400',
-						'dark:bg-indigo-700',
-						'text-white',
-						'font-bold',
-						'transition-colors',
-						'duration-200'
-					)
-				}
-			})
-		}
-
-		const options = {
-			root: null,
-			rootMargin: ' 15% 0px 0% 0px ',
-			threshold: 1
-		}
-
-		const observer = new IntersectionObserver(handleIntersection, options)
-	}
-	fnObserver()
-	document.addEventListener('astro:after-swap', fnObserver)
-</script>
