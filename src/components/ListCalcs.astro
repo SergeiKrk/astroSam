@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 import CalcCard from '@/components/CalcCard'
+import StarIcon from './icons/StarIcon.astro'
 
 type Props = {
 	calcs: CollectionEntry<'calcs'>[]
@@ -9,10 +10,26 @@ type Props = {
 const { calcs } = Astro.props
 ---
 
-<section class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-3'>
-	{
-		calcs.map(async (calc) => {
-			return <CalcCard id={calc.id} data={calc.data} slug={calc.slug} />
-		})
-	}
-</section>
+<div class='my-10 mx-4 2xl:mx-52 2xl:my-24'>
+	<div
+		class='flex justify-center uppercase text-lg text-center dark:text-white sm:text-4xl text-gray-700 font-[700]'
+	>
+		ПОЛЕЗНЫЕ КАЛЬКУЛЯТОРЫ ДЛЯ ВИНОКУРОВ И САМОГОНЩИКОВ
+	</div>
+	<div class='my-6 sm:my-10 flex justify-center text-xl sm:text-4xl text-gray-700 font-[700]'>
+		<div class='my-auto h-[6px] w-32 bg-gray-700 border rounded'></div>
+		<div class='mx-6 dark:text-white'>
+			<StarIcon />
+		</div>
+		<div class='my-auto h-[6px] w-32 bg-gray-700 border rounded'></div>
+	</div>
+	<section
+		class='grid 2xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 hover:drop-shadow-md'
+	>
+		{
+			calcs.map(async (calc) => {
+				return <CalcCard id={calc.id} data={calc.data} slug={calc.slug} />
+			})
+		}
+	</section>
+</div>
