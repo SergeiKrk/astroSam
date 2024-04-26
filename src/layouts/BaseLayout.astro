@@ -6,7 +6,6 @@ import ProviderTheme from '@/components/ProviderTheme'
 import ProviderAnimations from '@/components/ProviderAnimations'
 import TwSizeIndicator from '@/components/TwSizeIndicator'
 import { ViewTransitions } from 'astro:transitions'
-import NaShavuhu from '@/components/NaShavuhu'
 const { title, description, image, articleDate } = Astro.props
 ---
 
@@ -22,7 +21,6 @@ const { title, description, image, articleDate } = Astro.props
 		<main class='sm:mx-autoantialiased grid gap-12 overflow-hidden md:overflow-visible'>
 			<Header />
 			<slot />
-			<NaShavuhu />
 		</main>
 		<Footer />
 		<TwSizeIndicator />

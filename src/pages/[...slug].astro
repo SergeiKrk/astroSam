@@ -1,10 +1,11 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content'
+import CalcPost from '@/layouts/CalcPost'
 import Code from '@/components/mdx/Code'
 import Share from '@/components/Share'
 import { getCalcs } from '@/utils'
 import SButton from '@/components/mdx/SButton'
-import CalcPost from '@/layouts/CalcPost'
+import NaShavuhu from '@/components/NaShavuhu'
 
 const calcs = await getCollection('calcs')
 export async function getStaticPaths() {
@@ -19,21 +20,23 @@ type Props = CollectionEntry<'calcs'>
 
 const calc = Astro.props
 
-const { Content } = await calc.render()
+const { Content, remarkPluginFrontmatter } = await calc.render()
 ---
 
 <CalcPost id={calc.id} data={calc.data}>
-	<div class='grid grid-cols-1 md:grid-cols-[20%_auto] gap-10 mt-8 lg:max-w-[960px]'>
-		<!-- aside  -->
-		<aside class='md:flex flex-col gap-8 hidden'>
+	<div class='grid grid-cols-1 lg:grid-cols-4 gap-6 mx-auto max-w-[1400px] pt-12 text-lg sm:px-6'>
+		<div class='px-4 mt-6'>
+			l o r e m i p s u m l o r e ml o r e m i p s u m l o r e ml o r e m i p s u m l o r e ml o r e
+			m i p s u m l o r e ml o r e m i p s u m l o r e ml o r e m i p s u m l o r e ml o r e m i p s
+			u m l o r e ml o r e m i p s u m l o r e ml o r e m i p s u m l o r e m
 			<Share />
-		</aside>
-
-		<!-- calc -->
-		<article class='max-w-full w-full'>
-			<div class='prose prose-lg md:prose-xl dark:prose-invert mb-12 min-w-full'>
-				<Content components={{ pre: Code, SButton }} />
+		</div>
+		<div class='px-4 col-span-2'><Content components={{ pre: Code, SButton }} /></div>
+		<div class='px-4 mt-6'>
+			<div class='sticky top-32'>
+				<div></div>
+				<NaShavuhu />
 			</div>
-		</article>
+		</div>
 	</div>
 </CalcPost>

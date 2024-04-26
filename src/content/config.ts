@@ -25,6 +25,7 @@ const calcs = defineCollection({
 		z.object({
 			title: z.string().max(80),
 			description: z.string(),
+			pretext: z.string(),
 			heroImage: image()
 		})
 })

@@ -12,12 +12,16 @@ type Props = {
 }
 
 const { data, id } = Astro.props
-const { title, description, heroImage } = data
+const { title, description, heroImage, pretext } = data
 ---
 
 <BaseLayout title={title} description={description} image={heroImage?.src}>
 	<Hero headImg={heroImage} titlePage={title} descriptionPage={description} urlSeo={id} />
-	<article class='min-w-full md:py-4 sm:max-w-none md:max-w-none'>
+
+	<div class='mx-auto max-w-[680px] py-12 text-lg sm:px-6'>
+		{pretext}
+	</div>
+	<article class='min-w-ful md:py-4 sm:max-w-none md:max-w-none'>
 		<div>
 			<slot />
 		</div>
