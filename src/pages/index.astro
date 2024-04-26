@@ -15,13 +15,60 @@ const { title, description, titlePage, descriptionPage, urlSeo } = homepage.data
 const MAX_POSTS = 5 // max number of posts to show on the home page
 const posts = await getPosts(MAX_POSTS)
 const calcs = await getCalcs()
+import CalcIcon from '../components/icons/CalcIcon.astro'
 ---
 
 <BaseLayout title={title} description={description}>
 	<Hero headImg={headImg} titlePage={titlePage} descriptionPage={descriptionPage} urlSeo={urlSeo} />
 
 	<ListCalcs {calcs} />
-	<TitlePage title='Полезно знать' />
+
+	<div class='bg-[#1abc9c] py-10 px-4 2xl:px-52 2xl:py-24'>
+		<div
+			class='flex justify-center uppercase text-lg text-center sm:text-4xl text-white font-[700]'
+		>
+			ОНЛАЙН КАЛЬКУЛЯТОРЫ САМОГОНЩИКА
+		</div>
+		<div class='my-6 sm:my-10 flex justify-center text-xl sm:text-4xl text-gray-700 font-[700]'>
+			<div class='my-auto h-[6px] w-32 bg-gray-50 border-gray-50 rounded'></div>
+			<div class='mx-6 dark:text-white'>
+				<CalcIcon />
+			</div>
+			<div class='my-auto h-[6px] w-32 bg-gray-50 border-gray-50 rounded'></div>
+		</div>
+		<div class='text-xl text-white max-w-xl mx-auto font-[200]'>
+			Онлайн калькуляторы самогонщика - набор полезных для винокуров (дистилье)
+			инструментов-помощников, которые необходимы для расчета всех важных параметров в процессе
+			производства крепких домашних напитков.
+		</div>
+	</div>
+	<div class='my-10 mx-4 2xl:mx-52 2xl:my-24'>
+		<div
+			class='flex justify-center uppercase text-lg text-center sm:text-4xl text-gray-700 font-[700]'
+		>
+			АЛКОГОЛЬНЫЙ КАЛЬКУЛЯТОР САМОГОНЩИКА: ПРЕИМУЩЕСТВА
+		</div>
+		<div class='text-xl text-gray-700 max-w-4xl mx-auto font-[200] mt-16'>
+			Ищите лучший калькулятор самогонщика? Возможно, вы его нашли. Наши онлайн калькуляторы:
+		</div>
+		<div class='grid sm:grid-cols-2 text-xl text-gray-700 max-w-4xl mx-auto font-[200]'>
+			<div class='m-2'>
+				<div class='my-8 flex justify-center text-4xl'>
+					<div class='flex justify-center'>🚀</div>
+				</div>
+				Загружаются заметно быстрее всех остальных калькуляторов самогона конкурентов. Не нужно ждать
+				пока страница откроется, ведь это всех раздражает.
+			</div>
+			<div class='my-2'>
+				<div class='my-8 flex justify-center text-4xl'>⚡️</div>
+				<p>
+					Расчет осуществляется сразу после ввода параметров в калькулятор. Не нужно совершать
+					лишнего действия и нажимать на кнопку "Посчитать".
+				</p>
+			</div>
+		</div>
+	</div>
+
 	<ListCategories />
 
 	<div>
