@@ -5,6 +5,7 @@ import { Image } from 'astro:assets'
 import { fade } from 'astro:transitions'
 import Hero from '@/components/Hero'
 import { ViewTransitions } from 'astro:transitions'
+import KalkulyatorZamenySaharaGlyukozoj from '../components/calc/KalkulyatorZamenySaharaGlyukozoj'
 
 type Props = {
 	id: CollectionEntry<'calcs'>['id']
@@ -21,6 +22,8 @@ const { title, description, heroImage, pretext } = data
 	<div class='mx-auto max-w-[680px] py-12 text-lg sm:px-6'>
 		{pretext}
 	</div>
+
+	<KalkulyatorZamenySaharaGlyukozoj client:load />
 	<article class='min-w-ful md:py-4 sm:max-w-none md:max-w-none'>
 		<div>
 			<slot />
