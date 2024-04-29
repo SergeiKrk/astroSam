@@ -65,7 +65,7 @@ const ZamenaCalc = () => {
 							<ResultBlock
 								key={data.id}
 								volGlucose={data.volGlucose}
-								// Пропсы, если они нужны 11
+								// Пропсы, если они нужны 112
 							/>
 						))}
 					</div>
