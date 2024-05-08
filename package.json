@@ -63,7 +63,7 @@
 		"typescript": "^5.2.2"
 	},
 	"engines": {
-		"node": "18.17.1"
+		"node": "18.x"
 	},
 	"lint-staged": {
 		"*.{astro,js,jsx,ts,tsx,md,mdx,json}": [
