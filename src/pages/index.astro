@@ -9,7 +9,6 @@ import { getCalcs } from '@/utils'
 import { getEntry } from 'astro:content'
 import headImg from '../assets/images/kalkulyator-samogonshchika.png'
 import CalcIcon from '../components/icons/CalcIcon.astro'
-import Counter from '@/calc/Counter.jsx'
 const homepage = await getEntry('calcPages', 'home')
 const { title, description, titlePage, descriptionPage, urlSeo } = homepage.data
 
@@ -20,7 +19,6 @@ const calcs = await getCalcs()
 
 <BaseLayout title={title} description={description}>
 	<Hero headImg={headImg} titlePage={titlePage} descriptionPage={descriptionPage} urlSeo={urlSeo} />
-	<Counter client:load />
 
 	<ListCalcs {calcs} />
 
