@@ -3,7 +3,7 @@ import type { CollectionEntry } from 'astro:content'
 import BaseLayout from '@/layouts/BaseLayout'
 import Hero from '@/components/Hero'
 import { ViewTransitions } from 'astro:transitions'
-import Sebestoimost from '@/calc/Sebestoimost.jsx'
+import AbsolyutnijSpirt from '@/calc/AbsolyutnijSpirt.jsx'
 
 type Props = {
 	id: CollectionEntry<'calcs'>['id']
@@ -22,8 +22,17 @@ const { title, description, heroImage, pretext } = data
 	</div>
 
 	<div class='mx-auto max-w-6xl text-lg sm:px-6'>
-		<Sebestoimost client:load />
-		Нужно исправить расчет Vodka поправок на температуру
+		<AbsolyutnijSpirt client:load />
+		<p>Нужно исправить расчет:</p>
+		<ul>
+			<li>Vodka</li>
+			<li>RazbavleniyaSamogona</li>
+			<li>PoslePervoj</li>
+			<li>OtborGolov</li>
+			<li>DrobnayaPeregonka</li>
+			<li>Braga</li>
+			<li>AbsolyutnijSpirt</li>
+		</ul>
 	</div>
 	<article class='min-w-ful md:py-4 sm:max-w-none md:max-w-none'>
 		<div>
