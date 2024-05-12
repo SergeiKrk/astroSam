@@ -1,6 +1,5 @@
 ---
 import { Image } from 'astro:assets'
-import ArrowUp from '@/components/icons/ArrowUp'
 
 const {
 	id,
@@ -15,6 +14,7 @@ const {
 	<a class='relative overflow-hidden' href={`/${slug}/`}>
 		<div class='text-center hover:bg-[#1abc9c] hover:rounded-lg'>
 			<Image
+				transition:name={`img${title}`}
 				src={heroImage}
 				width={360}
 				height={360}
@@ -23,7 +23,10 @@ const {
 				alt={`img of ${title}`}
 			/>
 		</div>
-		<div class='mb-3 text-center leading-[1.2rem] dark:text-white font-[700] text-gray-700'>
+		<div
+			class='mb-3 text-center leading-[1.2rem] dark:text-white font-[700] text-gray-700'
+			transition:name={title}
+		>
 			{title}
 		</div>
 		<div class='text-center leading-[1.2rem] font-[400] dark:text-white text-sm text-gray-800'>
