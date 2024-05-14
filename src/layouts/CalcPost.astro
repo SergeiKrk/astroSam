@@ -28,11 +28,11 @@ const { title, description, heroImage, pretext } = data
 <BaseLayout title={title} description={description} image={heroImage?.src}>
 	<Hero headImg={heroImage} titlePage={title} descriptionPage={description} urlSeo={id} />
 
-	<div class='mx-auto max-w-[680px] py-12 text-lg sm:px-6'>
+	<div class='mx-auto max-w-[680px] py-12 text-lg px-6'>
 		{pretext}
 	</div>
 
-	<div class='mx-auto max-w-6xl text-lg sm:px-6'>
+	<div class='mx-auto w-full max-w-7xl text-lg sm:px-6'>
 		{
 			title == 'Калькулятор абсолютного спирта' ? (
 				<AbsolyutnijSpirt client:load />

@@ -40,72 +40,67 @@ const AbsolyutnijSpirtCalc = () => {
 	}
 
 	return (
-		<div className='container'>
-			<div className='card-group'>
-				<div className='card border border-dark'>
-					<div className='card-body'>
-						<div className='card-text'>
-							<form>
-								<div className='form-row' style={{ marginTop: '10px' }}>
-									<label className='p10 text-md-right col-sm-6' htmlFor='alcoholVol'>
-										Объем самогона:
-									</label>
-									<div className='col-xs-9 col-md-4'>
-										<input
-											id='alcoholVol'
-											className='form-control'
-											type='number'
-											placeholder='объем, литров'
-											value={alcoholVol}
-											onChange={handleInputChange}
-										/>
-									</div>
-									<div className='p10 text-left col-xs-3 col-md-2'>, л.</div>
-								</div>
-								<div className='form-row'>
-									<label className='p10 text-md-right col-sm-6' htmlFor='alcoholFortr'>
-										Крепость самогона:
-									</label>
-									<div className='col-xs-9 col-md-4'>
-										<input
-											id='alcoholFortr'
-											className='form-control'
-											type='number'
-											placeholder='крепость, градусов'
-											value={alcoholFortr}
-											onChange={handleInputChange}
-										/>
-									</div>
-									<div className='p10 text-left col-xs-3 col-md-2'>, °</div>
-								</div>
-								<div className='form-row'>
-									<label className='p10 text-md-right col-sm-6' htmlFor='firstTemp'>
-										Температура самогона:
-									</label>
-									<div className='col-xs-9 col-md-4'>
-										<input
-											id='firstTemp'
-											className='form-control'
-											type='number'
-											placeholder='температура, °C'
-											value={firstTemp}
-											onChange={handleInputChange}
-										/>
-									</div>
-									<div className='p10 text-left col-xs-3 col-md-2'>, °C</div>
-								</div>
-							</form>
+		<div className='w-full flex flex-col lg:flex-row'>
+			<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
+				<div>
+					<form className='mx-6'>
+						<div className='mt-10 flex'>
+							<label className='p10 text-md-right base-1/3 w-full' htmlFor='alcoholVol'>
+								Объем самогона:
+							</label>
+							<div className='base-1/3 w-full'>
+								<input
+									id='alcoholVol'
+									className='form-control'
+									type='number'
+									placeholder='объем, литров'
+									value={alcoholVol}
+									onChange={handleInputChange}
+								/>
+							</div>
+							<div className='p10 text-left base-1/3 w-full'>, л.</div>
 						</div>
-					</div>
-				</div>
-				<div className='card border-dark bg-primary text-center'>
-					<div className='blockquote mb-0 card-body'>
-						<p id='absAlcohol'>Объем абсолютного спирта: {absAlcohol} л</p>
-						<p id='cleanAlcohol'>Объем чистого спирта: {cleanAlcohol} л</p>
-					</div>
+						<div className='flex'>
+							<label className='base-1/3 w-full' htmlFor='alcoholFortr'>
+								Крепость самогона:
+							</label>
+							<div className='base-1/3 w-full'>
+								<input
+									id='alcoholFortr'
+									className='form-control'
+									type='number'
+									placeholder='крепость, градусов'
+									value={alcoholFortr}
+									onChange={handleInputChange}
+								/>
+							</div>
+							<div className='base-1/3 w-full'>, °</div>
+						</div>
+						<div className='flex'>
+							<label className='base-3/6 w-full' htmlFor='firstTemp'>
+								Температура самогона:
+							</label>
+							<div className='base-2/6 w-full'>
+								<input
+									id='firstTemp'
+									className='form-control'
+									type='number'
+									placeholder='температура, °C'
+									value={firstTemp}
+									onChange={handleInputChange}
+								/>
+							</div>
+							<div className='base-1/6 w-full'>, °C</div>
+						</div>
+					</form>
 				</div>
 			</div>
-			<br />
+			<div className='basis-1/2 border-4 lg:rounded-r-lg border-[#1ABC9C] dark:border-[#00614B] bg-[#1ABC9C] dark:bg-[#00614B] text-center'>
+				<div className='mb-0'>
+					<p id='absAlcohol'>Объем абсолютного спирта: {absAlcohol} л</p>
+					<p id='cleanAlcohol'>Объем чистого спирта: {cleanAlcohol} л</p>
+				</div>
+			</div>
 		</div>
 	)
 }
