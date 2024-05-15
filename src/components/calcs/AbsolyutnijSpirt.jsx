@@ -1,43 +1,22 @@
 import React, { useState } from 'react'
 
 const AbsolyutnijSpirtCalc = () => {
-	const [alcoholVol, setAlcoholVol] = useState('')
-	const [alcoholFortr, setAlcoholFortr] = useState('')
-	const [firstTemp, setFirstTemp] = useState(20)
-	const [absAlcohol, setAbsAlcohol] = useState(0)
-	const [cleanAlcohol, setCleanAlcohol] = useState(0)
+	const alcoholVolRef = useRef(null)
+	const alcoholFortrRef = useRef(null)
+	const firstTempRef = useRef(null)
 
-	const calculateResults = () => {
-		const strenghth = (parseFloat(alcoholFortr) + 0.3 * (20 - firstTemp)).toFixed(2)
-		const absAlcoholValue = ((strenghth * parseFloat(alcoholVol)) / 100).toFixed(2)
-		const cleanAlcoholValue = (absAlcoholValue * 1.038421599169263).toFixed(2)
+	const [absAlcohol, setAbsAlcohol] = useState('')
+	const [cleanAlcohol, setCleanAlcohol] = useState('')
 
-		if (!isNaN(alcoholVol) && !isNaN(alcoholFortr) && !isNaN(firstTemp)) {
-			setAbsAlcohol(absAlcoholValue)
-			setCleanAlcohol(cleanAlcoholValue)
-		} else {
-			setAbsAlcohol(0)
-			setCleanAlcohol(0)
-		}
-	}
+	const handleInputChange = () => {
+		let alcoholVol = parseFloat(alcoholVolRef.current.value) || 0
+		let alcoholFortr = parseFloat(alcoholFortrRef.current.value) || 0
+		let firstTemp = parseFloat(firstTempRef.current.value) || 20
 
-	const handleInputChange = (e) => {
-		const { id, value } = e.target
-		switch (id) {
-			case 'alcoholVol':
-				setAlcoholVol(value)
-				break
-			case 'alcoholFortr':
-				setAlcoholFortr(value)
-				break
-			case 'firstTemp':
-				setFirstTemp(parseFloat(value))
-				break
-			default:
-				break
-		}
-		calculateResults()
-	}
+		let strenghth = (parseFloat(Number(alcoholFortr)) + 0.3 * (20 - Number(firstTemp))).toFixed(2) 
+		let absAlcoholValue = ((strenghth * parseFloat(alcoholVol)) / 100).toFixed(2)
+
+		if (!isNaN(alcoholVol) && !isNaN(alcoholFortr) && !isNaN(firstTemp)) {}
 
 	return (
 		<div className='w-full flex flex-col lg:flex-row'>
@@ -50,6 +29,7 @@ const AbsolyutnijSpirtCalc = () => {
 							</label>
 							<div className='w-[70%] lg:w-[40%]'>
 								<input
+								ref={alcoholVolRef}
 									id='alcoholVol'
 									className='border-2 rounded-lg border-[#1ABC9C] px-1 w-44'
 									type='number'
@@ -66,6 +46,7 @@ const AbsolyutnijSpirtCalc = () => {
 							</label>
 							<div className='w-[70%] lg:w-[40%]'>
 								<input
+								ref={alcoholFortrRef}
 									id='alcoholFortr'
 									className='border-2 rounded-lg border-[#1ABC9C] px-1 w-44'
 									type='number'
@@ -82,6 +63,7 @@ const AbsolyutnijSpirtCalc = () => {
 							</label>
 							<div className='w-[70%] lg:w-[40%]'>
 								<input
+								ref={firstTempRef}
 									id='firstTemp'
 									className='border-2 rounded-lg border-[#1ABC9C] px-1 w-44'
 									type='number'
@@ -98,11 +80,11 @@ const AbsolyutnijSpirtCalc = () => {
 			<div className='basis-1/2 content-center border-4 lg:rounded-r-lg border-[#1ABC9C] dark:border-[#00614B] bg-[#1ABC9C] dark:bg-[#00614B] text-center'>
 				<div className='mb-0 text-xl text-white'>
 					<p>Объем абсолютного спирта:</p>
-					<p className=' text-3xl' id='absAlcohol'>
+					<p className=' text-3xl'>
 						{absAlcohol} л
 					</p>
 					<p>Объем чистого спирта:</p>
-					<p className=' text-3xl' id='cleanAlcohol'>
+					<p className=' text-3xl'>
 						{cleanAlcohol} л
 					</p>
 				</div>
