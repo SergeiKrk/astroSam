@@ -95,10 +95,16 @@ const AbsolyutnijSpirtCalc = () => {
 					</form>
 				</div>
 			</div>
-			<div className='basis-1/2 border-4 lg:rounded-r-lg border-[#1ABC9C] dark:border-[#00614B] bg-[#1ABC9C] dark:bg-[#00614B] text-center'>
-				<div className='mb-0'>
-					<p id='absAlcohol'>Объем абсолютного спирта: {absAlcohol} л</p>
-					<p id='cleanAlcohol'>Объем чистого спирта: {cleanAlcohol} л</p>
+			<div className='basis-1/2 content-center border-4 lg:rounded-r-lg border-[#1ABC9C] dark:border-[#00614B] bg-[#1ABC9C] dark:bg-[#00614B] text-center'>
+				<div className='mb-0 text-xl text-white'>
+					<p>Объем абсолютного спирта:</p>
+					<p className=' text-3xl' id='absAlcohol'>
+						{absAlcohol} л
+					</p>
+					<p>Объем чистого спирта:</p>
+					<p className=' text-3xl' id='cleanAlcohol'>
+						{cleanAlcohol} л
+					</p>
 				</div>
 			</div>
 		</div>
