@@ -32,110 +32,105 @@ const AlcoholMixCalculator = () => {
 	}
 
 	return (
-		<div className='container mx-auto'>
-			<div className='card-group'>
-				<div className='card border border-gray-300'>
-					<div className='card-body'>
-						<div className='card-text'>
-							<br />
-							<div className='form-group'>
-								<div className='grid grid-cols-2 gap-4'>
-									<label className='text-right p-2' htmlFor='firstVolume'>
-										Объем 1-ой жидкости:
-									</label>
-									<input
-										ref={firstVolumeRef}
-										id='firstVolume'
-										className='form-control col-span-1'
-										type='number'
-										placeholder='объем, литров'
-										onChange={calculateMixedValues}
-									/>
-									<div className='col-span-1 p-2'>, л.</div>
-								</div>
-								<div className='grid grid-cols-2 gap-4'>
-									<label className='text-right p-2' htmlFor='firstStrength'>
-										Крепость 1-ой жидкости:
-									</label>
-									<input
-										ref={firstStrengthRef}
-										id='firstStrength'
-										className='form-control col-span-1'
-										type='number'
-										placeholder='градусов'
-										onChange={calculateMixedValues}
-									/>
-									<div className='col-span-1 p-2'>, °</div>
-								</div>
-								<div className='grid grid-cols-2 gap-4'>
-									<label className='text-right p-2' htmlFor='firstTemperature'>
-										Температура 1-ой жидкости:
-									</label>
-									<input
-										ref={firstTemperatureRef}
-										id='firstTemperature'
-										className='form-control col-span-1'
-										type='number'
-										placeholder='температура, °C'
-										onChange={calculateMixedValues}
-									/>
-									<div className='col-span-1 p-2'>, °C</div>
-								</div>
-								<br />
-								<div className='grid grid-cols-2 gap-4'>
-									<label className='text-right p-2' htmlFor='secondVolume'>
-										Объем 2-ой жидкости:
-									</label>
-									<input
-										ref={secondVolumeRef}
-										id='secondVolume'
-										className='form-control col-span-1'
-										type='number'
-										placeholder='объем, литров'
-										onChange={calculateMixedValues}
-									/>
-									<div className='col-span-1 p-2'>, л.</div>
-								</div>
-								<div className='grid grid-cols-2 gap-4'>
-									<label className='text-right p-2' htmlFor='secondStrength'>
-										Крепость 2-ой жидкости:
-									</label>
-									<input
-										ref={secondStrengthRef}
-										id='secondStrength'
-										className='form-control col-span-1'
-										type='number'
-										placeholder='градусов'
-										onChange={calculateMixedValues}
-									/>
-									<div className='col-span-1 p-2'>, °</div>
-								</div>
-								<div className='grid grid-cols-2 gap-4'>
-									<label className='text-right p-2' htmlFor='secondTemperature'>
-										Температура 2-ой жидкости:
-									</label>
-									<input
-										ref={secondTemperatureRef}
-										id='secondTemperature'
-										className='form-control col-span-1'
-										type='number'
-										placeholder='температура, °C'
-										onChange={calculateMixedValues}
-									/>
-									<div className='col-span-1 p-2'>, °C</div>
-								</div>
-							</div>
+		<div className='w-full flex flex-col lg:flex-row'>
+			<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
+				<div className=''>
+					<form className='m-6'>
+						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
+							<label className='p10 mr-4 lg:text-right lg:w-[60%] w-full' htmlFor='firstVolume'>
+								Объем 1-ой жидкости:
+							</label>
+							<input
+								ref={firstVolumeRef}
+								id='firstVolume'
+								className='w-[70%] lg:w-[40%] border-2 rounded-lg border-[#1ABC9C] px-1'
+								type='number'
+								placeholder='0 литров'
+								onChange={calculateMixedValues}
+							/>
 						</div>
-					</div>
-				</div>
-				<div className='card border border-gray-300 bg-primary text-center'>
-					<div className='card-body'>
-						<p>Смешанная крепость: {mixedStrength}°</p>
-						<p>Объем смеси: {mixedVolume} литров</p>
-					</div>
+						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
+							<label className='p10 mr-4 lg:text-right lg:w-[60%] w-full' htmlFor='firstStrength'>
+								Крепость 1-ой жидкости:
+							</label>
+							<input
+								ref={firstStrengthRef}
+								id='firstStrength'
+								className='w-[70%] lg:w-[40%] border-2 rounded-lg border-[#1ABC9C] px-1'
+								type='number'
+								placeholder='0 °'
+								onChange={calculateMixedValues}
+							/>
+						</div>
+						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
+							<label
+								className='p10 mr-4 lg:text-right lg:w-[60%] w-full'
+								htmlFor='firstTemperature'
+							>
+								Температура 1-ой жидкости:
+							</label>
+							<input
+								ref={firstTemperatureRef}
+								id='firstTemperature'
+								className='w-[70%] lg:w-[40%] border-2 rounded-lg border-[#1ABC9C] px-1'
+								type='number'
+								placeholder='20 °C'
+								onChange={calculateMixedValues}
+							/>
+						</div>
+						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
+							<label className='p10 mr-4 lg:text-right lg:w-[60%] w-full' htmlFor='secondVolume'>
+								Объем 2-ой жидкости:
+							</label>
+							<input
+								ref={secondVolumeRef}
+								id='secondVolume'
+								className='w-[70%] lg:w-[40%] border-2 rounded-lg border-[#1ABC9C] px-1'
+								type='number'
+								placeholder='0 литров'
+								onChange={calculateMixedValues}
+							/>
+						</div>
+						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
+							<label className='p10 mr-4 lg:text-right lg:w-[60%] w-full' htmlFor='secondStrength'>
+								Крепость 2-ой жидкости:
+							</label>
+							<input
+								ref={secondStrengthRef}
+								id='secondStrength'
+								className='w-[70%] lg:w-[40%] border-2 rounded-lg border-[#1ABC9C] px-1'
+								type='number'
+								placeholder='0 °'
+								onChange={calculateMixedValues}
+							/>
+						</div>
+						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
+							<label
+								className='p10 mr-4 lg:text-right lg:w-[60%] w-full'
+								htmlFor='secondTemperature'
+							>
+								Температура 2-ой жидкости:
+							</label>
+							<input
+								ref={secondTemperatureRef}
+								id='secondTemperature'
+								className='w-[70%] lg:w-[40%] border-2 rounded-lg border-[#1ABC9C] px-1'
+								type='number'
+								placeholder='20 °C'
+								onChange={calculateMixedValues}
+							/>
+						</div>
+					</form>
 				</div>
 			</div>
-			<br />
+			<div className='basis-1/2 content-center border-4 lg:rounded-r-lg border-[#1ABC9C] dark:border-[#00614B] bg-[#1ABC9C] dark:bg-[#00614B] text-center'>
+				<div className='mb-0 text-xl text-white'>
+					<p>Смешанная крепость:</p>
+					<p className=' text-3xl'>{mixedStrength}°</p>
+					<p>Объем смеси:</p>
+					<p className=' text-3xl'>{mixedVolume} л</p>
+				</div>
+			</div>
 		</div>
 	)
 }
