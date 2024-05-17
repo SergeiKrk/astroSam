@@ -54,7 +54,7 @@ const FractionalDistillationCalculator = () => {
 						</label>
 						<input
 							type='number'
-							className='w-full lg:w-[30%] border-2 rounded-lg border-[#1ABC9C] px-1 text-center lg:text-left'
+							className='w-full lg:w-[30%] border-2 rounded-lg border-[#1ABC9C] px-1 text-center lg:text-left bg-white'
 							ref={rawAlcoholVolRef}
 							placeholder='0 л.'
 							onChange={calculateDrobnayaPeregonka}
