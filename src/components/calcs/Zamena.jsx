@@ -17,38 +17,34 @@ const SugarSubstituteCalculator = () => {
 	}
 
 	return (
-		<div className='container mx-auto'>
-			<div className='card-group'>
-				<div className='card border border-gray-300'>
-					<div className='card-body'>
-						<div className='card-text'>
-							<br />
-							<div className='form-group'>
-								<div className='grid grid-cols-2 gap-4'>
-									<label className='text-right p-2' htmlFor='sugar'>
-										Количество сахара:
-									</label>
-									<input
-										ref={sugarRef}
-										id='sugar'
-										className='form-control col-span-1'
-										type='number'
-										placeholder='0'
-										onChange={calculateZamena}
-									/>
-									<div className='col-span-1 p-2'>, кг.</div>
-								</div>
-							</div>
+		<div className='w-full flex flex-col lg:flex-row'>
+			<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
+				<div className='p-6'>
+					<form className='my-6 text-center content-center'>
+						<div className='mx-auto my-2 flex flex-wrap lg:flex-nowrap'>
+							<label className='mr-4 lg:text-right lg:w-[60%] w-full' htmlFor='sugar'>
+								Количество сахара:
+							</label>
+							<input
+								ref={sugarRef}
+								id='sugar'
+								className='w-[70%] lg:w-[40%] border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52'
+								type='number'
+								placeholder='0 кг.'
+								onChange={calculateZamena}
+							/>
 						</div>
-					</div>
-				</div>
-				<div className='card border border-gray-300 bg-primary text-center'>
-					<div className='card-body'>
-						<p>Количество глюкозы: {glucose} кг</p>
-					</div>
+					</form>
 				</div>
 			</div>
-			<br />
+			<div className='basis-1/2 content-center border-4 lg:rounded-r-lg border-[#1ABC9C] dark:border-[#00614B] bg-[#1ABC9C] dark:bg-[#00614B] text-center'>
+				<div className='mb-0 py-6 text-xl text-white'>
+					<p>Количество глюкозы:</p>
+					<p>
+						<span className='text-4xl'>{glucose}</span> кг
+					</p>
+				</div>
+			</div>
 		</div>
 	)
 }
