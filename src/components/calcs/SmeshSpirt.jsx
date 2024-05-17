@@ -35,7 +35,7 @@ const AlcoholMixCalculator = () => {
 		<div className='w-full flex flex-col lg:flex-row'>
 			<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
 				<div className=''>
-					<form className='m-6'>
+					<form className='m-6 text-center'>
 						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
 							<label className='mr-4 lg:text-right lg:w-[60%] w-full' htmlFor='firstVolume'>
 								Объем 1-ой жидкости:
@@ -43,7 +43,7 @@ const AlcoholMixCalculator = () => {
 							<input
 								ref={firstVolumeRef}
 								id='firstVolume'
-								className='w-[70%] lg:w-[40%] border-2 rounded-lg border-[#1ABC9C] px-1'
+								className='w-full lg:w-[40%] text-center lg:text-left border-2 rounded-lg border-[#1ABC9C] px-1'
 								type='number'
 								placeholder='0 литров'
 								onChange={calculateMixedValues}
@@ -56,7 +56,7 @@ const AlcoholMixCalculator = () => {
 							<input
 								ref={firstStrengthRef}
 								id='firstStrength'
-								className='w-[70%] lg:w-[40%] border-2 rounded-lg border-[#1ABC9C] px-1'
+								className='w-full lg:w-[40%] text-center lg:text-left border-2 rounded-lg border-[#1ABC9C] px-1'
 								type='number'
 								placeholder='0 °'
 								onChange={calculateMixedValues}
@@ -69,7 +69,7 @@ const AlcoholMixCalculator = () => {
 							<input
 								ref={firstTemperatureRef}
 								id='firstTemperature'
-								className='w-[70%] lg:w-[40%] border-2 rounded-lg border-[#1ABC9C] px-1'
+								className='w-full lg:w-[40%] text-center lg:text-left border-2 rounded-lg border-[#1ABC9C] px-1'
 								type='number'
 								placeholder='20 °C'
 								onChange={calculateMixedValues}
@@ -82,7 +82,7 @@ const AlcoholMixCalculator = () => {
 							<input
 								ref={secondVolumeRef}
 								id='secondVolume'
-								className='w-[70%] lg:w-[40%] border-2 rounded-lg border-[#1ABC9C] px-1'
+								className='w-full lg:w-[40%] text-center lg:text-left border-2 rounded-lg border-[#1ABC9C] px-1'
 								type='number'
 								placeholder='0 литров'
 								onChange={calculateMixedValues}
@@ -95,7 +95,7 @@ const AlcoholMixCalculator = () => {
 							<input
 								ref={secondStrengthRef}
 								id='secondStrength'
-								className='w-[70%] lg:w-[40%] border-2 rounded-lg border-[#1ABC9C] px-1'
+								className='w-full lg:w-[40%] text-center lg:text-left border-2 rounded-lg border-[#1ABC9C] px-1'
 								type='number'
 								placeholder='0 °'
 								onChange={calculateMixedValues}
@@ -108,7 +108,7 @@ const AlcoholMixCalculator = () => {
 							<input
 								ref={secondTemperatureRef}
 								id='secondTemperature'
-								className='w-[70%] lg:w-[40%] border-2 rounded-lg border-[#1ABC9C] px-1'
+								className='w-full lg:w-[40%] text-center lg:text-left border-2 rounded-lg border-[#1ABC9C] px-1'
 								type='number'
 								placeholder='20 °C'
 								onChange={calculateMixedValues}
@@ -118,7 +118,7 @@ const AlcoholMixCalculator = () => {
 				</div>
 			</div>
 			<div className='basis-1/2 content-center border-4 lg:rounded-r-lg border-[#1ABC9C] dark:border-[#00614B] bg-[#1ABC9C] dark:bg-[#00614B] text-center'>
-				<div className='mb-0 text-xl text-white'>
+				<div className='mb-0 py-6 text-xl text-white'>
 					<p>Смешанная крепость:</p>
 					<p className=' text-3xl'>{mixedStrength}°</p>
 					<p>Объем смеси:</p>

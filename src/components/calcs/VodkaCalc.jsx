@@ -35,7 +35,7 @@ const VodkaCalculator = () => {
 		<div className='w-full flex flex-col lg:flex-row'>
 			<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
 				<div>
-					<form className='m-6'>
+					<form className='m-6 text-center'>
 						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
 							<label className='p10 mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='firstVolume'>
 								Объем спирта или дистиллята:
@@ -43,7 +43,7 @@ const VodkaCalculator = () => {
 							<input
 								ref={firstVolumeRef}
 								id='firstVolume'
-								className='w-[70%] lg:w-[30%] border-2 rounded-lg border-[#1ABC9C] px-1'
+								className='w-full lg:w-[30%] border-2 rounded-lg border-[#1ABC9C] px-1 text-center lg:text-left'
 								type='number'
 								placeholder='0 литров'
 								onChange={calculateVodka}
@@ -56,7 +56,7 @@ const VodkaCalculator = () => {
 							<input
 								ref={alcoholStrRef}
 								id='alcoholStr'
-								className='w-[70%] lg:w-[30%] border-2 rounded-lg border-[#1ABC9C] px-1'
+								className='w-full lg:w-[30%] border-2 rounded-lg border-[#1ABC9C] px-1 text-center lg:text-left'
 								type='number'
 								placeholder='0 °'
 								onChange={calculateVodka}
@@ -72,7 +72,7 @@ const VodkaCalculator = () => {
 							<input
 								ref={firstTemperatureRef}
 								id='firstTemperature'
-								className='w-[70%] lg:w-[30%] border-2 rounded-lg border-[#1ABC9C] px-1'
+								className='w-full lg:w-[30%] border-2 rounded-lg border-[#1ABC9C] px-1 text-center lg:text-left'
 								type='number'
 								placeholder='20 °C'
 								onChange={calculateVodka}
@@ -88,7 +88,7 @@ const VodkaCalculator = () => {
 							<input
 								ref={secondTemperatureRef}
 								id='secondTemperature'
-								className='w-[70%] lg:w-[30%] border-2 rounded-lg border-[#1ABC9C] px-1'
+								className='w-full lg:w-[30%] border-2 rounded-lg border-[#1ABC9C] px-1 text-center lg:text-left'
 								type='number'
 								placeholder='20 °C'
 								onChange={calculateVodka}
@@ -98,7 +98,7 @@ const VodkaCalculator = () => {
 				</div>
 			</div>
 			<div className='basis-1/2 content-center border-4 lg:rounded-r-lg border-[#1ABC9C] dark:border-[#00614B] bg-[#1ABC9C] dark:bg-[#00614B] text-center'>
-				<div className='mb-0 text-xl text-white'>
+				<div className='mb-0 py-6 text-xl text-white'>
 					<p>Объем воды для разбавления:</p>
 					<p className='text-3xl'>{waterVolume} л.</p>
 					<p>Объем конечного продукта:</p>
