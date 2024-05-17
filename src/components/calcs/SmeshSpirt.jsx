@@ -37,7 +37,7 @@ const AlcoholMixCalculator = () => {
 				<div className=''>
 					<form className='m-6'>
 						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-							<label className='p10 mr-4 lg:text-right lg:w-[60%] w-full' htmlFor='firstVolume'>
+							<label className='mr-4 lg:text-right lg:w-[60%] w-full' htmlFor='firstVolume'>
 								Объем 1-ой жидкости:
 							</label>
 							<input
@@ -50,7 +50,7 @@ const AlcoholMixCalculator = () => {
 							/>
 						</div>
 						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-							<label className='p10 mr-4 lg:text-right lg:w-[60%] w-full' htmlFor='firstStrength'>
+							<label className='mr-4 lg:text-right lg:w-[60%] w-full' htmlFor='firstStrength'>
 								Крепость 1-ой жидкости:
 							</label>
 							<input
@@ -63,10 +63,7 @@ const AlcoholMixCalculator = () => {
 							/>
 						</div>
 						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-							<label
-								className='p10 mr-4 lg:text-right lg:w-[60%] w-full'
-								htmlFor='firstTemperature'
-							>
+							<label className='mr-4 lg:text-right lg:w-[60%] w-full' htmlFor='firstTemperature'>
 								Температура 1-ой жидкости:
 							</label>
 							<input
@@ -79,7 +76,7 @@ const AlcoholMixCalculator = () => {
 							/>
 						</div>
 						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-							<label className='p10 mr-4 lg:text-right lg:w-[60%] w-full' htmlFor='secondVolume'>
+							<label className='mr-4 lg:text-right lg:w-[60%] w-full' htmlFor='secondVolume'>
 								Объем 2-ой жидкости:
 							</label>
 							<input
@@ -92,7 +89,7 @@ const AlcoholMixCalculator = () => {
 							/>
 						</div>
 						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-							<label className='p10 mr-4 lg:text-right lg:w-[60%] w-full' htmlFor='secondStrength'>
+							<label className='mr-4 lg:text-right lg:w-[60%] w-full' htmlFor='secondStrength'>
 								Крепость 2-ой жидкости:
 							</label>
 							<input
@@ -105,10 +102,7 @@ const AlcoholMixCalculator = () => {
 							/>
 						</div>
 						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-							<label
-								className='p10 mr-4 lg:text-right lg:w-[60%] w-full'
-								htmlFor='secondTemperature'
-							>
+							<label className='mr-4 lg:text-right lg:w-[60%] w-full' htmlFor='secondTemperature'>
 								Температура 2-ой жидкости:
 							</label>
 							<input

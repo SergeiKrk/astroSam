@@ -24,65 +24,62 @@ const AbsolyutnijSpirtCalc = () => {
 	return (
 		<div className='w-full flex flex-col lg:flex-row'>
 			<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
-				<div>
-					<form className='m-6'>
-						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-							<label className='p10 mr-4 lg:text-right lg:w-[50%] w-full' htmlFor='alcoholVol'>
+				<div className='py-6'>
+					<form className='my-6 text-center'>
+						<div className='mx-auto my-2 flex flex-wrap lg:flex-nowrap'>
+							<label className='mr-4 lg:text-right lg:w-[50%] w-full' htmlFor='alcoholVol'>
 								Объем самогона:
 							</label>
-							<div className='w-[70%] lg:w-[40%]'>
+							<div className='w-full lg:w-[40%]'>
 								<input
 									ref={alcoholVolRef}
 									id='alcoholVol'
-									className='border-2 rounded-lg border-[#1ABC9C] px-1 w-44'
+									className='border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52'
 									type='number'
 									placeholder='0 литров'
 									onChange={handleInputChange}
 								/>
 							</div>
-							<div className='p10 text-left w-[10%]'>, л.</div>
 						</div>
 						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-							<label className='p10 mr-4 lg:text-right lg:w-[50%] w-full' htmlFor='alcoholFortr'>
+							<label className='mr-4 lg:text-right lg:w-[50%] w-full' htmlFor='alcoholFortr'>
 								Крепость самогона:
 							</label>
-							<div className='w-[70%] lg:w-[40%]'>
+							<div className='w-full lg:w-[40%]'>
 								<input
 									ref={alcoholFortrRef}
 									id='alcoholFortr'
-									className='border-2 rounded-lg border-[#1ABC9C] px-1 w-44'
+									className='border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52'
 									type='number'
 									placeholder='0 °'
 									onChange={handleInputChange}
 								/>
 							</div>
-							<div className='p10 text-left w-[10%]'>, °</div>
 						</div>
 						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-							<label className='p10 mr-4 lg:text-right lg:w-[50%] w-full' htmlFor='firstTemp'>
+							<label className='mr-4 lg:text-right lg:w-[50%] w-full' htmlFor='firstTemp'>
 								Температура самогона:
 							</label>
-							<div className='w-[70%] lg:w-[40%]'>
+							<div className='w-full lg:w-[40%]'>
 								<input
 									ref={firstTempRef}
 									id='firstTemp'
-									className='border-2 rounded-lg border-[#1ABC9C] px-1 w-44'
+									className='border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52'
 									type='number'
 									placeholder='20 °C'
 									onChange={handleInputChange}
 								/>
 							</div>
-							<div className='p10 text-left w-[10%]'>, °C</div>
 						</div>
 					</form>
 				</div>
 			</div>
 			<div className='basis-1/2 content-center border-4 lg:rounded-r-lg border-[#1ABC9C] dark:border-[#00614B] bg-[#1ABC9C] dark:bg-[#00614B] text-center'>
-				<div className='mb-0 text-xl text-white'>
+				<div className='mb-0 py-6 text-xl text-white'>
 					<p>Объем абсолютного спирта:</p>
-					<p className=' text-3xl'>{absAlcohol} л</p>
+					<p className='text-4xl'>{absAlcohol} л</p>
 					<p>Объем чистого спирта:</p>
-					<p className=' text-3xl'>{cleanAlcohol} л</p>
+					<p className='text-4xl'>{cleanAlcohol} л</p>
 				</div>
 			</div>
 		</div>
