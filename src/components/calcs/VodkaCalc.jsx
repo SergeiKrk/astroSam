@@ -43,7 +43,7 @@ const VodkaCalculator = () => {
 							<input
 								ref={firstVolumeRef}
 								id='firstVolume'
-								className='w-full lg:w-[30%] '
+								className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 								type='number'
 								placeholder='0 литров'
 								onChange={calculateVodka}
@@ -56,7 +56,7 @@ const VodkaCalculator = () => {
 							<input
 								ref={alcoholStrRef}
 								id='alcoholStr'
-								className='w-full lg:w-[30%] '
+								className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 								type='number'
 								placeholder='0 °'
 								onChange={calculateVodka}
@@ -72,7 +72,7 @@ const VodkaCalculator = () => {
 							<input
 								ref={firstTemperatureRef}
 								id='firstTemperature'
-								className='w-full lg:w-[30%] '
+								className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 								type='number'
 								placeholder='20 °C'
 								onChange={calculateVodka}
@@ -88,7 +88,7 @@ const VodkaCalculator = () => {
 							<input
 								ref={secondTemperatureRef}
 								id='secondTemperature'
-								className='w-full lg:w-[30%] '
+								className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 								type='number'
 								placeholder='20 °C'
 								onChange={calculateVodka}

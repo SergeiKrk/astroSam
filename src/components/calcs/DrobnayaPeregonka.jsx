@@ -54,7 +54,7 @@ const FractionalDistillationCalculator = () => {
 						</label>
 						<input
 							type='number'
-							className='w-full lg:w-[30%]'
+							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 							ref={rawAlcoholVolRef}
 							placeholder='0 л.'
 							onChange={calculateDrobnayaPeregonka}
@@ -66,7 +66,7 @@ const FractionalDistillationCalculator = () => {
 						</label>
 						<input
 							type='number'
-							className='w-full lg:w-[30%] '
+							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 							ref={rawAlcoholFortrRef}
 							placeholder='0 °'
 							onChange={calculateDrobnayaPeregonka}
@@ -78,7 +78,7 @@ const FractionalDistillationCalculator = () => {
 						</label>
 						<input
 							type='number'
-							className='w-full lg:w-[30%] '
+							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 							id='afterDistillingFortr'
 							ref={afterDistillingFortrRef}
 							placeholder='0 °'
@@ -90,7 +90,7 @@ const FractionalDistillationCalculator = () => {
 							Доля «Голов»:
 						</label>
 						<select
-							className='w-full lg:w-[30%] '
+							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 							id='partHead'
 							ref={partHeadRef}
 							onChange={calculateDrobnayaPeregonka}
@@ -110,7 +110,7 @@ const FractionalDistillationCalculator = () => {
 							Доля «Хвостов»:
 						</label>
 						<select
-							className='w-full lg:w-[30%] '
+							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 							id='partTail'
 							ref={partTailRef}
 							onChange={calculateDrobnayaPeregonka}

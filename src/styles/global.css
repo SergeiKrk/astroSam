@@ -28,10 +28,6 @@
 	}
 }
 
-input {
-	@apply bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52;
-}
-
 .glass {
 	background: rgba(57, 56, 56, 0.52);
 	backdrop-filter: blur(13px) saturate(150%);

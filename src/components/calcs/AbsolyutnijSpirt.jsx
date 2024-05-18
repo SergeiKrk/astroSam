@@ -34,7 +34,7 @@ const AbsolyutnijSpirtCalc = () => {
 								<input
 									ref={alcoholVolRef}
 									id='alcoholVol'
-									className='border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52'
+									className='bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52'
 									type='number'
 									placeholder='0 литров'
 									onChange={handleInputChange}
@@ -49,7 +49,7 @@ const AbsolyutnijSpirtCalc = () => {
 								<input
 									ref={alcoholFortrRef}
 									id='alcoholFortr'
-									className='border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52'
+									className='bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52'
 									type='number'
 									placeholder='0 °'
 									onChange={handleInputChange}
@@ -64,7 +64,7 @@ const AbsolyutnijSpirtCalc = () => {
 								<input
 									ref={firstTempRef}
 									id='firstTemp'
-									className='border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52'
+									className='bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52'
 									type='number'
 									placeholder='20 °C'
 									onChange={handleInputChange}

@@ -56,7 +56,7 @@ const BragaCalculator = () => {
 							<select
 								id='rawMaterials'
 								ref={rawMaterialsRef}
-								className='w-[70%] lg:w-[40%] border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52'
+								className='w-full lg:w-[40%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 								onChange={handleInputChange}
 							>
 								<option value='0.59'>Сахар-песок</option>
@@ -74,7 +74,7 @@ const BragaCalculator = () => {
 							<input
 								id='massMaterials'
 								ref={massMaterialsRef}
-								className='w-[70%] lg:w-[40%] border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52'
+								className='w-full lg:w-[40%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 								type='number'
 								placeholder='0 кг.'
 								onChange={handleInputChange}
@@ -85,7 +85,7 @@ const BragaCalculator = () => {
 							<input
 								id='mashVolume'
 								ref={mashVolumeRef}
-								className='w-[70%] lg:w-[40%] border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52'
+								className='w-full lg:w-[40%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 								type='number'
 								placeholder='0 л.'
 								onChange={handleInputChange}
