@@ -42,12 +42,12 @@ const SebestoimostCalc = () => {
 
 	return (
 		<div className='container mx-auto'>
-			<div className='card-group'>
+			<div className='w-full flex flex-col lg:flex-row'>
 				<div className='card border border-gray-300'>
-					<div className='card-body'>
+					<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
 						<div className='card-text'>
 							<br />
-							<div className='form-group'>
+							<div className='my-2 flex flex-wrap lg:flex-nowrap'>
 								<div className='grid grid-cols-2 gap-4'>
 									<label className='text-right p-2' htmlFor='materialCost'>
 										Цена сырья за 1 кг.:
@@ -55,7 +55,7 @@ const SebestoimostCalc = () => {
 									<input
 										ref={materialCostRef}
 										id='materialCost'
-										className='form-control col-span-1'
+										className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left col-span-1'
 										type='number'
 										placeholder='цена за 1 кг.'
 										onChange={allValuesOnChange}
@@ -69,7 +69,7 @@ const SebestoimostCalc = () => {
 									<input
 										ref={materialMassRef}
 										id='materialMass'
-										className='form-control col-span-1'
+										className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left col-span-1'
 										type='number'
 										placeholder='масса, кг.'
 										onChange={allValuesOnChange}
@@ -84,7 +84,7 @@ const SebestoimostCalc = () => {
 									<input
 										ref={yeastCostRef}
 										id='yeastCost'
-										className='form-control col-span-1'
+										className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left col-span-1'
 										type='number'
 										placeholder='цена, руб.'
 										onChange={allValuesOnChange}
@@ -98,7 +98,7 @@ const SebestoimostCalc = () => {
 									<input
 										ref={bentoniteCostRef}
 										id='bentoniteCost'
-										className='form-control col-span-1'
+										className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left col-span-1'
 										type='number'
 										placeholder='стоимость, руб.'
 										onChange={allValuesOnChange}
@@ -112,7 +112,7 @@ const SebestoimostCalc = () => {
 									<input
 										ref={coalCostRef}
 										id='coalCost'
-										className='form-control col-span-1'
+										className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left col-span-1'
 										type='number'
 										placeholder='стоимость, руб.'
 										onChange={allValuesOnChange}
@@ -126,7 +126,7 @@ const SebestoimostCalc = () => {
 									<input
 										ref={wgeCostRef}
 										id='wgeCost'
-										className='form-control col-span-1'
+										className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left col-span-1'
 										type='number'
 										placeholder='стоимость, руб.'
 										onChange={allValuesOnChange}
@@ -141,7 +141,7 @@ const SebestoimostCalc = () => {
 									<input
 										ref={volumeDrinkRef}
 										id='volumeDrink'
-										className='form-control col-span-1'
+										className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left col-span-1'
 										type='number'
 										placeholder='Объем напитка, л.'
 										onChange={(e) => setVolumeDrink(e.target.value)}
@@ -153,7 +153,7 @@ const SebestoimostCalc = () => {
 					</div>
 				</div>
 				<div className='card border border-gray-300 bg-primary text-center'>
-					<div className='card-body'>
+					<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
 						<p>Стоимость алкоголя (за литр): {costLiter} ₽</p>
 						<p>Стоимость алкоголя (за пол-литра): {costHalfLiter} ₽</p>
 						<p>Объем абсолютного спирта: {absoluteAlcoholVolume} л</p>

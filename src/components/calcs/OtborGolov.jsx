@@ -19,8 +19,8 @@ const HeadsSelectionCalculator = () => {
 			10000
 		).toFixed(2)
 
-		setRawAlcohol(absAlcoholValue)
-		setOutHeads(outHeadsValue)
+		rawAlcoholFortrValue && rawAlcoholVolValue && setRawAlcohol(absAlcoholValue)
+		rawAlcoholFortrValue && rawAlcoholVolValue && partHeadVolValue && setOutHeads(outHeadsValue)
 	}
 
 	return (

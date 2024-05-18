@@ -23,13 +23,13 @@ const TemperatureCalculator = () => {
 
 	return (
 		<div className='container mx-auto'>
-			<div className='card-group'>
+			<div className='w-full flex flex-col lg:flex-row'>
 				<div className='card border border-gray-300'>
-					<div className='card-body'>
+					<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
 						<h5 className='card-title'>Введите данные для расчета:</h5>
 						<div className='card-text'>
 							<br />
-							<div className='form-group'>
+							<div className='my-2 flex flex-wrap lg:flex-nowrap'>
 								<div className='grid grid-cols-2 gap-4'>
 									<label className='text-right p-2' htmlFor='firstStr'>
 										Крепость по спиртометру:
@@ -37,7 +37,7 @@ const TemperatureCalculator = () => {
 									<input
 										ref={firstStrRef}
 										id='firstStr'
-										className='form-control col-span-1'
+										className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left col-span-1'
 										type='number'
 										placeholder='градусов'
 										onChange={calculateTemperature}
@@ -51,7 +51,7 @@ const TemperatureCalculator = () => {
 									<input
 										ref={firstTempRef}
 										id='firstTemp'
-										className='form-control col-span-1'
+										className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left col-span-1'
 										type='number'
 										placeholder='20 °C'
 										onChange={calculateTemperature}
@@ -63,7 +63,7 @@ const TemperatureCalculator = () => {
 					</div>
 				</div>
 				<div className='card border border-gray-300 bg-primary text-center'>
-					<div className='card-body'>
+					<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
 						<p>Крепость: {strength}°</p>
 					</div>
 				</div>

@@ -43,12 +43,12 @@ const SebestoimApproxCalc = () => {
 
 	return (
 		<div className='container mx-auto'>
-			<div className='card-group'>
+			<div className='w-full flex flex-col lg:flex-row'>
 				<div className='card border border-dark'>
-					<div className='card-body'>
+					<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
 						<div className='card-text'>
 							<br />
-							<div className='form-group'>
+							<div className='my-2 flex flex-wrap lg:flex-nowrap'>
 								<div className='row'>
 									<label className='col-sm-6 text-md-right p-2'>
 										Сырье для самогона (дистиллята):
@@ -57,7 +57,7 @@ const SebestoimApproxCalc = () => {
 										<select
 											ref={rawMaterialsRef}
 											id='rawMaterials'
-											className='form-control'
+											className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 											onChange={allValuesOnChange}
 										>
 											<option value='0.59'>Сахар-песок</option>
@@ -77,7 +77,7 @@ const SebestoimApproxCalc = () => {
 										<input
 											ref={massMaterialsRef}
 											id='massMaterials'
-											className='form-control'
+											className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 											type='number'
 											placeholder='масса, кг.'
 											onInput={allValuesOnChange}
@@ -91,7 +91,7 @@ const SebestoimApproxCalc = () => {
 										<input
 											ref={costMaterialsRef}
 											id='costMaterials'
-											className='form-control'
+											className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 											type='number'
 											placeholder='стоимость, руб.'
 											onInput={allValuesOnChange}
@@ -105,7 +105,7 @@ const SebestoimApproxCalc = () => {
 										<input
 											ref={yeastCostRef}
 											id='yeastCost'
-											className='form-control'
+											className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 											type='number'
 											placeholder='цена, руб.'
 											onInput={allValuesOnChange}
@@ -120,7 +120,7 @@ const SebestoimApproxCalc = () => {
 										<input
 											ref={wgeRef}
 											id='wge'
-											className='form-control'
+											className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 											type='number'
 											placeholder='стоимость, руб.'
 											onInput={allValuesOnChange}
@@ -134,7 +134,7 @@ const SebestoimApproxCalc = () => {
 										<input
 											ref={bentoniteCoalRef}
 											id='bentoniteCoal'
-											className='form-control'
+											className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 											type='number'
 											placeholder='стоимость, руб.'
 											onInput={allValuesOnChange}
@@ -149,7 +149,7 @@ const SebestoimApproxCalc = () => {
 										<input
 											ref={efficiencyRef}
 											id='efficiency'
-											className='form-control'
+											className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 											type='number'
 											placeholder='80'
 											onInput={allValuesOnChange}
@@ -164,7 +164,7 @@ const SebestoimApproxCalc = () => {
 										<select
 											ref={headsRef}
 											id='heads'
-											className='form-control'
+											className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 											onChange={allValuesOnChange}
 										>
 											<option value='0.1'>10%</option>
@@ -185,7 +185,7 @@ const SebestoimApproxCalc = () => {
 										<select
 											ref={tailsRef}
 											id='tails'
-											className='form-control'
+											className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 											onChange={allValuesOnChange}
 										>
 											<option value='0.2'>20%</option>
@@ -200,8 +200,11 @@ const SebestoimApproxCalc = () => {
 						</div>
 					</div>
 				</div>
-				<div className='card border-dark bg-primary text-center'>
-					<div className='blockquote mb-0 card-body' id='addCalculateSebestoimApproxElements'>
+				<div className='basis-1/2 content-center border-4 lg:rounded-r-lg border-[#1ABC9C] dark:border-[#00614B] bg-[#1ABC9C] dark:bg-[#00614B] text-center'>
+					<div
+						className='blockquote mb-0 basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'
+						id='addCalculateSebestoimApproxElements'
+					>
 						<p>Стоимость алкоголя (за литр): {costLiterApprox} ₽</p>
 						<p>Стоимость алкоголя (за пол-литра): {costHalfLiterApprox} ₽</p>
 						<p>Объем абсолютного спирта: {volumeAbsAlcoholApprox} л</p>
