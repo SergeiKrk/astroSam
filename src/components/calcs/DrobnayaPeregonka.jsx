@@ -49,39 +49,36 @@ const FractionalDistillationCalculator = () => {
 			<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
 				<form className='mx-6 my-6 lg:my-16 text-center'>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='p10 mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='rawAlcoholVol'>
+						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='rawAlcoholVol'>
 							Объем спирта-сырца:
 						</label>
 						<input
 							type='number'
-							className='w-full lg:w-[30%] border-2 rounded-lg border-[#1ABC9C] px-1 text-center lg:text-left bg-white'
+							className='w-full lg:w-[30%]'
 							ref={rawAlcoholVolRef}
 							placeholder='0 л.'
 							onChange={calculateDrobnayaPeregonka}
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='p10 mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='rawAlcoholFortr'>
+						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='rawAlcoholFortr'>
 							Крепость спирта-сырца:
 						</label>
 						<input
 							type='number'
-							className='w-full lg:w-[30%] border-2 rounded-lg border-[#1ABC9C] px-1 text-center lg:text-left'
+							className='w-full lg:w-[30%] '
 							ref={rawAlcoholFortrRef}
 							placeholder='0 °'
 							onChange={calculateDrobnayaPeregonka}
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label
-							className='p10 mr-4 lg:text-right lg:w-[70%] w-full'
-							htmlFor='afterDistillingFortr'
-						>
+						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='afterDistillingFortr'>
 							Нужная крепость после перегона:
 						</label>
 						<input
 							type='number'
-							className='w-full lg:w-[30%] border-2 rounded-lg border-[#1ABC9C] px-1 text-center lg:text-left'
+							className='w-full lg:w-[30%] '
 							id='afterDistillingFortr'
 							ref={afterDistillingFortrRef}
 							placeholder='0 °'
@@ -89,11 +86,11 @@ const FractionalDistillationCalculator = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='p10 mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='partHead'>
+						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='partHead'>
 							Доля «Голов»:
 						</label>
 						<select
-							className='w-full lg:w-[30%] border-2 rounded-lg border-[#1ABC9C] px-1 text-center lg:text-left'
+							className='w-full lg:w-[30%] '
 							id='partHead'
 							ref={partHeadRef}
 							onChange={calculateDrobnayaPeregonka}
@@ -109,11 +106,11 @@ const FractionalDistillationCalculator = () => {
 						</select>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='p10 mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='partTail'>
+						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='partTail'>
 							Доля «Хвостов»:
 						</label>
 						<select
-							className='w-full lg:w-[30%] border-2 rounded-lg border-[#1ABC9C] px-1 text-center lg:text-left'
+							className='w-full lg:w-[30%] '
 							id='partTail'
 							ref={partTailRef}
 							onChange={calculateDrobnayaPeregonka}
