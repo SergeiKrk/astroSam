@@ -1,32 +1,17 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 const DilutionCalculator = () => {
-	const [rawAlcoholVol, setRawAlcoholVol] = useState('')
-	const [rawAlcoholFortr, setRawAlcoholFortr] = useState('')
-	const [necessFortr, setNecessFortr] = useState(20) // Default value set to 20°
+	const rawAlcoholVolRef = useRef(null)
+	const rawAlcoholFortrRef = useRef(null)
+	const necessFortrRef = useRef(null)
 
-	const handleInputChange = (e) => {
-		const { id, value } = e.target
-		switch (id) {
-			case 'rawAlcoholVol':
-				setRawAlcoholVol(value)
-				break
-			case 'rawAlcoholFortr':
-				setRawAlcoholFortr(value)
-				break
-			case 'necessFortr':
-				setNecessFortr(value)
-				break
-			default:
-				break
-		}
-		calculate()
-	}
+	const [addWater, setAddWaterValue] = useState(0)
+	const [reqVol, setReqVolValue] = useState(0)
 
-	const calculate = () => {
-		let rawAlcoholVolValue = parseFloat(rawAlcoholVol)
-		let rawAlcoholFortrValue = parseFloat(rawAlcoholFortr)
-		let necessFortrValue = parseFloat(necessFortr)
+	const handleInputChange = () => {
+		let rawAlcoholVolValue = parseFloat(rawAlcoholVolRef.current.value)
+		let rawAlcoholFortrValue = parseFloat(rawAlcoholFortrRef.current.value)
+		let necessFortrValue = parseFloat(necessFortrRef.current.value)
 
 		let addWaterValue = (
 			(rawAlcoholVolValue * rawAlcoholFortrValue) / necessFortrValue -
@@ -34,9 +19,8 @@ const DilutionCalculator = () => {
 		).toFixed(2)
 		let reqVolValue = ((rawAlcoholVolValue * rawAlcoholFortrValue) / necessFortrValue).toFixed(2)
 
-		document.getElementById('addWater').innerText =
-			`Количество добавленной воды: ${addWaterValue} л`
-		document.getElementById('reqVol').innerText = `Объем разбавленного самогона: ${reqVolValue} л`
+		rawAlcoholVolValue && rawAlcoholFortrValue && setAddWaterValue(addWaterValue)
+		rawAlcoholVolValue && rawAlcoholFortrValue && setReqVolValue(reqVolValue)
 	}
 
 	return (
@@ -44,48 +28,36 @@ const DilutionCalculator = () => {
 			<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
 				<form className='m-6 text-center'>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label
-							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
-							htmlFor='rawAlcoholVol'
-						>
+						<label className='mr-4 lg:text-right lg:w-[70%] w-full'>
 							Объем разбавляемого самогона, литры:
 						</label>
 						<input
 							type='number'
 							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
-							id='rawAlcoholVol'
-							placeholder='Начальный объем, литры'
-							value={rawAlcoholVol}
+							ref={rawAlcoholVolRef}
+							placeholder='0 л.'
 							onChange={handleInputChange}
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label
-							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
-							htmlFor='rawAlcoholFortr'
-						>
-							Крепость разбавляемого самогона, градусов:
+						<label className='mr-4 lg:text-right lg:w-[70%] w-full'>
+							Крепость разбавляемого самогона:
 						</label>
 						<input
 							type='number'
 							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
-							id='rawAlcoholFortr'
-							placeholder='Начальная крепость, градусы'
-							value={rawAlcoholFortr}
+							ref={rawAlcoholFortrRef}
+							placeholder='0°'
 							onChange={handleInputChange}
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label
-							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
-							htmlFor='necessFortr'
-						>
-							Крепость, которую хотите получить, градусов:
+						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='necessFortr'>
+							Крепость, которую хотите получить:
 						</label>
 						<select
 							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
-							id='necessFortr'
-							value={necessFortr}
+							ref={necessFortrRef}
 							onChange={handleInputChange}
 						>
 							<option value='20'>20°</option>
@@ -99,8 +71,14 @@ const DilutionCalculator = () => {
 			</div>
 			<div className='basis-1/2 content-center border-4 lg:rounded-r-lg border-[#1ABC9C] dark:border-[#00614B] bg-[#1ABC9C] dark:bg-[#00614B] text-center'>
 				<div className='mb-0 py-6 text-xl text-white'>
-					<p id='addWater'>Количество добавленной воды: 0 л</p>
-					<p id='reqVol'>Объем разбавленного самогона: 0 л</p>
+					<p>Количество добавленной воды:</p>
+					<p>
+						<span className='text-4xl'>{addWater}</span> л
+					</p>
+					<p>Объем разбавленного самогона:</p>
+					<p>
+						<span className='text-4xl'>{reqVol}</span> л
+					</p>
 				</div>
 			</div>
 		</div>
