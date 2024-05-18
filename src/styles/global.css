@@ -29,7 +29,7 @@
 }
 
 input {
-	@apply bg-white text-black;
+	@apply bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52;
 }
 
 .glass {
