@@ -1,108 +1,85 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 const HeadsSelectionCalculator = () => {
-	const [rawAlcoholVol, setRawAlcoholVol] = useState('')
-	const [rawAlcoholFortr, setRawAlcoholFortr] = useState('')
-	const [partHeadVol, setPartHeadVol] = useState(10) // Default value set to 10%
+	const rawAlcoholVolRef = useRef(null)
+	const rawAlcoholFortrRef = useRef(null)
+	const partHeadRef = useRef(null)
 
-	const handleInputChange = (e) => {
-		const { id, value } = e.target
-		switch (id) {
-			case 'rawAlcoholVol':
-				setRawAlcoholVol(value)
-				break
-			case 'rawAlcoholFortr':
-				setRawAlcoholFortr(value)
-				break
-			case 'partHead':
-				setPartHeadVol(value)
-				break
-			default:
-				break
-		}
-		calculate()
-	}
+	const [absAlcohol, setRawAlcohol] = useState(0)
+	const [outHeads, setOutHeads] = useState(0)
 
-	const calculate = () => {
-		let rawAlcoholVolValue = parseFloat(rawAlcoholVol)
-		let rawAlcoholFortrValue = parseFloat(rawAlcoholFortr)
-		let partHeadVolValue = parseFloat(partHeadVol)
+	const handleInputChange = () => {
+		let rawAlcoholVolValue = parseFloat(rawAlcoholVolRef.current.value)
+		let rawAlcoholFortrValue = parseFloat(rawAlcoholFortrRef.current.value)
+		let partHeadVolValue = parseFloat(partHeadRef.current.value)
 
 		let absAlcoholValue = ((rawAlcoholFortrValue * rawAlcoholVolValue) / 100).toFixed(2)
-		if (isNaN(absAlcoholValue)) {
-			absAlcoholValue = 0
-		}
 		let outHeadsValue = (
 			(rawAlcoholFortrValue * rawAlcoholVolValue * partHeadVolValue) /
 			10000
 		).toFixed(2)
 
-		if (isNaN(outHeadsValue)) {
-			outHeadsValue = 0
-		}
-
-		document.getElementById('absAlcohol').innerText =
-			`Абсолютный объем спирта: ${absAlcoholValue} л`
-		document.getElementById('outHeads').innerText = `Объем «Голов»: ${outHeadsValue} л`
+		setRawAlcohol(absAlcoholValue)
+		setOutHeads(outHeadsValue)
 	}
 
 	return (
-		<div className='container'>
-			<div className='card-group'>
-				<div className='card border border-dark'>
-					<div className='card-body'>
-						<div className='card-text'>
-							<form>
-								<div className='form-group'>
-									<label htmlFor='rawAlcoholVol'>Объем спирта-сырца, литры:</label>
-									<input
-										type='number'
-										className='form-control'
-										id='rawAlcoholVol'
-										placeholder='Объем, литры'
-										value={rawAlcoholVol}
-										onChange={handleInputChange}
-									/>
-								</div>
-								<div className='form-group'>
-									<label htmlFor='rawAlcoholFortr'>Крепость спирта-сырца, градусов:</label>
-									<input
-										type='number'
-										className='form-control'
-										id='rawAlcoholFortr'
-										placeholder='Крепость, градусы'
-										value={rawAlcoholFortr}
-										onChange={handleInputChange}
-									/>
-								</div>
-								<div className='form-group'>
-									<label htmlFor='partHead'>Доля «Голов», % от общего объема:</label>
-									<select
-										className='form-control'
-										id='partHead'
-										value={partHeadVol}
-										onChange={handleInputChange}
-									>
-										<option value='10'>10%</option>
-										<option value='11'>11%</option>
-										<option value='12'>12%</option>
-										<option value='13'>13%</option>
-										<option value='14'>14%</option>
-										<option value='15'>15%</option>
-									</select>
-								</div>
-							</form>
-						</div>
+		<div className='w-full flex flex-col lg:flex-row'>
+			<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
+				<form className='m-6 text-center'>
+					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
+						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='rawAlcoholVol'>
+							Объем спирта-сырца, литры:
+						</label>
+						<input
+							type='number'
+							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
+							ref={rawAlcoholVolRef}
+							placeholder='0 л'
+							onChange={handleInputChange}
+						/>
 					</div>
-				</div>
-				<div className='card border-dark bg-primary text-center'>
-					<blockquote className='blockquote mb-0 card-body'>
-						<p id='absAlcohol'>Абсолютный объем спирта: 0 л</p>
-						<p id='outHeads'>Объем «Голов»: 0 л</p>
-					</blockquote>
+					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
+						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='rawAlcoholFortr'>
+							Крепость спирта-сырца, градусов:
+						</label>
+						<input
+							type='number'
+							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
+							ref={rawAlcoholFortrRef}
+							placeholder='0°'
+							onChange={handleInputChange}
+						/>
+					</div>
+					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
+						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='partHead'>
+							Доля «Голов», % от общего объема:
+						</label>
+						<select
+							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
+							ref={partHeadRef}
+							onChange={handleInputChange}
+						>
+							<option value='10'>10%</option>
+							<option value='3'>3%</option>
+							<option value='7'>7%</option>
+							<option value='11'>11%</option>
+							<option value='12'>12%</option>
+							<option value='13'>13%</option>
+							<option value='14'>14%</option>
+							<option value='15'>15%</option>
+						</select>
+					</div>
+				</form>
+			</div>
+			<div className='basis-1/2 content-center border-4 lg:rounded-r-lg border-[#1ABC9C] dark:border-[#00614B] bg-[#1ABC9C] dark:bg-[#00614B] text-center'>
+				<div className='mb-0 py-6 text-xl text-white'>
+					<p>Абсолютный объем спирта:</p>
+					<p className='text-3xl'>{absAlcohol} л.</p>
+					<p>Объем «Голов»:</p>
+					<p className='text-3xl'>{outHeads} л.</p>
 				</div>
 			</div>
-			<br />
 		</div>
 	)
 }
