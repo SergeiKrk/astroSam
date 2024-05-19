@@ -72,7 +72,7 @@ const SebestoimApproxCalc = () => {
 							id='massMaterials'
 							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 							type='number'
-							placeholder='масса, кг.'
+							placeholder='0 кг.'
 							onInput={allValuesOnChange}
 						/>
 					</div>
@@ -85,7 +85,7 @@ const SebestoimApproxCalc = () => {
 							id='costMaterials'
 							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 							type='number'
-							placeholder='стоимость, руб.'
+							placeholder='0 руб.'
 							onInput={allValuesOnChange}
 						/>
 					</div>
@@ -96,7 +96,7 @@ const SebestoimApproxCalc = () => {
 							id='yeastCost'
 							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 							type='number'
-							placeholder='цена, руб.'
+							placeholder='0 руб.'
 							onInput={allValuesOnChange}
 						/>
 					</div>
@@ -109,7 +109,7 @@ const SebestoimApproxCalc = () => {
 							id='wge'
 							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 							type='number'
-							placeholder='стоимость, руб.'
+							placeholder='0 руб.'
 							onInput={allValuesOnChange}
 						/>
 					</div>
@@ -122,7 +122,7 @@ const SebestoimApproxCalc = () => {
 							id='bentoniteCoal'
 							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 							type='number'
-							placeholder='стоимость, руб.'
+							placeholder='0 руб.'
 							onInput={allValuesOnChange}
 						/>
 					</div>
@@ -135,7 +135,7 @@ const SebestoimApproxCalc = () => {
 							id='efficiency'
 							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 							type='number'
-							placeholder='80'
+							placeholder='80%'
 							onInput={allValuesOnChange}
 						/>
 					</div>
@@ -174,14 +174,23 @@ const SebestoimApproxCalc = () => {
 				</form>
 			</div>
 			<div className='basis-1/2 content-center border-4 lg:rounded-r-lg border-[#1ABC9C] dark:border-[#00614B] bg-[#1ABC9C] dark:bg-[#00614B] text-center'>
-				<div
-					className='blockquote mb-0 basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'
-					id='addCalculateSebestoimApproxElements'
-				>
-					<p>Стоимость алкоголя (за литр): {costLiterApprox} ₽</p>
-					<p>Стоимость алкоголя (за пол-литра): {costHalfLiterApprox} ₽</p>
-					<p>Объем абсолютного спирта: {volumeAbsAlcoholApprox} л</p>
-					<p>Объем алкоголя питейной крепости: {reqVolApprox} л</p>
+				<div className='mb-0 py-6 text-xl text-white'>
+					<p>Стоимость алкоголя (за литр):</p>
+					<p>
+						<span className='text-4xl'>{costLiterApprox}</span> ₽
+					</p>
+					<p>Стоимость алкоголя (за пол-литра):</p>
+					<p>
+						<span className='text-4xl'>{costHalfLiterApprox}</span> ₽
+					</p>
+					<p>Объем абсолютного спирта:</p>
+					<p>
+						<span className='text-4xl'>{volumeAbsAlcoholApprox}</span> л
+					</p>
+					<p>Объем алкоголя питейной крепости:</p>
+					<p>
+						<span className='text-4xl'>{reqVolApprox}</span> л
+					</p>
 				</div>
 			</div>
 		</div>
