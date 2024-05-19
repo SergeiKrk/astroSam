@@ -13,7 +13,7 @@ export default defineConfig({
 		remarkPlugins: [remarkReadingTime],
 		drafts: true,
 		shikiConfig: {
-			theme: 'samogoncalc',
+			theme: 'material-theme-palenight',
 			wrap: true
 		}
 	},
@@ -23,7 +23,7 @@ export default defineConfig({
 			shikiConfig: {
 				experimentalThemes: {
 					light: 'vitesse-light',
-					dark: 'samogoncalc'
+					dark: 'material-theme-palenight'
 				},
 				wrap: true
 			},
