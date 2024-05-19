@@ -8,12 +8,12 @@ import react from '@astrojs/react'
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://blog-template-gray.vercel.app/', // Write here your website url
+	site: 'https://samogoncalc.ru/', // Write here your website url
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 		drafts: true,
 		shikiConfig: {
-			theme: 'material-theme-palenight',
+			theme: 'samogoncalc',
 			wrap: true
 		}
 	},
@@ -23,7 +23,7 @@ export default defineConfig({
 			shikiConfig: {
 				experimentalThemes: {
 					light: 'vitesse-light',
-					dark: 'material-theme-palenight'
+					dark: 'samogoncalc'
 				},
 				wrap: true
 			},
