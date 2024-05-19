@@ -35,10 +35,10 @@ const SebestoimApproxCalc = () => {
 		).toFixed(2)
 		let costHalfLiterApproxValue = (costLiterApproxValue / 2).toFixed(2)
 
-		setCostLiterApprox(costLiterApproxValue)
-		setCostHalfLiterApprox(costHalfLiterApproxValue)
-		setVolumeAbsAlcoholApprox(volumeAbsAlcoholApproxValue)
-		setReqVolApprox(reqVolApproxValue)
+		massMaterials && costMaterials && setCostLiterApprox(costLiterApproxValue)
+		massMaterials && costMaterials && setCostHalfLiterApprox(costHalfLiterApproxValue)
+		massMaterials && costMaterials && setVolumeAbsAlcoholApprox(volumeAbsAlcoholApproxValue)
+		massMaterials && costMaterials && setReqVolApprox(reqVolApproxValue)
 	}
 
 	return (
