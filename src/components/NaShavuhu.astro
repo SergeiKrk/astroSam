@@ -1,6 +1,6 @@
 ---
 import Shavuha from '../assets/images/shavuha.png'
-import QrShavuha from '../assets/images/logo.png'
+import QrShavuha from '../assets/images/qrshaurma.png'
 import { Image } from 'astro:assets'
 ---
 
@@ -11,7 +11,14 @@ import { Image } from 'astro:assets'
 				<Image src={Shavuha} alt='На еду для разработчика' width={190} />
 			</div>
 			<div class='hidden lg:block animate-bounce'>
-				<Image src={QrShavuha} alt='QR на еду для разработчика' width={190} />
+				<Image
+					format='webp'
+					quality='low'
+					src={QrShavuha}
+					alt='QR на еду для разработчика'
+					width={190}
+					height={190}
+				/>
 			</div>
 			<p class='text-md'>☝️ Тут такое дело...</p>
 			<p class='text-xs'>на шаурму для разработчика</p>
