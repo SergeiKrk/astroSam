@@ -15,6 +15,8 @@ import SmeshSpirt from '@/calc/SmeshSpirt.jsx'
 import Temperature from '@/calc/Temperature.jsx'
 import VodkaCalc from '@/calc/VodkaCalc.jsx'
 import Zamena from '@/calc/Zamena.jsx'
+import Ad1R from '@/components/Ad1R'
+import Ad1L from '@/components/Ad1L'
 
 type Props = {
 	id: CollectionEntry<'calcs'>['id']
@@ -28,40 +30,48 @@ const { title, description, heroImage, pretext } = data
 <BaseLayout title={title} description={description} image={heroImage?.src}>
 	<Hero headImg={heroImage} titlePage={title} descriptionPage={description} urlSeo={id} />
 
-	<div class='mx-auto max-w-[680px] py-12 text-lg px-6'>
+	<div class='mx-auto max-w-[680px] pt-12 text-lg px-6'>
 		{pretext}
 	</div>
 
-	<div class='mx-auto w-full max-w-6xl text-lg sm:px-6 px-6'>
-		{
-			title == 'Калькулятор абсолютного спирта' ? (
-				<AbsolyutnijSpirt client:load />
-			) : title == 'Калькулятор браги' ? (
-				<Braga client:load />
-			) : title == 'Калькулятор дробной перегонки спирта-сырца' ? (
-				<DrobnayaPeregonka client:load />
-			) : title == 'Калькулятор отбор голов' ? (
-				<OtborGolov client:load />
-			) : title == 'Калькулятор разбавления спирта-сырца (после первого перегона)' ? (
-				<PoslePervoj client:load />
-			) : title == 'Калькулятор разбавления самогона водой' ? (
-				<RazbavleniyaSamogona client:load />
-			) : title == 'Калькулятор примерной стоимости самогона' ? (
-				<SebestoimApprox client:load />
-			) : title == 'Калькулятор себестоимости самогона' ? (
-				<Sebestoimost client:load />
-			) : title == 'Калькулятор смешивания спиртов' ? (
-				<SmeshSpirt client:load />
-			) : title == 'Калькулятор спирта от температуры' ? (
-				<Temperature client:load />
-			) : title == 'Калькулятор водки из спирта' ? (
-				<VodkaCalc client:load />
-			) : title == 'Калькулятор замены сахара декстрозой' ? (
-				<Zamena client:load />
-			) : (
-				<p>Калькулятор не найден</p>
-			)
-		}
+	<div class='grid grid-cols-1 lg:grid-cols-6 gap-6 mx-auto'>
+		<div class='mx-6 mb-12 lg:mb-0'>
+			<!-- <Ad1L /> -->
+		</div>
+		<div class='col-span-4 mx-auto w-full max-w-6xl text-lg sm:px-6 px-6'>
+			{
+				title == 'Калькулятор абсолютного спирта' ? (
+					<AbsolyutnijSpirt client:load />
+				) : title == 'Калькулятор браги' ? (
+					<Braga client:load />
+				) : title == 'Калькулятор дробной перегонки спирта-сырца' ? (
+					<DrobnayaPeregonka client:load />
+				) : title == 'Калькулятор отбор голов' ? (
+					<OtborGolov client:load />
+				) : title == 'Калькулятор разбавления спирта-сырца (после первого перегона)' ? (
+					<PoslePervoj client:load />
+				) : title == 'Калькулятор разбавления самогона водой' ? (
+					<RazbavleniyaSamogona client:load />
+				) : title == 'Калькулятор примерной стоимости самогона' ? (
+					<SebestoimApprox client:load />
+				) : title == 'Калькулятор себестоимости самогона' ? (
+					<Sebestoimost client:load />
+				) : title == 'Калькулятор смешивания спиртов' ? (
+					<SmeshSpirt client:load />
+				) : title == 'Калькулятор спирта от температуры' ? (
+					<Temperature client:load />
+				) : title == 'Калькулятор водки из спирта' ? (
+					<VodkaCalc client:load />
+				) : title == 'Калькулятор замены сахара декстрозой' ? (
+					<Zamena client:load />
+				) : (
+					<p>Калькулятор не найден</p>
+				)
+			}
+		</div>
+		<div class='mx-6 mt-12 lg:mt-0'>
+			<!-- <Ad1R /> -->
+		</div>
 	</div>
 	<article class='min-w-ful md:py-4 sm:max-w-none md:max-w-none'>
 		<div>

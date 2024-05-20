@@ -2,10 +2,12 @@
 import { type CollectionEntry, getCollection } from 'astro:content'
 import CalcPost from '@/layouts/CalcPost'
 import Code from '@/components/mdx/Code'
-import Share from '@/components/Share'
 import { getCalcs } from '@/utils'
 import SButton from '@/components/mdx/SButton'
 import NaShavuhu from '@/components/NaShavuhu'
+import ShareButtons from '@/components/ShareButtons'
+import Ad2R from '@/components/Ad2R'
+import Ad2L from '@/components/Ad2L'
 
 const calcs = await getCollection('calcs')
 export async function getStaticPaths() {
@@ -24,18 +26,27 @@ const { Content, remarkPluginFrontmatter } = await calc.render()
 ---
 
 <CalcPost id={calc.id} data={calc.data}>
-	<div class='grid grid-cols-1 lg:grid-cols-4 gap-6 mx-auto max-w-[1400px] pt-12 text-lg sm:px-6'>
+	<div class='grid grid-cols-1 lg:grid-cols-4 gap-6 mx-auto max-w-[1400px] pt-1 text-lg sm:px-6'>
 		<div class='px-4 mt-6'>
-			<Share />
-			<div class='sticky top-32'>
+			<div class='flex justify-end lg:justify-start'>
+				<div class='text-center lg:text-left'>
+					<div class='mb-1 lg:ml-6 font-bold text-xl'>Поделиться калькулятором:</div>
+					<ShareButtons
+						urlSeo={calc.slug}
+						titlePage={calc.data.title}
+						headImg={calc.data.heroImage.src}
+						descriptionPage={calc.data.description}
+					/>
+				</div>
+			</div>
+			<!-- <Ad2L /> -->
+			<div class='sticky top-20 flex justify-end lg:justify-start'>
 				<NaShavuhu />
 			</div>
 		</div>
 		<div class='px-4 col-span-2'><Content components={{ pre: Code, SButton }} /></div>
 		<div class='px-4 mt-6'>
-			l o r e m i p s u m l o r e ml o r e m i p s u m l o r e ml o r e m i p s u m l o r e ml o r e
-			m i p s u m l o r e ml o r e m i p s u m l o r e ml o r e m i p s u m l o r e ml o r e m i p s
-			u m l o r e ml o r e m i p s u m l o r e ml o r e m i p s u m l o r e m
+			<!-- <Ad2R /> -->
 		</div>
 	</div>
 </CalcPost>
