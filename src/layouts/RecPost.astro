@@ -6,6 +6,8 @@ import Tag from '@/components/Tag'
 import type { MarkdownHeading } from 'astro'
 import { Image } from 'astro:assets'
 import { fade } from 'astro:transitions'
+const backgroundImageUrl = '../assets/images/tarhun.jpg'
+import Shavuha from '../assets/images/shavuha.png'
 
 type Props = {
 	id: CollectionEntry<'blog'>['id']
@@ -28,44 +30,46 @@ const articleDate = pubDate.toISOString()
 >
 	<article class='min-w-full md:py-4 sm:max-w-none md:max-w-none mt-12'>
 		<div class='mb-3 flex lg:flex-row flex-col gap-6'>
-			<div class='basis-1/3 top-16 sticky self-start'>
+			<div class='basis-1/3 top-[65px] sticky self-start'>
 				{
 					heroImage && (
-						<Image
-							transition:animate={fade({ duration: '1.5s' })}
-							src={heroImage}
-							width={1000}
-							height={500}
-							quality={100}
-							format='webp'
-							loading='eager'
-							quality='high'
-							class='w-full max-h-[300px]  md:max-h-[500px]  object-cover'
-							alt={`img of ${title}`}
-						/>
+						<div class='mx-4 my-4'>
+							<Image
+								transition:animate={fade({ duration: '1.5s' })}
+								src={heroImage}
+								width={1000}
+								height={500}
+								quality={100}
+								format='webp'
+								loading='eager'
+								quality='high'
+								class='w-full max-h-[300px] rounded-2xl md:max-h-[500px] object-cover'
+								alt={`img of ${title}`}
+							/>
+						</div>
 					)
 				}
 
-				<div class='stats shadow mx-2 mt-4'>
-					<div class='stat'>
-						<div class='stat-figure text-secondary'>
-							<div class='avatar'>
-								<div class='w-[72px] rounded-full border-dotted border-accent border-4'>
-									<img
-										src='https://m.dom-eda.com/uploads/images/catalog/item/68a49f31ca/96b9ee2514_1000.jpg'
-									/>
-								</div>
+				<div class='grid grid-cols-3 gap-2'>
+					<div class='relative rounded-lg overflow-hidden'>
+						<Image
+							src={heroImage}
+							format='webp'
+							quality='high'
+							class='h-full object-cover'
+							alt={`img ofgg ${title}`}
+						/>
+						<div class='absolute inset-0 bg-black bg-opacity-50 flex flex-col p-4 justify-center'>
+							<div class='stat-title text-white'>Листьев эстрагона</div>
+							<div class='stat-value text-accent'>20 г.</div>
+							<div class='stat-desc text-white'>
+								где взять ингредиент <span
+									class='rounded-full border-2 border-accent px-[7px] py-[2px] m-1'><b>?</b></span
+								>
 							</div>
 						</div>
-						<div class='stat-title'>Листьев эстрагона</div>
-						<div class='stat-value text-accent'>20 г.</div>
-						<div class='stat-desc'>
-							где взять ингредиент <span
-								class='rounded-full border-2 border-accent px-[7px] py-[2px] m-1'><b>?</b></span
-							>
-						</div>
 					</div>
-				</div><!-- related posts -->
+				</div>
 			</div>
 			<div class='flex flex-col gap-2'>
 				<h1
