@@ -55,6 +55,7 @@ const articleDate = pubDate.toISOString()
 								ingr.map((ingred) => (
 									<div class='relative rounded-2xl overflow-hidden'>
 										<Image
+											client:load
 											src={ingred.ingrImage}
 											format='avif'
 											quality='high'
