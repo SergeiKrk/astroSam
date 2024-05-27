@@ -20,7 +20,7 @@ const blog = defineCollection({
 						name: z.string(),
 						mass: z.string().optional(),
 						value: z.string().optional(),
-						ingrImage: image().optional(),
+						ingrImage: image(),
 						info: z.string().optional()
 					})
 				)
