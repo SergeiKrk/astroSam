@@ -66,12 +66,16 @@ const articleDate = pubDate.toISOString()
 											<div class='stat-value text-accent'>
 												{ingred.mass} {ingred.value}
 											</div>
-											<div class='stat-desc text-white'>
-												где взять ингредиент{' '}
-												<span class='rounded-full border-2 border-accent px-[7px] py-[2px] m-1'>
-													<b>?</b>
-												</span>
-											</div>
+											{ingred.info && (
+												<div class='stat-desc text-white'>
+													где взять ингредиент{' '}
+													<a href={ingred.info}>
+														<span class='rounded-full border-2 border-accent px-[7px] py-[2px] m-1'>
+															<b>?</b>
+														</span>
+													</a>
+												</div>
+											)}
 										</div>
 									</div>
 								))
@@ -82,7 +86,7 @@ const articleDate = pubDate.toISOString()
 			<div class='flex flex-col gap-2'>
 				<h1
 					transition:animate='slide'
-					class='text-center text-4xl md:text-4xl md:pb-2.5 font-semibold'
+					class='text-center text-4xl md:text-4xl md:pb-2.5 font-semibold lg:my-12'
 				>
 					{title}
 				</h1>
