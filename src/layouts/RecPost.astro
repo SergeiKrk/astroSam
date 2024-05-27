@@ -13,11 +13,10 @@ type Props = {
 	id: CollectionEntry<'blog'>['id']
 	data: CollectionEntry<'blog'>['data']
 	headings: MarkdownHeading[]
-	readTime: string
 }
 
 const { data } = Astro.props
-const { title, description, pubDate, heroImage, tags } = data
+const { title, description, pubDate, heroImage, tags, ingr } = data
 
 const articleDate = pubDate.toISOString()
 ---
@@ -49,27 +48,34 @@ const articleDate = pubDate.toISOString()
 						</div>
 					)
 				}
-
 				<div class='mx-4 my-4'>
 					<div class='grid grid-cols-2 lg:grid-cols-3 gap-2'>
-						<div class='relative rounded-2xl overflow-hidden'>
-							<Image
-								src={heroImage}
-								format='webp'
-								quality='high'
-								class='h-full object-cover'
-								alt={`img ofgg ${title}`}
-							/>
-							<div class='absolute inset-0 bg-black bg-opacity-50 flex flex-col p-4 justify-center'>
-								<div class='stat-title text-white'>Листьев эстрагона</div>
-								<div class='stat-value text-accent'>20 г.</div>
-								<div class='stat-desc text-white'>
-									где взять ингредиент <span
-										class='rounded-full border-2 border-accent px-[7px] py-[2px] m-1'><b>?</b></span
-									>
-								</div>
-							</div>
-						</div>
+						{
+							ingr &&
+								ingr.map((ingred) => (
+									<div class='relative rounded-2xl overflow-hidden'>
+										<Image
+											src={ingred.ingrImage}
+											format='webp'
+											quality='high'
+											class='h-full object-cover'
+											alt={`img ofgg ${title}`}
+										/>
+										<div class='absolute inset-0 bg-black bg-opacity-50 flex flex-col p-4 justify-center'>
+											<div class='stat-title text-white'>{ingred.name}</div>
+											<div class='stat-value text-accent'>
+												{ingred.mass} {ingred.value}
+											</div>
+											<div class='stat-desc text-white'>
+												где взять ингредиент{' '}
+												<span class='rounded-full border-2 border-accent px-[7px] py-[2px] m-1'>
+													<b>?</b>
+												</span>
+											</div>
+										</div>
+									</div>
+								))
+						}
 					</div>
 				</div>
 			</div>
@@ -89,6 +95,23 @@ const articleDate = pubDate.toISOString()
 			</div>
 		</div>
 	</article>
+	<div class='relative flex overflow-x-hidden'>
+		<div class='py-12 animate-marquee whitespace-nowrap'>
+			<span class='text-4xl mx-4'>Marquee Item 1</span>
+			<span class='text-4xl mx-4'>Marquee Item 2</span>
+			<span class='text-4xl mx-4'>Marquee Item 3</span>
+			<span class='text-4xl mx-4'>Marquee Item 4</span>
+			<span class='text-4xl mx-4'>Marquee Item 5</span>
+		</div>
+
+		<div class='absolute top-0 py-12 animate-marquee2 whitespace-nowrap'>
+			<span class='text-4xl mx-4'>Marquee Item 1</span>
+			<span class='text-4xl mx-4'>Marquee Item 2</span>
+			<span class='text-4xl mx-4'>Marquee Item 3</span>
+			<span class='text-4xl mx-4'>Marquee Item 4</span>
+			<span class='text-4xl mx-4'>Marquee Item 5</span>
+		</div>
+	</div>
 </BaseLayout>
 
 <script>
