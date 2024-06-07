@@ -17,6 +17,11 @@ export default defineConfig({
 			wrap: true
 		}
 	},
+	image: {
+		service: {
+			entrypoint: 'astro/assets/services/noop'
+		}
+	},
 	integrations: [
 		mdx({
 			syntaxHighlight: 'shiki',
