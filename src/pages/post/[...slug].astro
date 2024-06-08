@@ -38,6 +38,28 @@ const { Content, headings, remarkPluginFrontmatter } = await post.render()
 const disqusEnabled = disqusConfig.enabled
 ---
 
+<style>
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+
+	@keyframes slide {
+		0% {
+			transform: translateX(0);
+		}
+		50% {
+			transform: translateX(-100%);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
+
+	.animate-slide {
+		animation: slide 1s infinite;
+	}
+</style>
+
 <RecPost id={post.id} data={post.data} headings={headings}>
 	<div class='w-full flex flex-row py-auto mb-12 md:ml-[20%]'>
 		<div class=''>
@@ -49,7 +71,9 @@ const disqusEnabled = disqusConfig.enabled
 			/>
 		</div>
 		<div class='my-auto w-54 font-bold text-[24px] hidden md:flex'>
-			<span class=''>👈</span> поделиться
+			<div class='flex items-center ml-4'>
+				<span class='animate-slide text-2xl'>👈</span>
+			</div> поделиться
 		</div>
 	</div>
 	<div class='grid grid-cols-1 md:grid-cols-[20%_auto] gap-10 mt-8 lg:max-w-[960px]'>
