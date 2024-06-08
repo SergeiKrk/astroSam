@@ -3,8 +3,8 @@ import { type CollectionEntry, getCollection } from 'astro:content'
 import RecPost from '@/layouts/RecPost'
 import Code from '@/components/mdx/Code'
 import ListRelatedPosts from '@/components/ListRelatedPosts'
-import Share from '@/components/Share'
 import TableOfContents from '@/components/TableOfContents'
+import ShareButtons from '@/components/ShareButtons'
 import { getPosts } from '@/utils'
 import SButton from '@/components/mdx/SButton'
 import Disqus from '@/components/Disqus'
@@ -38,16 +38,9 @@ const { Content, headings, remarkPluginFrontmatter } = await post.render()
 const disqusEnabled = disqusConfig.enabled
 ---
 
-<RecPost
-	id={post.id}
-	data={post.data}
-	headings={headings}
-	readTime={remarkPluginFrontmatter.minutesRead}
->
+<RecPost id={post.id} data={post.data} headings={headings}>
 	<div class='grid grid-cols-1 md:grid-cols-[20%_auto] gap-10 mt-8 lg:max-w-[960px]'>
-		<!-- aside  -->
 		<aside class='md:flex flex-col gap-8 hidden'>
-			<Share />
 			<div class='sticky top-24 self-start hidden md:block transition-all duration-200'>
 				{headings && headings.length > 0 && <TableOfContents {headings} />}
 			</div>
@@ -55,8 +48,25 @@ const disqusEnabled = disqusConfig.enabled
 
 		<!-- post -->
 		<article class='max-w-full w-full'>
+			<div class='my-12'>
+				<ShareButtons
+					urlSeo={post.id}
+					titlePage={post.data.title}
+					headImg={post.data.heroImage}
+					descriptionPage={post.data.description}
+				/>
+			</div>
 			<div class='prose prose-lg md:prose-xl dark:prose-invert mb-12 min-w-full'>
 				<Content components={{ pre: Code, SButton }} />
+			</div>
+
+			<div class='my-12'>
+				<ShareButtons
+					urlSeo={post.id}
+					titlePage={post.data.title}
+					headImg={post.data.heroImage}
+					descriptionPage={post.data.description}
+				/>
 			</div>
 
 			<footer>

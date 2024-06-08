@@ -33,6 +33,7 @@ const articleDate = pubDate.toISOString()
 							<Image
 								transition:animate={fade({ duration: '1.5s' })}
 								src={heroImage}
+								transition:name={`img${title}`}
 								width={1000}
 								height={500}
 								quality={100}
@@ -81,6 +82,12 @@ const articleDate = pubDate.toISOString()
 								))
 						}
 					</div>
+					<div class='mt-8'>
+						<div class='text-2xl font-bold'>Другие рецепты содержащие:</div>
+						<div class='mt-4 flex flex-wrap items-center gap-2 gap-y-4 md:gap-2'>
+							{tags.map((tag) => <Tag tag={tag} />)}
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class='flex flex-col gap-2'>
@@ -90,9 +97,7 @@ const articleDate = pubDate.toISOString()
 				>
 					{h1}
 				</h1>
-				<div class='flex flex-wrap justify-center items-center gap-2 gap-y-4 md:gap-5'>
-					{tags.map((tag) => <Tag tag={tag} />)}
-				</div>
+
 				<div>
 					<slot />
 				</div>
