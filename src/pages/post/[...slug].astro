@@ -39,6 +39,19 @@ const disqusEnabled = disqusConfig.enabled
 ---
 
 <RecPost id={post.id} data={post.data} headings={headings}>
+	<div class='w-full flex flex-row py-auto mb-12 md:ml-[20%]'>
+		<div class=''>
+			<ShareButtons
+				urlSeo={post.id}
+				titlePage={post.data.title}
+				headImg={post.data.heroImage}
+				descriptionPage={post.data.description}
+			/>
+		</div>
+		<div class='my-auto w-54 font-bold text-[24px] hidden md:flex'>
+			<span class=''>👈</span> поделиться
+		</div>
+	</div>
 	<div class='grid grid-cols-1 md:grid-cols-[20%_auto] gap-10 mt-8 lg:max-w-[960px]'>
 		<aside class='md:flex flex-col gap-8 hidden'>
 			<div class='sticky top-24 self-start hidden md:block transition-all duration-200'>
@@ -48,14 +61,6 @@ const disqusEnabled = disqusConfig.enabled
 
 		<!-- post -->
 		<article class='max-w-full w-full'>
-			<div class='my-12'>
-				<ShareButtons
-					urlSeo={post.id}
-					titlePage={post.data.title}
-					headImg={post.data.heroImage}
-					descriptionPage={post.data.description}
-				/>
-			</div>
 			<div class='prose prose-lg md:prose-xl dark:prose-invert mb-12 min-w-full'>
 				<Content components={{ pre: Code, SButton }} />
 			</div>
