@@ -25,7 +25,7 @@ const articleDate = pubDate.toISOString()
 	articleDate={articleDate}
 >
 	<article class='min-w-full md:py-4 sm:max-w-none md:max-w-none mt-12'>
-		<div class='mb-3 flex lg:flex-row flex-col gap-6'>
+		<div class='mb-3 flex xl:flex-row flex-col gap-6'>
 			<div class='basis-1/3 top-[65px] sticky self-start'>
 				{
 					heroImage && (
@@ -135,21 +135,25 @@ const articleDate = pubDate.toISOString()
 				if (entry.isIntersecting) {
 					index?.classList.remove('bg-slate-200', 'dark:bg-slate-800') // remove bg
 					index?.classList.add(
-						'bg-indigo-400',
-						'dark:bg-indigo-700',
-						'text-white',
+						'bg-teal-400',
+						'dark:bg-teal-700',
+						'text-black',
 						'font-bold',
 						'transition-colors',
+						'border-l-8',
+						'border-teal-800',
 						'duration-200'
 					)
 				} else {
 					index?.classList.add('bg-slate-200', 'dark:bg-slate-800') // add bg
 					index?.classList.remove(
-						'bg-indigo-400',
-						'dark:bg-indigo-700',
-						'text-white',
+						'bg-teal-400',
+						'dark:bg-teal-700',
+						'text-black',
 						'font-bold',
 						'transition-colors',
+						'border-l-8',
+						'border-teal-800',
 						'duration-200'
 					)
 				}
