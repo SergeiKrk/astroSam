@@ -26,7 +26,7 @@ const articleDate = pubDate.toISOString()
 >
 	<article class='min-w-full md:py-4 sm:max-w-none md:max-w-none mt-12'>
 		<div class='mb-3 flex xl:flex-row flex-col gap-6'>
-			<div class='basis-1/3 top-[65px] sticky self-start'>
+			<div class='xl:basis-1/3 top-[65px] xl:sticky self-start'>
 				{
 					heroImage && (
 						<div class='mx-4 my-4'>
@@ -47,7 +47,9 @@ const articleDate = pubDate.toISOString()
 					)
 				}
 				<div class='mx-4 my-4'>
-					<div class='grid grid-cols-2 lg:grid-cols-3 gap-2'>
+					<div
+						class='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-2 2xl:grid-cols-3 gap-2'
+					>
 						{
 							ingr &&
 								ingr.map((ingred) => (
