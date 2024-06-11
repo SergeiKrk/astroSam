@@ -9,6 +9,7 @@ import { getCalcs } from '@/utils'
 import { getEntry } from 'astro:content'
 import headImg from '../assets/images/kalkulyator-samogonshchika.png'
 import CalcIcon from '../components/icons/CalcIcon.astro'
+import RecipeIcon from '../components/icons/RecipeIcon.astro'
 const homepage = await getEntry('calcPages', 'home')
 const { title, description, titlePage, descriptionPage, urlSeo } = homepage.data
 
@@ -41,24 +42,44 @@ const calcs = await getCalcs()
 			производства крепких домашних напитков.
 		</div>
 	</div>
+
 	<div class='my-10 mx-4 2xl:mx-52 2xl:my-24'>
 		<div
 			class='flex justify-center uppercase text-lg text-center sm:text-4xl text-gray-700 font-[700] dark:text-white'
 		>
+			Рецепты настоек и наливок
+		</div>
+		<div class='my-6 sm:my-10 flex justify-center text-xl sm:text-4xl text-gray-700 font-[700]'>
+			<div class='my-auto h-[4px] w-32 bg-gray-700 border-gray-700 rounded'></div>
+			<div class='mx-6'>
+				<RecipeIcon />
+			</div>
+			<div class='my-auto h-[4px] w-32 bg-gray-700 border-gray-700 rounded'></div>
+		</div>
+		<ListCategories />
+		<div>
+			<ListPosts posts={posts} />
+		</div>
+	</div>
+
+	<div class='bg-[#1abc9c] dark:bg-[#00614B] py-10 px-4 2xl:px-52 2xl:py-24'>
+		<div
+			class='flex justify-center uppercase text-lg text-center sm:text-4xl text-white font-[700]'
+		>
 			АЛКОГОЛЬНЫЙ КАЛЬКУЛЯТОР САМОГОНЩИКА: ПРЕИМУЩЕСТВА
 		</div>
-		<div class='text-xl text-gray-700 max-w-4xl mx-auto font-[200] mt-16 dark:text-white'>
+		<div class='text-xl text-white max-w-4xl mx-auto font-[200] mt-16 dark:text-white'>
 			Ищите лучший калькулятор самогонщика? Возможно, вы его нашли. Наши онлайн калькуляторы:
 		</div>
-		<div class='grid sm:grid-cols-2 text-xl text-gray-700 max-w-4xl mx-auto font-[200]'>
-			<div class='m-2 dark:text-white'>
+		<div class='grid sm:grid-cols-2 text-xl text-white max-w-4xl mx-auto font-[200]'>
+			<div class='m-2 text-white'>
 				<div class='my-8 flex justify-center text-4xl'>
 					<div class='flex justify-center'>🚀</div>
 				</div>
 				Загружаются заметно быстрее всех остальных калькуляторов самогона конкурентов. Не нужно ждать
 				пока страница откроется, ведь это всех раздражает.
 			</div>
-			<div class='my-2 dark:text-white'>
+			<div class='my-2 text-white'>
 				<div class='my-8 flex justify-center text-4xl'>⚡️</div>
 				<p>
 					Расчет осуществляется сразу после ввода параметров в калькулятор. Не нужно совершать
@@ -66,13 +87,6 @@ const calcs = await getCalcs()
 				</p>
 			</div>
 		</div>
-	</div>
-
-	<ListCategories />
-
-	<div>
-		<h2 class='text-lg font-medium tracking-wide text-end'>Новые статьи</h2>
-		<ListPosts FirstBig={true} posts={posts} />
 	</div>
 </BaseLayout>
 
