@@ -33,8 +33,12 @@ const posts = page.data
 ---
 
 <BaseLayout title={params.category}>
-	<TitlePage title={unsluglifyNameCategory} />
-	<ListCategories activeCategory={params.category} />
-	<ListPosts posts={posts} />
-	<Pagination page={page} />
+	<div class='flex justify-center mt-52'>
+		<TitlePage title={unsluglifyNameCategory} />
+	</div>
+	<div class='my-10 mx-4 2xl:mx-52 2xl:my-16'>
+		<ListCategories activeCategory={params.category} />
+		<ListPosts posts={posts} />
+		<Pagination page={page} />
+	</div>
 </BaseLayout>
