@@ -1,6 +1,7 @@
 ---
 import BaseHead from '@/components/BaseHead'
 import Header from '@/components/Header'
+import Subscribe from '../components/Subscribe'
 import Footer from '@/components/Footer'
 import ProviderTheme from '@/components/ProviderTheme'
 import ProviderAnimations from '@/components/ProviderAnimations'
@@ -24,5 +25,6 @@ const { title, description, image, articleDate } = Astro.props
 		</main>
 		<Footer />
 		<TwSizeIndicator />
+		<Subscribe client:load />
 	</body>
 </html>
