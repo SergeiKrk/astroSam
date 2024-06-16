@@ -2,6 +2,7 @@
 import HeaderLink from '@/components/HeaderLink'
 import TelegramIcon from './icons/Telegram.astro'
 import Search from '@/components/Search'
+import SubscribeInTop from './SubscribeInTop'
 import ToggleTheme from './ToggleTheme.astro'
 import { Image } from 'astro:assets'
 import kalkulyatorRazbavleniyaSamogonaVodoj from '../assets/images/kalkulyator-razbavleniya-samogona-vodoj.png'
@@ -228,18 +229,7 @@ const itemNavInfo = [
 	</div>
 	<div class='navbar-end'>
 		<div class='flex items-center gap-3 md:pl-3' transition:persist='navbar'>
-			<div class='tooltip tooltip-bottom' data-tip='☝️ Подпишись'>
-				{
-					SOCIALNETWORKS.map((network) => (
-						<HeaderLink href={network.url} target='_blank' aria-label={network.name}>
-							<span class='relative flex justify-center items-center h-12 w-12'>
-								<span class='animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75' />
-								<span class='relative inline-flex h-12 w-12'>{<network.icon />}</span>
-							</span>
-						</HeaderLink>
-					))
-				}
-			</div>
+			<SubscribeInTop client:load />
 			<div class='ml-6'>
 				<Search />
 			</div>

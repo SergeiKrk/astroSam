@@ -10,8 +10,8 @@ const Subscribe = () => {
 
 		const intervalId = setInterval(() => {
 			toggleTooltip()
-			setTimeout(toggleTooltip, 10000) // Закрыть tooltip через 10 секунд
-		}, 15000) // Открыть tooltip через каждые 15 секунд (5 секунд ожидания + 10 секунд видимости)
+			setTimeout(toggleTooltip, 7000) // Закрыть tooltip через 10 секунд
+		}, 20000) // Открыть tooltip через каждые 15 секунд (5 секунд ожидания + 10 секунд видимости)
 
 		return () => clearInterval(intervalId)
 	}, [])
