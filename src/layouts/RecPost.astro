@@ -29,7 +29,7 @@ const articleDate = pubDate.toISOString()
 			<div class='xl:basis-1/3 top-[65px] xl:sticky self-start'>
 				{
 					heroImage && (
-						<div class='mx-4 my-4'>
+						<div class='relative rounded-2xl overflow-hidden mx-4 my-4'>
 							<Image
 								transition:animate={fade({ duration: '1.5s' })}
 								src={heroImage}
@@ -40,9 +40,14 @@ const articleDate = pubDate.toISOString()
 								format='webp'
 								loading='eager'
 								quality='high'
-								class='w-full max-h-[300px] rounded-2xl md:max-h-[500px] object-cover'
+								class='w-full max-h-[300px] md:max-h-[500px] object-cover'
 								alt={`img of ${title}`}
 							/>
+							<div class='absolute inset-0 bg-black bg-opacity-50 flex flex-col p-4 justify-center'>
+								<h1 transition:animate='slide' class='text-white text-2xl lg:text-4xl font-bold'>
+									{h1}
+								</h1>
+							</div>
 						</div>
 					)
 				}
@@ -93,13 +98,6 @@ const articleDate = pubDate.toISOString()
 				</div>
 			</div>
 			<div class='flex flex-col gap-2'>
-				<h1
-					transition:animate='slide'
-					class='mx-4 text-4xl font-bold xl:text-5xl md:pb-2.5 mt-10 mb-6 lg:mt-24 lg:mb-8'
-				>
-					{h1}
-				</h1>
-
 				<div class='mx-4'>
 					<slot />
 				</div>
