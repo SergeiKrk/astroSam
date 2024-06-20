@@ -5,7 +5,7 @@ import ArrowUp from '@/components/icons/ArrowUp'
 
 const {
 	id,
-	data: { title, description, pubDate, heroImage, category },
+	data: { title, h1, description, pubDate, heroImage, category },
 	readTime,
 	slug
 } = Astro.props
@@ -28,7 +28,7 @@ const {
 	<a href={`/post/${slug}/`} class='md:gap-0 py-6 px-3'>
 		<div class='flex flex-col gap-2'>
 			<div class='text-2xl font-semibold -tracking-wider'>
-				{title}
+				{h1}
 			</div>
 		</div>
 
