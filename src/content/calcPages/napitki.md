@@ -1,6 +1,6 @@
 ---
 headImg: '../../assets/images/kalkulyator-samogonshchika.png'
-titlePage: 'РЕЦЕПТЫ НАСТОЕК И НАЛИВОК'
+titlePage: 'Алкогольные рецепты'
 descriptionPage: 'Калькулятор винокура и самогонщика: онлайн расчет всех важных параметров'
 urlSeo: 'napitki'
 title: 'Калькулятор Самогонщика: Онлайн расчет'
