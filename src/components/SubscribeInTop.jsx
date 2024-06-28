@@ -22,7 +22,11 @@ const Subscribe = () => {
 			data-tip='Заходи, тут интересно 👉'
 		>
 			<span className='absolute -z-10 h-[35px] w-[35px] animate-ping rounded-full bg-[#40B3E0] opacity-80'></span>
-			<a aria-label='telegram' href='https://t.me/samogonco'>
+			<a
+				aria-label='telegram'
+				href='https://t.me/samogonco'
+				class={`${tooltipOpen ? 'animate-spin' : ''}`}
+			>
 				<svg viewBox='0 0 256 256' astro-icon='logos:telegram' className='h-10'>
 					<path
 						d='M128 0C57.307 0 0 57.307 0 128s57.307 128 128 128 128-57.307 128-128S198.693 0 128 0z'
