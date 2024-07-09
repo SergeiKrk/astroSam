@@ -8,6 +8,7 @@ const blog = defineCollection({
 			title: z.string().max(80),
 			h1: z.string().max(80),
 			description: z.string(),
+			status: z.string().optional(),
 			// Transform string to Date object
 			pubDate: z
 				.string()

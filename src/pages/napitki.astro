@@ -5,12 +5,11 @@ import ListPosts from '@/components/ListPosts'
 import BaseLayout from '@/layouts/BaseLayout'
 import { getPosts } from '@/utils'
 import { getEntry } from 'astro:content'
-import headImg from '../assets/images/kalkulyator-samogonshchika.png'
+import headImg from '../assets/images/samogoncalc-bender.png'
 const homepage = await getEntry('calcPages', 'napitki')
 const { title, description, titlePage, descriptionPage, urlSeo } = homepage.data
 
-const MAX_POSTS = 30 // max number of posts to show on the home page
-const posts = await getPosts(MAX_POSTS)
+const posts = await getPosts()
 ---
 
 <BaseLayout title={title} description={description}>
@@ -18,8 +17,6 @@ const posts = await getPosts(MAX_POSTS)
 
 	<div class='my-10 mx-4 2xl:mx-52 2xl:my-24'>
 		<ListCategories />
-		<div>
-			<ListPosts posts={posts} />
-		</div>
+		<ListPosts posts={posts} />
 	</div>
 </BaseLayout>
