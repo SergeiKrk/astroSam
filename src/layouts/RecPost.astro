@@ -5,6 +5,8 @@ import Tag from '@/components/Tag'
 import type { MarkdownHeading } from 'astro'
 import { Image } from 'astro:assets'
 import { fade } from 'astro:transitions'
+import Ad1R from '@/components/Ad1R'
+import Ad1L from '@/components/Ad1L'
 
 type Props = {
 	id: CollectionEntry<'blog'>['id']
@@ -89,6 +91,8 @@ const articleDate = pubDate.toISOString()
 								))
 						}
 					</div>
+
+					<Ad1L />
 					<div class='mt-8'>
 						<div class='text-2xl font-bold'>Другие рецепты содержащие:</div>
 						<div class='mt-4 flex flex-wrap items-center gap-2 gap-y-4 md:gap-2'>
@@ -108,6 +112,7 @@ const articleDate = pubDate.toISOString()
 						><img src='https://my.saleads.pro/b/7ff5f4a0-0503-11ee-982e-a7e21c0190d4/img.jpg' /></a
 					>
 				</div>
+				<Ad1R />
 			</div>
 		</div>
 	</article>
