@@ -37,7 +37,11 @@ const VodkaCalculator = () => {
 				<div>
 					<form className='m-6 text-center'>
 						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-							<label className='p10 mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='firstVolume'>
+							<label
+								aria-label='Объем спирта или дистиллята'
+								className='p10 mr-4 lg:text-right lg:w-[70%] w-full'
+								htmlFor='firstVolume'
+							>
 								Объем спирта или дистиллята:
 							</label>
 							<input
@@ -50,7 +54,11 @@ const VodkaCalculator = () => {
 							/>
 						</div>
 						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-							<label className='p10 mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='alcoholStr'>
+							<label
+								aria-label='Крепость спирта или дистиллята'
+								className='p10 mr-4 lg:text-right lg:w-[70%] w-full'
+								htmlFor='alcoholStr'
+							>
 								Крепость спирта или дистиллята:
 							</label>
 							<input
@@ -64,6 +72,7 @@ const VodkaCalculator = () => {
 						</div>
 						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
 							<label
+								aria-label='Температура спирта или дистиллята'
 								className='p10 mr-4 lg:text-right lg:w-[70%] w-full'
 								htmlFor='firstTemperature'
 							>
@@ -80,6 +89,7 @@ const VodkaCalculator = () => {
 						</div>
 						<div className='my-2 flex flex-wrap lg:flex-nowrap'>
 							<label
+								aria-label='Температура воды'
 								className='p10 mr-4 lg:text-right lg:w-[70%] w-full'
 								htmlFor='secondTemperature'
 							>

@@ -28,7 +28,10 @@ const DilutionCalculator = () => {
 			<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
 				<form className='m-6 text-center'>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full'>
+						<label
+							aria-label='Объем разбавляемого самогона'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+						>
 							Объем разбавляемого самогона, литры:
 						</label>
 						<input
@@ -40,7 +43,10 @@ const DilutionCalculator = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full'>
+						<label
+							aria-label='Крепость разбавляемого самогона'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+						>
 							Крепость разбавляемого самогона:
 						</label>
 						<input
@@ -52,10 +58,15 @@ const DilutionCalculator = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='necessFortr'>
+						<label
+							aria-label='Крепость, которую хотите получить'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+							htmlFor='necessFortr'
+						>
 							Крепость, которую хотите получить:
 						</label>
 						<select
+							aria-label='20-40'
 							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 							ref={necessFortrRef}
 							onChange={handleInputChange}

@@ -43,7 +43,11 @@ const SebestoimostCalc = () => {
 			<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
 				<form className='m-6 text-center'>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='materialCost'>
+						<label
+							aria-label='Цена сырья'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+							htmlFor='materialCost'
+						>
 							Цена сырья за 1 кг.:
 						</label>
 						<input
@@ -56,7 +60,11 @@ const SebestoimostCalc = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='materialMass'>
+						<label
+							aria-label='Масса сырья'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+							htmlFor='materialMass'
+						>
 							Масса сырья:
 						</label>
 						<input
@@ -69,7 +77,11 @@ const SebestoimostCalc = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='volumeDrink'>
+						<label
+							aria-label='Объем готового напитка'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+							htmlFor='volumeDrink'
+						>
 							Объем готового напитка:
 						</label>
 						<input
@@ -83,7 +95,11 @@ const SebestoimostCalc = () => {
 					</div>
 					<br />
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='yeastCost'>
+						<label
+							aria-label='Стоимость дрожжей'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+							htmlFor='yeastCost'
+						>
 							Стоимость дрожжей:
 						</label>
 						<input
@@ -96,7 +112,11 @@ const SebestoimostCalc = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='bentoniteCost'>
+						<label
+							aria-label='Стоимость бентонита'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+							htmlFor='bentoniteCost'
+						>
 							Стоимость бентонита:
 						</label>
 						<input
@@ -109,7 +129,11 @@ const SebestoimostCalc = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='coalCost'>
+						<label
+							aria-label='Стоимость угля'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+							htmlFor='coalCost'
+						>
 							Стоимость угля:
 						</label>
 						<input
@@ -122,7 +146,11 @@ const SebestoimostCalc = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='wgeCost'>
+						<label
+							aria-label='Вода, газ'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+							htmlFor='wgeCost'
+						>
 							Вода, газ / электричество:
 						</label>
 						<input

@@ -46,10 +46,11 @@ const SebestoimApproxCalc = () => {
 			<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
 				<form className='m-6 text-center'>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full'>
+						<label aria-label='' className='mr-4 lg:text-right lg:w-[70%] w-full'>
 							Сырье для самогона (дистиллята):
 						</label>
 						<select
+							aria-label=''
 							ref={rawMaterialsRef}
 							id='rawMaterials'
 							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
@@ -66,7 +67,9 @@ const SebestoimApproxCalc = () => {
 						</select>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full'>Масса сырья:</label>
+						<label aria-label='' className='mr-4 lg:text-right lg:w-[70%] w-full'>
+							Масса сырья:
+						</label>
 						<input
 							ref={massMaterialsRef}
 							id='massMaterials'
@@ -77,7 +80,7 @@ const SebestoimApproxCalc = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full'>
+						<label aria-label='' className='mr-4 lg:text-right lg:w-[70%] w-full'>
 							Стоимость сырья за 1 кг.:
 						</label>
 						<input
@@ -90,7 +93,9 @@ const SebestoimApproxCalc = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full'>Стоимость дрожжей:</label>
+						<label aria-label='' className='mr-4 lg:text-right lg:w-[70%] w-full'>
+							Стоимость дрожжей:
+						</label>
 						<input
 							ref={yeastCostRef}
 							id='yeastCost'
@@ -101,7 +106,7 @@ const SebestoimApproxCalc = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full'>
+						<label aria-label='' className='mr-4 lg:text-right lg:w-[70%] w-full'>
 							Вода, газ / электричество:
 						</label>
 						<input
@@ -114,7 +119,7 @@ const SebestoimApproxCalc = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full'>
+						<label aria-label='' className='mr-4 lg:text-right lg:w-[70%] w-full'>
 							Стоимость бентонита / угля:
 						</label>
 						<input
@@ -127,7 +132,7 @@ const SebestoimApproxCalc = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full'>
+						<label aria-label='' className='mr-4 lg:text-right lg:w-[70%] w-full'>
 							КПД самогонного аппарата:
 						</label>
 						<input
@@ -140,8 +145,11 @@ const SebestoimApproxCalc = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full'>Доля «Голов»:</label>
+						<label aria-label='' className='mr-4 lg:text-right lg:w-[70%] w-full'>
+							Доля «Голов»:
+						</label>
 						<select
+							aria-label=''
 							ref={headsRef}
 							id='heads'
 							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
@@ -158,8 +166,11 @@ const SebestoimApproxCalc = () => {
 						</select>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full'>Доля «Хвостов»:</label>
+						<label aria-label='Доля Хвостов' className='mr-4 lg:text-right lg:w-[70%] w-full'>
+							Доля «Хвостов»:
+						</label>
 						<select
+							aria-label='10-25'
 							ref={tailsRef}
 							id='tails'
 							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'

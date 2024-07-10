@@ -26,7 +26,11 @@ const TemperatureCalculator = () => {
 			<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
 				<form className='m-6 text-center'>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='firstStr'>
+						<label
+							aria-label='Крепость по спиртометру'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+							htmlFor='firstStr'
+						>
 							Крепость по спиртометру:
 						</label>
 						<input
@@ -39,7 +43,11 @@ const TemperatureCalculator = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='firstTemp'>
+						<label
+							aria-label='Температура спирта'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+							htmlFor='firstTemp'
+						>
 							Температура спирта:
 						</label>
 						<input

@@ -28,7 +28,11 @@ const HeadsSelectionCalculator = () => {
 			<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
 				<form className='m-6 text-center'>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='rawAlcoholVol'>
+						<label
+							aria-label='Объем спирта-сырца, литры'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+							htmlFor='rawAlcoholVol'
+						>
 							Объем спирта-сырца, литры:
 						</label>
 						<input
@@ -40,7 +44,11 @@ const HeadsSelectionCalculator = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='rawAlcoholFortr'>
+						<label
+							aria-label='Крепость спирта-сырца, градусов'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+							htmlFor='rawAlcoholFortr'
+						>
 							Крепость спирта-сырца, градусов:
 						</label>
 						<input
@@ -52,10 +60,15 @@ const HeadsSelectionCalculator = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='partHead'>
+						<label
+							aria-label=''
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+							htmlFor='partHead'
+						>
 							Доля «Голов», % от общего объема:
 						</label>
 						<select
+							aria-label='3-15'
 							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 							ref={partHeadRef}
 							onChange={handleInputChange}

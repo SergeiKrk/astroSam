@@ -49,7 +49,11 @@ const FractionalDistillationCalculator = () => {
 			<div className='basis-1/2 border-4 lg:rounded-l-lg border-[#1ABC9C] dark:border-[#00614B]'>
 				<form className='mx-6 my-6 lg:my-16 text-center'>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='rawAlcoholVol'>
+						<label
+							aria-label='Объем спирта-сырца'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+							htmlFor='rawAlcoholVol'
+						>
 							Объем спирта-сырца:
 						</label>
 						<input
@@ -61,7 +65,11 @@ const FractionalDistillationCalculator = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='rawAlcoholFortr'>
+						<label
+							aria-label='Крепость спирта-сырца'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+							htmlFor='rawAlcoholFortr'
+						>
 							Крепость спирта-сырца:
 						</label>
 						<input
@@ -73,7 +81,11 @@ const FractionalDistillationCalculator = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='afterDistillingFortr'>
+						<label
+							aria-label='Нужная крепость после перегона'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+							htmlFor='afterDistillingFortr'
+						>
 							Нужная крепость после перегона:
 						</label>
 						<input
@@ -86,10 +98,15 @@ const FractionalDistillationCalculator = () => {
 						/>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='partHead'>
+						<label
+							aria-label='Доля Голов'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+							htmlFor='partHead'
+						>
 							Доля «Голов»:
 						</label>
 						<select
+							aria-label='3-15'
 							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 							id='partHead'
 							ref={partHeadRef}
@@ -106,10 +123,15 @@ const FractionalDistillationCalculator = () => {
 						</select>
 					</div>
 					<div className='my-2 flex flex-wrap lg:flex-nowrap'>
-						<label className='mr-4 lg:text-right lg:w-[70%] w-full' htmlFor='partTail'>
+						<label
+							aria-label='Доля Хвостов'
+							className='mr-4 lg:text-right lg:w-[70%] w-full'
+							htmlFor='partTail'
+						>
 							Доля «Хвостов»:
 						</label>
 						<select
+							aria-label='10-14'
 							className='w-full lg:w-[30%] bg-white text-black border-2 rounded-lg border-[#1ABC9C] px-1 max-w-52 text-center lg:text-left'
 							id='partTail'
 							ref={partTailRef}

@@ -13,36 +13,42 @@ const { urlSeo, titlePage, headImg, descriptionPage } = Astro.props
 	<div class='mx-6 my-2 flex flex-row tooltip tooltip-bottom' data-tip='Репостни меня 👍🚀'>
 		<a
 			href={`http://vk.com/share.php?url=https://samogoncalc.ru/${urlSeo}&title=${titlePage}&image=https://samogoncalc.ru${headImg}&noparse=true`}
+			aria-label='vk.com'
 			class={`hover:shadow-lg m-1 p-2 rounded-full bg-cyan-800`}
 		>
 			<VkIcon />
 		</a>
 		<a
 			href={`https://t.me/share/url?url=https://samogoncalc.ru/${urlSeo}&text=${titlePage}`}
+			aria-label='t.me'
 			class='bg-cyan-500 hover:shadow-lg m-1 p-2 rounded-full'
 		>
 			<TgIcon />
 		</a>
 		<a
 			href={`viber://forward?text=https://samogoncalc.ru/${urlSeo} | ${titlePage}`}
+			aria-label='viber'
 			class='bg-purple-800 hover:shadow-lg m-1 p-2 rounded-full'
 		>
 			<VbIcon />
 		</a>
 		<a
 			href={`whatsapp://send?text=${titlePage} | https://samogoncalc.ru/${urlSeo}`}
+			aria-label='whatsapp'
 			class='bg-[#25D366] hover:shadow-lg m-1 p-2 rounded-full'
 		>
 			<WtspIcon />
 		</a>
 		<a
 			href={`http://www.fb.com/sharer.php?s=100&p[title]=${titlePage}&p[summary]=${descriptionPage}&p[url]=https://samogoncalc.ru/${urlSeo}&p[images][0]=https://samogoncalc.ru${headImg}`}
+			aria-label='fb.com'
 			class='bg-indigo-900 hover:shadow-lg m-1 p-2 rounded-full'
 		>
 			<FbIcon />
 		</a>
 		<a
 			href={`https://twitter.com/intent/tweet?original_referer=https://samogoncalc.ru/${urlSeo}&text=${titlePage}&url=https://samogoncalc.ru`}
+			aria-label='twitter.com'
 			class='bg-blue-500 hover:shadow-lg m-1 p-2 rounded-full'
 		>
 			<TwIcon />
