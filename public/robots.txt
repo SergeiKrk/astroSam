@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://samogoncalc.ru/sitemap-index.xml
+Sitemap: https://samogoncalc.ru/sitemap-0.xml
