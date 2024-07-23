@@ -1,46 +1,18 @@
 [[redirects]]
-  from = "/kalkulyator-spirta-ot-temperatury/kalkulyator-spirta-ot-temperatury/kalkulyator-spirta-ot-temperatury/"
-  to = "/kalkulyator-spirta-ot-temperatury/"
-  status = 301
-
-[[redirects]]
-  from = "/kalkulyator-spirta-ot-temperatury/kalkulyator-spirta-ot-temperatury/"
-  to = "/kalkulyator-spirta-ot-temperatury/"
-  status = 301
-
-[[redirects]]
-  from = "/kalkulyator-spirta-ot-temperatury/"
-  to = "/kalkulyator-spirta-ot-temperatury/"
-  status = 301
-
-# Добавьте аналогичные правила для других удалённых страниц
-[[redirects]]
-  from = "/kalkulyator-razbavleniya-samogona-vodoj/kalkulyator-razbavleniya-samogona-vodoj/kalkulyator-razbavleniya-samogona-vodoj/"
-  to = "/kalkulyator-razbavleniya-samogona-vodoj/"
-  status = 301
-
-[[redirects]]
-  from = "/kalkulyator-otbor-golov/kalkulyator-otbor-golov/kalkulyator-otbor-golov/"
-  to = "/kalkulyator-otbor-golov/"
-  status = 301
-
-# Вы можете настроить редиректы на главную страницу, если не знаете точный актуальный URL
-[[redirects]]
-  from = "/kalkulyator-razbavleniya-samogona-vodo"
-  to = "/"
-  status = 301
-
-[[redirects]]
-  from = "/kalkulyator-razbavleniya-samogona-vodoj.mdx"
-  to = "/"
-  status = 301
-
-[[redirects]]
-  from = "/kalkulyator-drobnoj-peregonki/kalkulyator-drobnoj-peregonki/kalkulyator-drobnoj-peregonki/"
+  from = "/kalkulyator-drobnoj-peregonki/*"
   to = "/kalkulyator-drobnoj-peregonki/"
   status = 301
 
-# Добавьте дополнительные редиректы по необходимости
+[[redirects]]
+  from = "/kalkulyator-spirta-ot-temperatury/*"
+  to = "/kalkulyator-spirta-ot-temperatury/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-razbavleniya-samogona-vodoj/*"
+  to = "/kalkulyator-razbavleniya-samogona-vodoj/"
+  status = 301
+
 
 [build]
   command = 'pnpm build'
