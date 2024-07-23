@@ -37,9 +37,5 @@ export default defineConfig({
 		react(),
 		sitemap(),
 		tailwind()
-	],
-	redirects: {
-		'/kalkulyator-razbavleniya-samogona-vodoj/kalkulyator-razbavleniya-samogona-vodoj/':
-			'/kalkulyator-razbavleniya-samogona-vodoj/'
-	}
+	]
 })
