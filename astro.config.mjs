@@ -39,9 +39,7 @@ export default defineConfig({
 		tailwind()
 	],
 	redirects: {
-		'/kalkulyator-razbavleniya-samogona-vodoj/kalkulyator-razbavleniya-samogona-vodoj/': {
-			status: 301,
-			destination: '/kalkulyator-razbavleniya-samogona-vodoj/'
-		}
+		'/kalkulyator-razbavleniya-samogona-vodoj/kalkulyator-razbavleniya-samogona-vodoj/':
+			'/kalkulyator-razbavleniya-samogona-vodoj/'
 	}
 })
