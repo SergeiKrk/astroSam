@@ -1,2 +1,102 @@
 [build]
   command = 'pnpm build'
+
+[[redirects]]
+  from = "/kalkulyator-razbavleniya-samogona-vodoj/kalkulyator-razbavleniya-samogona-vodoj/"
+  to = "/kalkulyator-razbavleniya-samogona-vodoj/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-otbor-golov/kalkulyator-otbor-golov/"
+  to = "/kalkulyator-otbor-golov/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-drobnoj-peregonki/kalkulyator-drobnoj-peregonki/"
+  to = "/kalkulyator-drobnoj-peregonki/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-spirta-ot-temperatury/kalkulyator-spirta-ot-temperatury/"
+  to = "/kalkulyator-spirta-ot-temperatury/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-saharnoj-bragi/kalkulyator-saharnoj-bragi/"
+  to = "/kalkulyator-saharnoj-bragi/"
+  status = 301
+
+[[redirects]]
+  from = "/razbavlenie-samogona-vodoj-posle-pervoj-peregonki/razbavlenie-samogona-vodoj-posle-pervoj-peregonki/"
+  to = "/razbavlenie-samogona-vodoj-posle-pervoj-peregonki/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-absolyutnogo-spirta/kalkulyator-absolyutnogo-spirta/"
+  to = "/kalkulyator-absolyutnogo-spirta/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-razbavleniya-samogona-vodoj/kalkulyator-razbavleniya-samogona-vodoj/kalkulyator-razbavleniya-samogona-vodoj/"
+  to = "/kalkulyator-razbavleniya-samogona-vodoj/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-vodki-iz-spirta/kalkulyator-vodki-iz-spirta/"
+  to = "/kalkulyator-vodki-iz-spirta/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-razbavleniya-samogona-vodo"
+  to = "/kalkulyator-razbavleniya-samogona-vodoj/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-razbavleniya-samogona-vodoj.mdx"
+  to = "/kalkulyator-razbavleniya-samogona-vodoj/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-otbor-golov/kalkulyator-otbor-golov/kalkulyator-otbor-golov/"
+  to = "/kalkulyator-otbor-golov/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-drobnoj-peregonki/kalkulyator-drobnoj-peregonki/kalkulyator-drobnoj-peregonki/"
+  to = "/kalkulyator-drobnoj-peregonki/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-smeshivaniya-spirtov/kalkulyator-smeshivaniya-spirtov/"
+  to = "/kalkulyator-smeshivaniya-spirtov/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-spirta-ot-temperatury/kalkulyator-spirta-ot-temperatury/kalkulyator-spirta-ot-temperatury/"
+  to = "/kalkulyator-spirta-ot-temperatury/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-sebestoimosti-samogona/kalkulyator-sebestoimosti-samogona/"
+  to = "/kalkulyator-sebestoimosti-samogona/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-saharnoj-bragi/kalkulyator-saharnoj-bragi/kalkulyator-saharnoj-bragi/"
+  to = "/kalkulyator-saharnoj-bragi/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-smeshivaniya-spirtov/kalkulyator-smeshivaniya-spirtov/kalkulyator-smeshivaniya-spirtov/"
+  to = "/kalkulyator-smeshivaniya-spirtov/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-spirta-ot-temperatury/kalkulyator-spirta-ot-temperatury/kalkulyator-spirta-ot-temperatury/kalkulyator-spirta-ot-temperatury/"
+  to = "/kalkulyator-spirta-ot-temperatury/"
+  status = 301
+
+[[redirects]]
+  from = "/kalkulyator-zameny-sahara-glyukozoj/kalkulyator-zameny-sahara-glyukozoj/"
+  to = "/kalkulyator-zameny-sahara-glyukozoj/"
+  status = 301
