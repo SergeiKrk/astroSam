@@ -1,18 +1,2 @@
-[[redirects]]
-  from = "/kalkulyator-drobnoj-peregonki/*"
-  to = "/kalkulyator-drobnoj-peregonki/"
-  status = 301
-
-[[redirects]]
-  from = "/kalkulyator-spirta-ot-temperatury/*"
-  to = "/kalkulyator-spirta-ot-temperatury/"
-  status = 301
-
-[[redirects]]
-  from = "/kalkulyator-razbavleniya-samogona-vodoj/*"
-  to = "/kalkulyator-razbavleniya-samogona-vodoj/"
-  status = 301
-
-
 [build]
   command = 'pnpm build'
