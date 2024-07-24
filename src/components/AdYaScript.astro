@@ -1,0 +1,17 @@
+<script>
+	function renderYandexAds() {
+		Ya.Context.AdvManager.render({
+			blockId: 'R-A-1654628-4',
+			renderTo: 'yandex_rtb_R-A-1654628-4'
+		})
+		Ya.Context.AdvManager.render({
+			blockId: 'R-A-1654628-2',
+			renderTo: 'yandex_rtb_R-A-1654628-2'
+		})
+	}
+
+	window.yaContextCb.push(() => {
+		renderYandexAds()
+		setInterval(renderYandexAds, 10000) // 10000 миллисекунд = 10 секунд
+	})
+</script>
