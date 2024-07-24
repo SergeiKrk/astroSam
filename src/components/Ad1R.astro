@@ -5,10 +5,14 @@
 <!-- Yandex.RTB R-A-1654628-4 -->
 <div id='yandex_rtb_R-A-1654628-4'></div>
 <script>
-	window.yaContextCb.push(() => {
+	function rendYaAd4() {
 		Ya.Context.AdvManager.render({
 			blockId: 'R-A-1654628-4',
 			renderTo: 'yandex_rtb_R-A-1654628-4'
 		})
+	}
+	window.yaContextCb.push(() => {
+		rendYaAd4()
+		setInterval(rendYaAd4, 10000)
 	})
 </script>
