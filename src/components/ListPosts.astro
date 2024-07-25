@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content'
 import PostCard from '@/components/PostCard'
 import { cn } from '@/utils'
+import Ad1L from './Ad1L.astro'
 
 type Props = {
 	posts: CollectionEntry<'blog'>[]
@@ -18,18 +19,25 @@ const { posts, FirstBig = false } = Astro.props
 	)}
 >
 	{
-		posts.map(async (post) => {
+		posts.map(async (post, index) => {
 			const { remarkPluginFrontmatter } = await post.render()
 
 			return (
-				post.data.status && (
-					<PostCard
-						id={post.id}
-						data={post.data}
-						slug={post.slug}
-						readTime={remarkPluginFrontmatter.minutesRead}
-					/>
-				)
+				<>
+					{post.data.status && (
+						<PostCard
+							id={post.id}
+							data={post.data}
+							slug={post.slug}
+							readTime={remarkPluginFrontmatter.minutesRead}
+						/>
+					)}
+					{(index + 1) % 3 === 0 && (
+						<div class='grid grid-rows-[300px_auto] md:grid-rows-[300px_220px] min-h-full group rounded-xl'>
+							<Ad1L />
+						</div>
+					)}
+				</>
 			)
 		})
 	}
