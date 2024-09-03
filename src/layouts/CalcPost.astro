@@ -41,27 +41,27 @@ const { title, description, h1, heroImage, pretext } = data
 		</div>
 		<div class='mx-auto w-full max-w-6xl text-lg sm:px-6 px-6'>
 			{
-				title == 'Калькулятор абсолютного спирта' ? (
+				title == 'Калькулятор абсолютного спирта: формула + как рассчитать' ? (
 					<AbsolyutnijSpirt client:load />
-				) : title == 'Калькулятор браги' ? (
+				) : title == 'Калькулятор браги (выход сахарной и зерновой браги)' ? (
 					<Braga client:load />
 				) : title == 'Калькулятор второй дробной перегонки самогона (спирта-сырца)' ? (
 					<DrobnayaPeregonka client:load />
-				) : title == 'Калькулятор отбор голов' ? (
+				) : title == 'Калькулятор отбора голов при второй перегонке' ? (
 					<OtborGolov client:load />
 				) : title == 'Калькулятор разбавления спирта-сырца (после первого перегона)' ? (
 					<PoslePervoj client:load />
-				) : title == 'Калькулятор разбавления самогона водой' ? (
+				) : title == 'Калькулятор разбавления самогона и спирта' ? (
 					<RazbavleniyaSamogona client:load />
 				) : title == 'Калькулятор примерной стоимости самогона' ? (
 					<SebestoimApprox client:load />
-				) : title == 'Калькулятор себестоимости самогона' ? (
+				) : title == 'Себестоимость самогона' ? (
 					<Sebestoimost client:load />
 				) : title == 'Калькулятор смешивания спиртов' ? (
 					<SmeshSpirt client:load />
-				) : title == 'Калькулятор спирта от температуры' ? (
+				) : title == 'Спирт от температуры: Калькулятор' ? (
 					<Temperature client:load />
-				) : title == 'Калькулятор водки из спирта' ? (
+				) : title == 'Калькулятор водки: как разбавить самогон или спирта до 40°' ? (
 					<VodkaCalc client:load />
 				) : title == 'Калькулятор замены сахара декстрозой' ? (
 					<Zamena client:load />
