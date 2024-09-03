@@ -36,7 +36,8 @@ const calcs = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: ({ image }) =>
 		z.object({
-			title: z.string().max(80),
+			title: z.string().max(80).optional(),
+			h1: z.string().max(80).optional(),
 			description: z.string(),
 			pretext: z.string(),
 			heroImage: image()

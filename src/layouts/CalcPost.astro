@@ -25,11 +25,11 @@ type Props = {
 }
 
 const { data, id } = Astro.props
-const { title, description, heroImage, pretext } = data
+const { title, description, h1, heroImage, pretext } = data
 ---
 
 <BaseLayout title={title} description={description} image={heroImage?.src}>
-	<Hero headImg={heroImage} titlePage={title} descriptionPage={description} urlSeo={id} />
+	<Hero headImg={heroImage} titlePage={title} h1={h1} descriptionPage={description} urlSeo={id} />
 
 	<div class='mx-auto max-w-[680px] pt-12 text-lg px-6'>
 		{pretext}
