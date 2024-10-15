@@ -7,6 +7,7 @@ import { Image } from 'astro:assets'
 import { fade } from 'astro:transitions'
 import Ad1R from '@/components/Ad1R'
 import Ad1L from '@/components/Ad1L'
+import Ad3L from '@/components/Ad3L'
 
 type Props = {
 	id: CollectionEntry<'blog'>['id']
@@ -98,6 +99,7 @@ const articleDate = pubDate.toISOString()
 							{tags.map((tag) => <Tag tag={tag} />)}
 						</div>
 					</div>
+					<div class='mt-4'><Ad3L /></div>
 					<div class='mt-4'><Ad1L /></div>
 				</div>
 			</div>
