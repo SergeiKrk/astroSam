@@ -2,7 +2,7 @@
 import type { CollectionEntry } from 'astro:content'
 import PostCard from '@/components/PostCard'
 import { cn } from '@/utils'
-import Ad1L from './Ad1L.astro'
+import Ad2R from './Ad2R.astro'
 
 type Props = {
 	posts: CollectionEntry<'blog'>[]
@@ -34,7 +34,7 @@ const { posts, FirstBig = false } = Astro.props
 					)}
 					{(index + 1) % 3 === 0 && (
 						<div class='grid grid-rows-[300px_auto] md:grid-rows-[300px_220px] min-h-full group rounded-xl'>
-							<Ad1L />
+							<Ad2R />
 						</div>
 					)}
 				</>
