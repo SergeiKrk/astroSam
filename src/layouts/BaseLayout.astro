@@ -48,5 +48,14 @@ const { title, description, h1, image, articleDate } = Astro.props
 		</main>
 		<Footer />
 		<TwSizeIndicator />
+		<script>
+			window.yaContextCb.push(() => {
+				Ya.Context.AdvManager.render({
+					blockId: 'R-A-1654628-11',
+					type: 'floorAd',
+					platform: 'touch'
+				})
+			})
+		</script>
 	</body>
 </html>
