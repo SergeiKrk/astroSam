@@ -30,33 +30,12 @@ const { title, description, h1, image, articleDate } = Astro.props
 			})(window, document, 'script', 'dataLayer', 'GTM-MDC575K')
 		</script>
 		<!-- End Google Tag Manager -->
+		<!-- Yandex.RTB -->
 		<script>
-			// Функция для загрузки скриптов
-			function loadYaScripts() {
-				// Объявляем yaContextCb
-				window.yaContextCb = window.yaContextCb || []
-
-				// Создаем новый <script> элемент для загрузки скрипта контекста
-				const script = document.createElement('script')
-				script.src = 'https://yandex.ru/ads/system/context.js'
-				script.async = true
-
-				// Удаляем предыдущие <script> с этим URL, чтобы избежать дублирования
-				const existingScript = document.querySelector(`script[src='${script.src}']`)
-				if (existingScript) {
-					existingScript.remove()
-				}
-
-				// Добавляем новый скрипт в DOM
-				document.body.appendChild(script)
-			}
-
-			// Вызываем функцию загрузки сразу
-			loadYaScripts()
-
-			// Устанавливаем интервал в 15 секунд
-			setInterval(loadYaScripts, 15000)
+			window.yaContextCb = window.yaContextCb || []
 		</script>
+		<script src='https://yandex.ru/ads/system/context.js' async></script>
+		<!-- End Yandex.RTB -->
 	</head>
 
 	<body class='bg-white text-stone-950 dark:bg-gray-800 dark:text-white'>
@@ -76,13 +55,22 @@ const { title, description, h1, image, articleDate } = Astro.props
 		<Footer />
 		<TwSizeIndicator />
 		<script>
-			window.yaContextCb.push(() => {
-				Ya.Context.AdvManager.render({
-					blockId: 'R-A-1654628-11',
-					type: 'floorAd',
-					platform: 'touch'
+			// Функция для вызова скрипта
+			function renderAd() {
+				window.yaContextCb.push(() => {
+					Ya.Context.AdvManager.render({
+						blockId: 'R-A-1654628-11',
+						type: 'floorAd',
+						platform: 'touch'
+					})
 				})
-			})
+			}
+
+			// Вызываем функцию рендера сразу
+			renderAd()
+
+			// Устанавливаем интервал в 15 секунд
+			setInterval(renderAd, 15000)
 		</script>
 	</body>
 </html>
