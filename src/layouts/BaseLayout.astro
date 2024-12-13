@@ -12,7 +12,7 @@ import YaFloor from '@/components/YaFloor'
 const { title, description, h1, image, articleDate } = Astro.props
 
 const userAgent = Astro.request.headers.get('user-agent') || ''
-const isBot = /Googlebot|YandexBot/.test(userAgent)
+const isBot = /Google PageSpeed Insights/.test(userAgent)
 ---
 
 <html lang='en' class='scroll-smooth'>
