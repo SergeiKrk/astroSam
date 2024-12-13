@@ -10,9 +10,6 @@ import YaM from '@/components/YaM'
 import YandexRTB from '@/components/YandexRTB'
 import YaFloor from '@/components/YaFloor'
 const { title, description, h1, image, articleDate } = Astro.props
-
-const userAgent = Astro.request.headers.get('user-agent') || ''
-const isBot = /Google PageSpeed Insights/.test(userAgent)
 ---
 
 <html lang='en' class='scroll-smooth'>
@@ -25,10 +22,11 @@ const isBot = /Google PageSpeed Insights/.test(userAgent)
 		{
 			!isBot && (
 				<>
-					<YaM />
+					<YaM client:idle />
 				</>
 			)
 		}
+		<YandexRTB />
 	</head>
 
 	<body class='bg-white text-stone-950 dark:bg-gray-800 dark:text-white'>
@@ -38,5 +36,6 @@ const isBot = /Google PageSpeed Insights/.test(userAgent)
 		</main>
 		<Footer />
 		<TwSizeIndicator />
+		<YaFloor client:idle />
 	</body>
 </html>
