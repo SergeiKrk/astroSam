@@ -26,7 +26,6 @@ const isBot = /Google PageSpeed Insights/.test(userAgent)
 			!isBot && (
 				<>
 					<YaM />
-					<YandexRTB />
 				</>
 			)
 		}
@@ -39,12 +38,5 @@ const isBot = /Google PageSpeed Insights/.test(userAgent)
 		</main>
 		<Footer />
 		<TwSizeIndicator />
-		{
-			!isBot && (
-				<>
-					<YaFloor />
-				</>
-			)
-		}
 	</body>
 </html>
