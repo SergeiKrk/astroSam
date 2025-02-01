@@ -1,13 +1,25 @@
-<div class='tgx-vbf' data-vbf-id='7547'></div>
-
 <script>
-	function loadScript() {
-		const script = document.createElement('script')
-		script.defer = true
-		script.src = 'https://cdn.adlook.me/js/vbf.js'
-		document.body.appendChild(script)
-	}
-
-	// Вызываем loadScript раз в 7 секунд
-	setInterval(loadScript, 15000)
+	;(function UTCoreInitialization() {
+		if (window.UTInventoryCore) {
+			new window.UTInventoryCore({
+				type: 'sticky',
+				host: 1147,
+				content: false,
+				width: 400,
+				height: 225,
+				playMode: 'autoplay',
+				align: 'right',
+				verticalAlign: 'bottom',
+				openTo: 'open-creativeView',
+				infinity: true,
+				infinityTimer: 1,
+				mobile: {
+					align: 'center',
+					verticalAlign: 'bottom'
+				}
+			})
+			return
+		}
+		setTimeout(UTCoreInitialization, 100)
+	})()
 </script>
