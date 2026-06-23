@@ -1,0 +1,22 @@
+---
+
+---
+
+<script>
+	// Функция для вызова скрипта
+	function renderAd() {
+		window.yaContextCb.push(() => {
+			Ya.Context.AdvManager.render({
+				blockId: 'R-A-1654628-11',
+				type: 'floorAd',
+				platform: 'touch'
+			})
+		})
+	}
+
+	// Вызываем функцию рендера сразу
+	renderAd()
+
+	// Устанавливаем интервал в 15 секунд
+	setInterval(renderAd, 15000)
+</script>

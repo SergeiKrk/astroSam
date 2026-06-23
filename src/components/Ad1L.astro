@@ -1,0 +1,25 @@
+<script>
+	;(function UTCoreInitialization() {
+		if (window.UTInventoryCore) {
+			new window.UTInventoryCore({
+				type: 'sticky',
+				host: 1147,
+				content: false,
+				width: 400,
+				height: 225,
+				playMode: 'autoplay',
+				align: 'right',
+				verticalAlign: 'bottom',
+				openTo: 'open-creativeView',
+				infinity: true,
+				infinityTimer: 1,
+				mobile: {
+					align: 'center',
+					verticalAlign: 'bottom'
+				}
+			})
+			return
+		}
+		setTimeout(UTCoreInitialization, 100)
+	})()
+</script>
