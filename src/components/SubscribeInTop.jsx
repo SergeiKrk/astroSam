@@ -24,7 +24,7 @@ const Subscribe = () => {
 			<span className='absolute -z-10 h-[35px] w-[35px] animate-ping rounded-full bg-[#40B3E0] opacity-80'></span>
 			<a
 				aria-label='telegram'
-				href='https://t.me/samogonco'
+				href='tg://resolve?domain=samogonco'
 				class={`${tooltipOpen ? 'animate-spin' : ''}`}
 			>
 				<svg viewBox='0 0 256 256' astro-icon='logos:telegram' className='h-10'>
