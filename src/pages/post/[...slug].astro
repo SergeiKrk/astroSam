@@ -1,0 +1,109 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content'
+import RecPost from '@/layouts/RecPost'
+import Code from '@/components/mdx/Code'
+import ListRelatedPosts from '@/components/ListRelatedPosts'
+import TableOfContents from '@/components/TableOfContents'
+import ShareButtons from '@/components/ShareButtons'
+import { getPosts } from '@/utils'
+import SButton from '@/components/mdx/SButton'
+import Disqus from '@/components/Disqus'
+import { disqusConfig } from '@/data/disqus.config'
+
+const posts = await getCollection('blog')
+export async function getStaticPaths() {
+	const posts = await getPosts()
+
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post
+	}))
+}
+type Props = CollectionEntry<'blog'>
+
+const post = Astro.props
+const MAX_POSTS = 3
+const getRelatedPosts = (post: Props) => {
+	const lowercaseTags = post.data.tags.map((tag) => tag.toLowerCase())
+	const relatedPosts = posts.filter(
+		(p) => p.slug !== post.slug && p.data.tags.some((t) => lowercaseTags.includes(t.toLowerCase()))
+	)
+	return relatedPosts.slice(0, MAX_POSTS)
+}
+
+const relatedPosts = getRelatedPosts(post)
+
+const { Content, headings, remarkPluginFrontmatter } = await post.render()
+
+const disqusEnabled = disqusConfig.enabled
+---
+
+<style>
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+
+	@keyframes slide {
+		0% {
+			transform: translateX(0);
+		}
+		50% {
+			transform: translateX(-100%);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
+
+	.animate-slide {
+		animation: slide 1s infinite;
+	}
+</style>
+
+<RecPost id={post.id} data={post.data} headings={headings}>
+	<div class='w-full flex flex-row py-auto lg:-ml-6 mt-12 mb-6'>
+		<div class=''>
+			<ShareButtons
+				urlSeo={post.id}
+				titlePage={post.data.title}
+				headImg={post.data.heroImage}
+				descriptionPage={post.data.description}
+			/>
+		</div>
+		<div class='my-auto w-54 font-bold text-[24px] hidden md:flex'>
+			<div class='flex items-center ml-4'>
+				<span class='animate-slide text-2xl'>👈</span>
+			</div> поделиться
+		</div>
+	</div>
+	<div class='grid grid-cols-1 md:grid-cols-[70%_auto] gap-10 mt-8 lg:max-w-[960px]'>
+		<!-- post -->
+		<article class='max-w-full w-full'>
+			<div class='prose prose-lg md:prose-xl dark:prose-invert mb-12 min-w-full'>
+				<Content components={{ pre: Code, SButton }} />
+			</div>
+
+			<div class='my-12'>
+				<ShareButtons
+					urlSeo={post.id}
+					titlePage={post.data.title}
+					headImg={post.data.heroImage}
+					descriptionPage={post.data.description}
+				/>
+			</div>
+
+			<footer>
+				<h2 class='font-bold text-lg dark:text-white mb-6'>Ещё статьи по теме</h2>
+				<ListRelatedPosts posts={relatedPosts} />
+			</footer>
+		</article>
+
+		<aside class='md:flex flex-col gap-8 hidden'>
+			<div class='sticky top-24 self-start hidden md:block transition-all duration-200'>
+				{headings && headings.length > 0 && <TableOfContents {headings} />}
+			</div>
+		</aside>
+	</div>
+
+	{disqusEnabled && <Disqus />}
+</RecPost>

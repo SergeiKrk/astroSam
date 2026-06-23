@@ -1,0 +1,114 @@
+---
+import Hero from '@/components/Hero'
+import ListCategories from '@/components/ListCategories'
+import ListPosts from '@/components/ListPosts'
+import ListCalcs from '@/components/ListCalcs'
+import BaseLayout from '@/layouts/BaseLayout'
+import SubscribeTelegram from '@/components/SubscribeTelegram'
+import { getPosts } from '@/utils'
+import { getCalcs } from '@/utils'
+import { getEntry } from 'astro:content'
+import headImg from '../assets/images/kalkulyator-samogonshchika.png'
+import CalcIcon from '../components/icons/CalcIcon.astro'
+import RecipeIcon from '../components/icons/RecipeIcon.astro'
+const homepage = await getEntry('calcPages', 'home')
+const { title, description, titlePage, descriptionPage, urlSeo } = homepage.data
+
+const MAX_POSTS = 6 // max number of posts to show on the home page
+const posts = await getPosts(MAX_POSTS)
+const calcs = await getCalcs()
+---
+
+<BaseLayout title={title} description={description}>
+	<Hero headImg={headImg} titlePage={titlePage} descriptionPage={descriptionPage} urlSeo={urlSeo} />
+
+	<ListCalcs {calcs} />
+
+	<div class='bg-[#1abc9c] dark:bg-[#00614B] py-10 px-4 2xl:px-52 2xl:py-24'>
+		<div
+			class='flex justify-center uppercase text-lg text-center sm:text-4xl text-white font-[700]'
+		>
+			ОНЛАЙН КАЛЬКУЛЯТОРЫ САМОГОНЩИКА
+		</div>
+		<div class='my-6 sm:my-10 flex justify-center text-xl sm:text-4xl text-gray-700 font-[700]'>
+			<div class='my-auto h-[4px] w-32 bg-gray-50 border-gray-50 rounded'></div>
+			<div class='mx-6 dark:text-white'>
+				<CalcIcon />
+			</div>
+			<div class='my-auto h-[4px] w-32 bg-gray-50 border-gray-50 rounded'></div>
+		</div>
+		<div class='text-xl text-white max-w-xl mx-auto font-[200]'>
+			Онлайн калькуляторы самогонщика - набор полезных для винокуров (дистилье)
+			инструментов-помощников, которые необходимы для расчета всех важных параметров в процессе
+			производства крепких домашних напитков.
+		</div>
+	</div>
+
+	<div class='my-10 px-2 2xl:mx-52 2xl:my-24'>
+		<div
+			class='flex justify-center uppercase text-lg text-center sm:text-4xl text-gray-700 font-[700] dark:text-white'
+		>
+			Рецепты настоек и наливок
+		</div>
+		<div class='my-6 sm:my-10 flex justify-center text-xl sm:text-4xl text-gray-700 font-[700]'>
+			<div class='my-auto h-[4px] w-32 bg-gray-700 border-gray-700 rounded'></div>
+			<div class='mx-6'>
+				<RecipeIcon />
+			</div>
+			<div class='my-auto h-[4px] w-32 bg-gray-700 border-gray-700 rounded'></div>
+		</div>
+		<ListCategories />
+		<div>
+			<ListPosts posts={posts} />
+		</div>
+	</div>
+
+	<div class='bg-[#1abc9c] dark:bg-[#00614B] py-10 px-4 2xl:px-52 2xl:py-24'>
+		<div
+			class='flex justify-center uppercase text-lg text-center sm:text-4xl text-white font-[700]'
+		>
+			АЛКОГОЛЬНЫЙ КАЛЬКУЛЯТОР САМОГОНЩИКА: ПРЕИМУЩЕСТВА
+		</div>
+		<div class='text-xl text-white max-w-4xl mx-auto font-[200] mt-16 dark:text-white'>
+			Ищите лучший калькулятор самогонщика? Возможно, вы его нашли. Наши онлайн калькуляторы:
+		</div>
+		<div class='grid sm:grid-cols-2 text-xl text-white max-w-4xl mx-auto font-[200]'>
+			<div class='m-2 text-white'>
+				<div class='my-8 flex justify-center text-4xl'>
+					<div class='flex justify-center'>🚀</div>
+				</div>
+				Загружаются заметно быстрее всех остальных калькуляторов самогона конкурентов. Не нужно ждать
+				пока страница откроется, ведь это всех раздражает.
+			</div>
+			<div class='my-2 text-white'>
+				<div class='my-8 flex justify-center text-4xl'>⚡️</div>
+				<p>
+					Расчет осуществляется сразу после ввода параметров в калькулятор. Не нужно совершать
+					лишнего действия и нажимать на кнопку "Посчитать".
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<SubscribeTelegram />
+</BaseLayout>
+
+<script>
+	import { animate } from 'motion'
+	const showAnimations = localStorage.getItem('animations') === 'true'
+
+	document.addEventListener('astro:page-load', () => {
+		if (showAnimations) {
+			animate(
+				'.title',
+				{ y: [80, 0], opacity: [0, 1] },
+				{
+					duration: 2.5,
+					opacity: { duration: 3 },
+
+					offset: [0, 0.55, 0.75]
+				}
+			)
+		}
+	})
+</script>

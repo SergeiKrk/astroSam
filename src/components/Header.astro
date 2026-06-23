@@ -1,0 +1,235 @@
+---
+import HeaderLink from '@/components/HeaderLink'
+import TelegramIcon from './icons/Telegram.astro'
+import Search from '@/components/Search'
+import SubscribeInTop from './SubscribeInTop'
+import ToggleTheme from './ToggleTheme.astro'
+import { Image } from 'astro:assets'
+import kalkulyatorRazbavleniyaSamogonaVodoj from '../assets/images/kalkulyator-razbavleniya-samogona-vodoj.png'
+import kalkulyatorOtborGolov from '../assets/images/kalkulyator-otbor-golov.png'
+import kalkulyatorDrobnojPeregonki from '../assets/images/kalkulyator-drobnoj-peregonki.png'
+import razbavlenieSamogonaVodojPoslePervojPeregonki from '../assets/images/razbavlenie-samogona-vodoj-posle-pervoj-peregonki.png'
+import kalkulyatorAbsolyutnogoSpirta from '../assets/images/kalkulyator-absolyutnogo-spirta.png'
+import kalkulyatorSmeshivaniyaSpirtov from '../assets/images/kalkulyator-smeshivaniya-spirtov.png'
+import kalkulyatorSebestoimostiSamogona from '../assets/images/kalkulyator-sebestoimosti-samogona.png'
+import primernayaStoimostSamogona from '../assets/images/primernaya-stoimost-samogona.png'
+import kalkulyatorSaharnojBragi from '../assets/images/kalkulyator-saharnoj-bragi.png'
+import kalkulyatorVodkiIzSpirta from '../assets/images/kalkulyator-vodki-iz-spirta.png'
+import kalkulyatorSpirtaOtTemperatury from '../assets/images/kalkulyator-spirta-ot-temperatury.png'
+import kalkulyatorZamenySaharaGlyukozoj from '../assets/images/kalkulyator-zameny-sahara-glyukozoj.png'
+
+// ADD YOUR SOCIAL NETWORKS HERE
+const SOCIALNETWORKS = [
+	{
+		name: 'Telegram',
+		url: 'https://telegram.me/samogonco',
+		icon: TelegramIcon
+	}
+]
+
+const itemNav = [
+	{
+		name: 'Разбавление самогона водой',
+		description: 'Поможет смешать дистиллят с водой в нужных пропорциях',
+		href: '/kalkulyator-razbavleniya-samogona-vodoj/',
+		icon: kalkulyatorRazbavleniyaSamogonaVodoj
+	},
+	{
+		name: 'Отбор голов',
+		description: 'Рассчитает объем «голов» и чистого спирта в дистилляте',
+		href: '/kalkulyator-otbor-golov/',
+		icon: kalkulyatorOtborGolov
+	},
+	{
+		name: 'Дробная перегонка',
+		description: 'Поможет отобрать «голов» и «хвосты» в процессе дробной перегонки',
+		href: '/kalkulyator-drobnoj-peregonki/',
+		icon: kalkulyatorDrobnojPeregonki
+	},
+	{
+		name: 'Разбавление самогона (после 1-го перегона)',
+		description: 'Поможет подготовить спирт-сырец к дробной перегонке',
+		href: '/razbavlenie-samogona-vodoj-posle-pervoj-peregonki/',
+		icon: razbavlenieSamogonaVodojPoslePervojPeregonki
+	},
+	{
+		name: 'Расчет абсолютного спирта',
+		description: 'Рассчитает объем абсолютного 100° и 96.6° спирта',
+		href: '/kalkulyator-absolyutnogo-spirta/',
+		icon: kalkulyatorAbsolyutnogoSpirta
+	},
+	{
+		name: 'Смешивание спиртов',
+		description:
+			'Поможет узнать, какой градус будет после смешивания двух спиртосодержащих жидкостей',
+		href: '/kalkulyator-smeshivaniya-spirtov/',
+		icon: kalkulyatorSmeshivaniyaSpirtov
+	},
+	{
+		name: 'Себестоимость самогона',
+		description:
+			'Рассчитает стоимость получившегося дистиллята исходя из затрат на сырье и ингредиенты',
+		href: '/kalkulyator-sebestoimosti-samogona/',
+		icon: kalkulyatorSebestoimostiSamogona
+	},
+	{
+		name: 'Примерная стоимость самогона',
+		description:
+			'Рассчитает примерную себестоимость и объем самогона даже если вы еще не ставили брагу',
+		href: '/primernaya-stoimost-samogona/',
+		icon: primernayaStoimostSamogona
+	},
+	{
+		name: 'Расчет браги из разного сырья',
+		description: 'Вычислит крепость браги, оптимальные пропорции сырья и воды для затора',
+		href: '/kalkulyator-saharnoj-bragi/',
+		icon: kalkulyatorSaharnojBragi
+	},
+	{
+		name: 'Расчет водки 40° из спирта',
+		description: 'Поможет разбавить спирт или дистиллят до водочной крепости в 40°',
+		href: '/kalkulyator-vodki-iz-spirta/',
+		icon: kalkulyatorVodkiIzSpirta
+	},
+	{
+		name: 'Коррекция спирта по температуре',
+		description: 'Рассчитает реальную крепость при любой температуре дистиллята',
+		href: '/kalkulyator-spirta-ot-temperatury/',
+		icon: kalkulyatorSpirtaOtTemperatury
+	},
+	{
+		name: 'Замена сахара декстрозой',
+		description:
+			'Рассчитает сколько потребуется декстрозы для аналогичного выхода спирта из браги на сахаре.',
+		href: '/kalkulyator-zameny-sahara-glyukozoj/',
+		icon: kalkulyatorZamenySaharaGlyukozoj
+	}
+]
+
+const itemNavInfo = [
+	{
+		name: 'Про напитки',
+		href: '/napitki'
+	},
+	{
+		name: 'О проекте',
+		href: '/about'
+	}
+]
+---
+
+<div
+	class='navbar mx-auto w-full md:px-32 lg:px-52 2xl:px-96 text-center fixed top-0 left-0 right-0 z-50 bg-gray-950/80 backdrop-blur-sm'
+	transition:name='navbar'
+>
+	<div class='navbar-start'>
+		<div class='dropdown'>
+			<div tabindex='0' role='button' class='btn btn-ghost lg:hidden' aria-label='dropdown'>
+				<svg
+					xmlns='http://www.w3.org/2000/svg'
+					class='h-5 w-5 text-white'
+					fill='none'
+					viewBox='0 0 24 24'
+					stroke='currentColor'
+					><path
+						stroke-linecap='round'
+						stroke-linejoin='round'
+						stroke-width='2'
+						d='M4 6h16M4 12h8m-8 6h16'></path></svg
+				>
+			</div>
+			<ul
+				tabindex='0'
+				class='menu dropdown-content mt-3 z-50 p-2 shadow bg-base-100 rounded-box w-[300px] max-w-[350px]'
+			>
+				<li>
+					<div class='text-gray-500 font-medium'>Калькуляторы</div>
+					<ul class='p-2 z-50'>
+						{
+							itemNav.map((item) => (
+								<li>
+									<a
+										href={item.href}
+										class='m-1 flex items-start rounded-lg p-1 hover:bg-gray-100 dark:hover:bg-green-700'
+									>
+										<div class='ml-1'>
+											<p class='lg:text-xs text-md font-medium text-gray-500'>- {item.name}</p>
+										</div>
+									</a>
+								</li>
+							))
+						}
+					</ul>
+				</li>
+				{
+					itemNavInfo.map((itm) => (
+						<li>
+							<a href={itm.href} class='text-base font-medium  text-gray-500 hover:text-[#0B6552]'>
+								{itm.name}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+		<a href='/' class='btn btn-ghost text-xl text-gray-200 hover:text-green-200'>SamagonCalc</a>
+	</div>
+	<div class='navbar-center hidden lg:flex'>
+		<ul class='menu menu-horizontal px-1'>
+			<li>
+				<details>
+					<summary class='font-medium text-gray-200 hover:text-green-200'>Калькуляторы</summary>
+					<ul class='p-1 -left-[50px] z-50 w-[700px] dark:bg-indigo-950'>
+						{
+							itemNav.map((item) => (
+								<li>
+									<a
+										href={item.href}
+										class='m-1 flex items-start rounded-lg py-1 px-3 hover:bg-gray-100 dark:hover:bg-green-700'
+									>
+										<div class='w-14'>
+											<Image
+												format='webp'
+												quality='low'
+												src={item.icon}
+												alt={item.name}
+												width={40}
+												height={40}
+											/>
+										</div>
+										<div class='ml-3'>
+											<p class='text-sm font-medium text-gray-900 dark:text-gray-100'>
+												{item.name}
+											</p>
+											<p class='mt-1 text-xs text-gray-500 dark:text-gray-200'>
+												{item.description}
+											</p>
+										</div>
+									</a>
+								</li>
+							))
+						}
+					</ul>
+				</details>
+			</li>
+			{
+				itemNavInfo.map((itm) => (
+					<li>
+						<a href={itm.href} class='font-medium text-gray-200 hover:text-green-200'>
+							{itm.name}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+	<div class='navbar-end'>
+		<div class='flex items-center gap-3 md:pl-3' transition:persist='navbar'>
+			<SubscribeInTop client:load />
+			<div class='ml-6'>
+				<Search />
+			</div>
+			<ToggleTheme />
+		</div>
+	</div>
+</div>

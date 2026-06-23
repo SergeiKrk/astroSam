@@ -1,0 +1,68 @@
+---
+import { Image } from 'astro:assets'
+import BaseLayout from '@/layouts/BaseLayout'
+import headImg from '../assets/images/404.png'
+---
+
+<BaseLayout title={'Страница не найдена — SamogonCalc'} description={'Ей не наливаем'}>
+
+<div class='h-auto w-full bg-[#1ABC9C] dark:bg-[#00614B] flex items-center justify-center'>
+  <div class='max-w-3xl mx-auto px-6 py-16 text-center text-white'>
+
+    <!-- 404 image -->
+    <div class='mb-8'>
+      <Image
+        src={headImg}
+        alt='404'
+        loading='eager'
+        width={200}
+        height={200}
+        class='mx-auto'
+      />
+    </div>
+
+    <!-- Main joke -->
+    <h1 class='text-4xl md:text-6xl font-bold mb-4'>
+      Головы отбираем, хвосты отсекаем, а эта страница всё...
+    </h1>
+    <p class='text-xl md:text-2xl font-light mb-2'>
+      — ей не наливаем
+    </p>
+    <p class='text-lg opacity-80 mb-12'>
+      Видимо, она испарилась при перегонке или ушла в сивушные масла
+    </p>
+
+    <!-- Useful links -->
+    <div class='bg-white/10 rounded-2xl p-8 mb-10 text-left'>
+      <h2 class='text-2xl font-bold mb-6 text-center'>🍶 Популярные калькуляторы</h2>
+      <div class='grid grid-cols-1 sm:grid-cols-2 gap-3'>
+        <a href='/kalkulyator-razbavleniya-samogona-vodoj' class='block bg-white/15 hover:bg-white/25 rounded-lg px-4 py-3 transition text-left'>
+          📐 Разбавление самогона водой
+        </a>
+        <a href='/kalkulyator-saharnoj-bragi' class='block bg-white/15 hover:bg-white/25 rounded-lg px-4 py-3 transition text-left'>
+          🍬 Калькулятор сахарной браги
+        </a>
+        <a href='/kalkulyator-otbor-golov' class='block bg-white/15 hover:bg-white/25 rounded-lg px-4 py-3 transition text-left'>
+          🧪 Отбор голов и хвостов
+        </a>
+        <a href='/kalkulyator-drobnoj-peregonki' class='block bg-white/15 hover:bg-white/25 rounded-lg px-4 py-3 transition text-left'>
+          🔬 Дробная перегонка
+        </a>
+        <a href='/kalkulyator-absolyutnogo-spirta' class='block bg-white/15 hover:bg-white/25 rounded-lg px-4 py-3 transition text-left'>
+          ⚗️ Абсолютный спирт
+        </a>
+        <a href='/kalkulyator-sebestoimosti-samogona' class='block bg-white/15 hover:bg-white/25 rounded-lg px-4 py-3 transition text-left'>
+          💰 Себестоимость самогона
+        </a>
+      </div>
+    </div>
+
+    <!-- Back button -->
+    <a href='/' class='inline-block bg-[#00614B] hover:bg-[#004D3B] text-white font-bold py-3 px-8 rounded-full text-lg transition shadow-lg'>
+      🏠 Вернуться к перегонке
+    </a>
+
+  </div>
+</div>
+
+</BaseLayout>

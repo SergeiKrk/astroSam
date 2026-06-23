@@ -1,0 +1,208 @@
+---
+title: 'Калькулятор разбавления самогона и спирта'
+h1: 'Калькулятор разбавления самогона водой'
+description: 'Поможет рассчитать и смешать дистиллят с водой в нужных пропорциях'
+heroImage: '../../assets/images/kalkulyator-razbavleniya-samogona-vodoj.png'
+pretext: 'Нужно разбавить спирт или дистиллят до конкретной крепости? Наш быстрый онлайн калькулятор разбавления самогона водой поможет.'
+---
+
+<p className='mt-6'>
+	Онлайн калькулятор разбавления самогона (спирта) водой рассчитает пропорции воды и алкоголя, а так
+	же подскажет объем самогона после разбавления.
+</p>
+<p className='mt-6'>
+	Например, есть 6 литров дистиллята крепостью в 90°. Вы хотите развести самогон до 45°. Вводим все
+	3 параметра "Объем разбавляемого самогона", "Крепость разбавляемого самогона", "Крепость, которую
+	хотите получить" в калькулятор и сразу получаете ответ сколько необходимо долить воды (нужно 6.86
+	л.) и какой общий объем разбавленного самогона (спирта) получится (получится 12 л.). Никаких
+	кнопок для расчета нажимать не нужно, результат появится автоматически после ввода всех 3-х
+	параметров.
+</p>
+
+<h2 className='text-4xl mt-6'>Правила разбавления самогона</h2>
+<ul className='mt-6 list-disc pl-6'>
+	<li>вливайте самогон в воду, а не воду в самогон, перемешивая жидкость при вливании;</li>
+	<li>температура смешиваемых жидкостей должна быть одинаковой, порядка 20°, при этой температуре показания спиртометров соответствуют истинному содержанию спирта;</li>
+	<li>смешанный напиток можно употреблять после отстаивания и стабилизации в течение нескольких часов, а лучше дней.</li>
+</ul>
+
+<h3 className='text-2xl mt-5'>Правила подбора воды и тары</h3>
+<ul className='mt-3 list-disc pl-6'>
+	<li>вода из городского водопровода непригодна, даже кипячение не всегда делает ее лучше;</li>
+	<li>идеально подходит родниковая, артезианская и бутилированная вода;</li>
+	<li>вполне пригодна вода, пропущенная через бытовой фильтр, при условии соблюдения срока его эксплуатации;</li>
+	<li>все емкости должны быть стеклянными, а не пластиковыми;</li>
+	<li>соблюдайте гигиену используемого оборудования и емкостей.</li>
+</ul>
+
+<h2 className='text-4xl mt-6'>Способы расчёта пропорций</h2>
+<p className='mt-4'>Существует несколько способов определить, сколько воды нужно долить в самогон:</p>
+
+<h3 className='text-2xl mt-5'>1. Онлайн-калькулятор</h3>
+<p className='mt-2'>
+	Самый быстрый и точный способ. Введите объём, исходную и желаемую крепость — калькулятор 
+	мгновенно покажет нужный объём воды и итоговый объём напитка.
+</p>
+
+<h3 className='text-2xl mt-5'>2. Формула разбавления</h3>
+<div className='mt-3 flex flex-row'>
+	<div class='border-2 rounded-lg m-6 basis-1/2 flex justify-center items-center'>
+		<b>V = C × (A/B − 1)</b>
+	</div>
+	<div class='basis-1/2 ml-4'>
+		<ul>
+			<li><b>V</b> – требуемый объем воды;</li>
+			<li><b>С</b> – объем самогона;</li>
+			<li><b>А</b> – крепость самогона;</li>
+			<li><b>В</b> – желаемая крепость напитка.</li>
+		</ul>
+	</div>
+</div>
+<p className='mt-3'>
+	Пример: объем самогона С=2,5 л, крепость А=72°, желаемая В=40°.
+	Требуемый объем воды V = 2,5×(72/40−1) = 2,0 л.
+</p>
+<p className='mt-3'>
+	Эта формула известна как «золотая формула самогоноварения» и существует также в виде 
+	<strong>С×А/В−С = V</strong> — пользуйтесь той, которая удобнее.
+</p>
+
+<h3 className='text-2xl mt-5'>3. Таблица Фертмана</h3>
+<p className='mt-2'>
+	Классический способ — найти в таблице пересечение исходной и желаемой крепости, 
+	получить объём воды в мл на 1 л самогона. См. таблицу ниже.
+</p>
+
+<h3 className='text-2xl mt-5'>4. Метод «на глазок»</h3>
+<p className='mt-2'>
+	Наименее точный, но рабочий в полевых условиях: понемногу доливайте воду, 
+	измеряя крепость спиртометром после каждого добавления, пока не достигнете нужного градуса.
+</p>
+
+<h2 className='text-4xl mt-6'>Таблица разбавления самогона водой (Фертмана)</h2>
+<p className='mt-4'>
+	В первом столбце — крепость до разбавления, в первой строке — желаемая крепость,
+	на пересечении — объём воды (мл), который нужно добавить к 1 литру самогона.
+</p>
+
+<div class='w-full overflow-auto touch-auto'>
+	<table class='max-w-none h-auto border-collapse border text-sm mt-6'>
+		<thead>
+			<tr>
+				<td class='p-2 border'>↓было / стало→</td>
+				<td class='p-2 border'>90%</td><td class='p-2 border'>85%</td><td class='p-2 border'>80%</td>
+				<td class='p-2 border'>75%</td><td class='p-2 border'>70%</td><td class='p-2 border'>65%</td>
+				<td class='p-2 border'>60%</td><td class='p-2 border'>55%</td><td class='p-2 border'>50%</td>
+				<td class='p-2 border'>45%</td><td class='p-2 border'>40%</td><td class='p-2 border'>35%</td>
+				<td class='p-2 border'>30%</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr><td class='p-2 border'>95%</td><td class='p-2 border'>64</td><td class='p-2 border'>133</td><td class='p-2 border'>209</td><td class='p-2 border'>295</td><td class='p-2 border'>391</td><td class='p-2 border'>501</td><td class='p-2 border'>629</td><td class='p-2 border'>779</td><td class='p-2 border'>957</td><td class='p-2 border'>1174</td><td class='p-2 border'>1443</td><td class='p-2 border'>1785</td><td class='p-2 border'>2239</td></tr>
+			<tr><td class='p-2 border'>90%</td><td class='p-2 border'>-</td><td class='p-2 border'>65</td><td class='p-2 border'>138</td><td class='p-2 border'>218</td><td class='p-2 border'>310</td><td class='p-2 border'>414</td><td class='p-2 border'>535</td><td class='p-2 border'>677</td><td class='p-2 border'>847</td><td class='p-2 border'>1052</td><td class='p-2 border'>1306</td><td class='p-2 border'>1630</td><td class='p-2 border'>2061</td></tr>
+			<tr><td class='p-2 border'>85%</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>68</td><td class='p-2 border'>144</td><td class='p-2 border'>231</td><td class='p-2 border'>329</td><td class='p-2 border'>443</td><td class='p-2 border'>578</td><td class='p-2 border'>738</td><td class='p-2 border'>932</td><td class='p-2 border'>1172</td><td class='p-2 border'>1478</td><td class='p-2 border'>1884</td></tr>
+			<tr><td class='p-2 border'>80%</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>72</td><td class='p-2 border'>153</td><td class='p-2 border'>246</td><td class='p-2 border'>353</td><td class='p-2 border'>480</td><td class='p-2 border'>630</td><td class='p-2 border'>812</td><td class='p-2 border'>1039</td><td class='p-2 border'>1327</td><td class='p-2 border'>1709</td></tr>
+			<tr><td class='p-2 border'>75%</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>76</td><td class='p-2 border'>163</td><td class='p-2 border'>264</td><td class='p-2 border'>382</td><td class='p-2 border'>523</td><td class='p-2 border'>694</td><td class='p-2 border'>906</td><td class='p-2 border'>1177</td><td class='p-2 border'>1535</td></tr>
+			<tr><td class='p-2 border'>70%</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>81</td><td class='p-2 border'>175</td><td class='p-2 border'>285</td><td class='p-2 border'>417</td><td class='p-2 border'>577</td><td class='p-2 border'>774</td><td class='p-2 border'>1027</td><td class='p-2 border'>1360</td></tr>
+			<tr><td class='p-2 border'>65%</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>88</td><td class='p-2 border'>190</td><td class='p-2 border'>311</td><td class='p-2 border'>460</td><td class='p-2 border'>644</td><td class='p-2 border'>878</td><td class='p-2 border'>1189</td></tr>
+			<tr><td class='p-2 border'>60%</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>95</td><td class='p-2 border'>207</td><td class='p-2 border'>344</td><td class='p-2 border'>514</td><td class='p-2 border'>730</td><td class='p-2 border'>1017</td></tr>
+			<tr><td class='p-2 border'>55%</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>103</td><td class='p-2 border'>229</td><td class='p-2 border'>384</td><td class='p-2 border'>583</td><td class='p-2 border'>845</td></tr>
+			<tr><td class='p-2 border'>50%</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>114</td><td class='p-2 border'>255</td><td class='p-2 border'>436</td><td class='p-2 border'>674</td></tr>
+			<tr><td class='p-2 border'>45%</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>127</td><td class='p-2 border'>290</td><td class='p-2 border'>505</td></tr>
+			<tr><td class='p-2 border'>40%</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>144</td><td class='p-2 border'>335</td></tr>
+			<tr><td class='p-2 border'>35%</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>-</td><td class='p-2 border'>167</td></tr>
+		</tbody>
+	</table>
+</div>
+
+<h2 className='text-4xl mt-6'>Что происходит с самогоном после разбавления</h2>
+<p className='mt-4'>
+	Многие начинающие самогонщики сразу пробуют разбавленный напиток и разочаровываются:
+	вкус кажется резким, спиртуозным, а запах — неприятным. Это нормально. После разбавления
+	самогону нужно время на <b>стабилизацию и «созревание»</b>.
+</p>
+
+<h3 className='text-2xl mt-5'>Почему самогон мутнеет после разбавления</h3>
+<p className='mt-3'>
+	Помутнение после разбавления — частая проблема. Причин несколько:
+</p>
+<ul className='mt-3 list-disc pl-6 space-y-2'>
+	<li><b>Жёсткая вода</b> — соли кальция и магния выпадают в осадок при контакте со спиртом. Используйте только бутилированную или фильтрованную воду</li>
+	<li><b>Сивушные масла</b> — при падении крепости ниже 40° масла перестают растворяться и образуют эмульсию. Решение: более тщательная очистка перед разбавлением</li>
+	<li><b>Неправильный порядок</b> — если лить воду в самогон (а не наоборот), смесь разогревается, и масла активнее переходят в эмульсию</li>
+	<li><b>Резкое охлаждение</b> — если разбавленный самогон сразу поставить в холодильник, помутнение почти гарантировано. Дайте ему остыть при комнатной температуре</li>
+</ul>
+
+<h3 className='text-2xl mt-5'>Сколько отстаивать самогон после разбавления</h3>
+<p className='mt-3'>
+	Оптимальный срок — <b>2–3 дня</b> в прохладном тёмном месте. За это время:
+</p>
+<ul className='mt-3 list-disc pl-6 space-y-1'>
+	<li>Завершается химическая реакция между спиртом и водой</li>
+	<li>Вкус становится мягче и гармоничнее</li>
+	<li>Исчезает резкий «спиртовой» запах</li>
+	<li>Если образовался осадок — он оседает на дно</li>
+</ul>
+<p className='mt-3'>
+	После отстаивания самогон после разбавления готов к употреблению. Некоторые винокуры
+	выдерживают его 5–7 дней для максимальной стабилизации вкуса. Хранить разбавленный
+	самогон лучше в стеклянной таре, заполненной под горлышко — чтобы минимизировать
+	контакт с воздухом.
+</p>
+
+<h2 className='text-4xl mt-6'>Разбавление после перегонки</h2>
+<p className='mt-4'>
+	Разбавление самогона водой требуется на разных этапах — и важно не перепутать, какой
+	калькулятор использовать для каждой ситуации:
+</p>
+
+<h3 className='text-2xl mt-5'>После первой перегонки</h3>
+<p className='mt-3'>
+	После первого перегона вы получаете <b>спирт-сырец</b> крепостью 60–70°. Перед второй
+	(дробной) перегонкой его нужно разбавить до 20–30°. Используйте{' '}
+	<a href='/razbavlenie-samogona-vodoj-posle-pervoj-peregonki' className='text-[#1ABC9C] hover:underline'>калькулятор разбавления спирта-сырца после первой перегонки</a> — он учитывает особенности работы именно с сырцом.
+</p>
+
+<h3 className='text-2xl mt-5'>После второй перегонки</h3>
+<p className='mt-3'>
+	После дробной перегонки вы получаете качественный дистиллят крепостью 65–85°, который
+	нужно разбавить до питьевой крепости (обычно 40°). Здесь подходит как этот калькулятор,
+	так и{' '}
+	<a href='/kalkulyator-vodki-iz-spirta' className='text-[#1ABC9C] hover:underline'>калькулятор водки из спирта</a> — 
+	для точного расчёта до классических 40°. А сам процесс дробной перегонки рассчитывается в{' '}
+	<a href='/kalkulyator-drobnoj-peregonki' className='text-[#1ABC9C] hover:underline'>калькуляторе дробной перегонки</a>.
+</p>
+
+<h2 className='text-4xl mt-6'>Часто задаваемые вопросы</h2>
+
+<FaqAccordion items={[
+  {
+    q: "Как разбавить самогон водой правильно?",
+    a: "Лейте самогон в воду (не наоборот), используйте бутилированную или фильтрованную воду комнатной температуры, перемешивайте плавно. После разбавления дайте отстояться 2–3 дня. Точные пропорции рассчитает наш онлайн калькулятор разбавления самогона."
+  },
+  {
+    q: "Как развести самогон до 40 градусов?",
+    a: "Введите в калькулятор исходный объём и крепость, укажите желаемую крепость 40° — и получите точный объём воды. Подробная инструкция — в разделе ниже."
+  },
+  {
+    q: "Можно ли разбавлять самогон водой из-под крана?",
+    a: "Не рекомендуется. Водопроводная вода содержит хлор, соли и примеси, которые могут вызвать помутнение и испортить вкус. Используйте бутилированную, родниковую или фильтрованную воду."
+  },
+  {
+    q: "Что делать если самогон помутнел после разбавления?",
+    a: "Дайте ему отстояться 2–3 дня — возможно, муть осядет. Если нет — пропустите через угольный фильтр или добавьте немного лимонной кислоты (на кончике ножа на литр). В будущем используйте более качественную воду."
+  }
+]} />
+
+<h2 className='text-4xl mt-6'>Как правильно развести самогон до 40 градусов</h2>
+<p className='mt-4'>
+	Чтобы получить классическую крепость 40°, воспользуйтесь{' '}
+	<a href='/kalkulyator-vodki-iz-spirta'>калькулятором водки из спирта</a>.
+	Он поможет подобрать пропорции и разбавить спирт или самогон водой до 40 градусов
+	с учётом всех нюансов: температуры, качества воды и правильной последовательности смешивания.
+</p>
+<p className='mt-3'>
+	Краткий алгоритм: измерьте исходную крепость спиртометром при 20°C → введите данные 
+	в калькулятор → отмерьте нужный объём воды → влейте спирт в воду (не наоборот!) → 
+	перемешайте → дайте отстояться 2–3 дня в прохладном тёмном месте.
+</p>

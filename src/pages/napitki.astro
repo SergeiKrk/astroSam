@@ -1,0 +1,22 @@
+---
+import Hero from '@/components/Hero'
+import ListCategories from '@/components/ListCategories'
+import ListPosts from '@/components/ListPosts'
+import BaseLayout from '@/layouts/BaseLayout'
+import { getPosts } from '@/utils'
+import { getEntry } from 'astro:content'
+import headImg from '../assets/images/samogoncalc-bender.png'
+const homepage = await getEntry('calcPages', 'napitki')
+const { title, description, titlePage, descriptionPage, urlSeo } = homepage.data
+
+const posts = await getPosts()
+---
+
+<BaseLayout title={title} description={description}>
+	<Hero headImg={headImg} titlePage={titlePage} descriptionPage={descriptionPage} urlSeo={urlSeo} />
+
+	<div class='my-10 mx-4 2xl:mx-52 2xl:my-24'>
+		<ListCategories />
+		<ListPosts posts={posts} />
+	</div>
+</BaseLayout>

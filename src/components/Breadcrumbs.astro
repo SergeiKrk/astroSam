@@ -1,0 +1,48 @@
+---
+// Breadcrumbs with Schema.org structured data
+export interface Props {
+	items: { label: string; href?: string }[]
+}
+
+const { items } = Astro.props
+---
+
+<nav aria-label='Хлебные крошки' class='text-sm text-gray-500 dark:text-gray-400 px-4 pt-4 max-w-[1400px] mx-auto'>
+	<ol
+		class='flex flex-wrap items-center gap-1'
+		itemscope
+		itemtype='https://schema.org/BreadcrumbList'
+	>
+		{
+			items.map((item, i) => {
+				const isLast = i === items.length - 1
+				return (
+					<li
+						itemprop='itemListElement'
+						itemscope
+						itemtype='https://schema.org/ListItem'
+						class='flex items-center gap-1'
+					>
+						<meta itemprop='position' content={String(i + 1)} />
+						{
+							item.href && !isLast ? (
+								<a
+									href={item.href}
+									itemprop='item'
+									class='hover:text-[#1ABC9C] dark:hover:text-[#1ABC9C] transition-colors'
+								>
+									<span itemprop='name'>{item.label}</span>
+								</a>
+							) : (
+								<span itemprop='name' class={isLast ? 'text-gray-800 dark:text-gray-200 font-medium' : ''}>
+									{item.label}
+								</span>
+							)
+						}
+						{!isLast && <span class='mx-1'>/</span>}
+					</li>
+				)
+			})
+		}
+	</ol>
+</nav>

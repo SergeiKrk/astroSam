@@ -1,0 +1,48 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content'
+import CalcPost from '@/layouts/CalcPost'
+import Code from '@/components/mdx/Code'
+import { getCalcs } from '@/utils'
+import SButton from '@/components/mdx/SButton'
+import NaShavuhu from '@/components/NaShavuhu'
+import ShareButtons from '@/components/ShareButtons'
+import FaqAccordion from '@/components/FaqAccordion'
+
+const calcs = await getCollection('calcs')
+export async function getStaticPaths() {
+	const calcs = await getCalcs()
+
+	return calcs.map((calc) => ({
+		params: { slug: calc.slug },
+		props: calc
+	}))
+}
+type Props = CollectionEntry<'calcs'>
+
+const calc = Astro.props
+
+const { Content, remarkPluginFrontmatter } = await calc.render()
+---
+
+<CalcPost id={calc.id} data={calc.data}>
+	<div class='grid grid-cols-1 lg:grid-cols-4 gap-6 mx-auto max-w-[1400px] pt-1 text-lg sm:px-6'>
+		<div class='px-4 mt-6'>
+			<div class='flex justify-end lg:justify-start'>
+				<div class='text-center lg:text-left'>
+					<div class='mb-1 lg:ml-6 font-bold text-xl'>Поделиться калькулятором:</div>
+					<ShareButtons
+						urlSeo={calc.slug}
+						titlePage={calc.data.title}
+						headImg={calc.data.heroImage.src}
+						descriptionPage={calc.data.description}
+					/>
+				</div>
+			</div>
+		</div>
+		<div class='px-4 col-span-2'>
+			<Content components={{ pre: Code, SButton, FaqAccordion }} />
+		</div>
+		<div class='px-4 mt-6'>
+		</div>
+	</div>
+</CalcPost>

@@ -1,0 +1,30 @@
+---
+import BaseHead from '@/components/BaseHead'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import ProviderTheme from '@/components/ProviderTheme'
+import ProviderAnimations from '@/components/ProviderAnimations'
+import TwSizeIndicator from '@/components/TwSizeIndicator'
+import { ViewTransitions } from 'astro:transitions'
+const { title, description, h1, image, articleDate, noindex } = Astro.props
+---
+
+<html lang='en' class='scroll-smooth'>
+	<head>
+		<BaseHead title={title} description={description} ogImage={image} articleDate={articleDate} noindex={noindex} />
+		<ProviderTheme />
+		<ProviderAnimations />
+		<ViewTransitions />
+		<meta name='yandex-verification' content='edfa58d760f1a977' />
+	</head>
+
+	<body class='bg-white text-stone-950 dark:bg-gray-800 dark:text-white'>
+		<main class='sm:mx-autoantialiased grid gap-12 overflow-hidden md:overflow-visible'>
+			<Header />
+			<slot />
+		</main>
+		<Footer />
+		<TwSizeIndicator />
+		<script src='https://sdk.adlook.tech/inventory/core.js' async type='text/javascript'></script>
+	</body>
+</html>
