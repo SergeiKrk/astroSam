@@ -45,17 +45,5 @@ const { headImg, titlePage, h1, descriptionPage, urlSeo } = Astro.props
 				<div class='my-auto h-1 w-10 bg-white border rounded hidden md:block'></div>
 			</div>
 		</div>
-		<div class='p-8 mb-6 mt-16 flex justify-center text-xl md:text-2xl text-white'>
-			{
-				urlSeo && (
-					<div class='border-top bg-[#00614B] py-2 px-4'>
-						<a href='/' class='text-white drop-shadow-md dark:drop-shadow-none'>
-							Главная
-						</a>
-						/ {titlePage}
-					</div>
-				)
-			}
-		</div>
 	</div>
 </div>
