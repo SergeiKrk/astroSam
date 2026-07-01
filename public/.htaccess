@@ -11,6 +11,9 @@ Redirect 301 /spirta-ot-temperatury/ https://samogoncalc.ru/kalkulyator-spirta-o
 Redirect 301 /vodki-iz-spirta/ https://samogoncalc.ru/kalkulyator-vodki-iz-spirta/
 Redirect 301 /zameny-sahara-glyukozoj/ https://samogoncalc.ru/kalkulyator-zameny-sahara-glyukozoj/
 
+# Кастомная страница 404
+ErrorDocument 404 /404.html
+
 # Кэширование
 <IfModule mod_headers.c>
   # Статика с хешами — кеш на год (имена с хешами никогда не меняются)
