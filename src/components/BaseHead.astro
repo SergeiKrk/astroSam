@@ -32,6 +32,12 @@ import { AstroFont } from 'astro-font'
 <!-- Canonical URL -->
 <link rel='canonical' href={canonicalURL} />
 
+<!-- Preconnect to external origins -->
+<link rel="preconnect" href="https://mc.yandex.ru" />
+<link rel="preconnect" href="https://mc.yandex.com" />
+<link rel="dns-prefetch" href="https://mc.yandex.ru" />
+<link rel="dns-prefetch" href="https://mc.yandex.com" />
+
 <!-- Preload hero image for LCP -->
 {ogImage && <link rel='preload' as='image' href={ogImage} />}
 
