@@ -17,6 +17,8 @@ import VodkaCalc from '@/calc/VodkaCalc.jsx'
 import Zamena from '@/calc/Zamena.jsx'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import SubscribeTelegram from '@/components/SubscribeTelegram'
+import EquipmentWidget from '@/components/EquipmentWidget'
+import { CALC_EQUIPMENT } from '@/data/equipment'
 import JsonLD from '@/components/JsonLD'
 
 type Props = {
@@ -91,6 +93,8 @@ const RELATED_CALCS = {
 	],
 }
 const relatedLinks = RELATED_CALCS[id.replace('calcs/', '').replace('.mdx', '')] || []
+const slug = id.replace('calcs/', '').replace('.mdx', '')
+const equipment = CALC_EQUIPMENT[slug] || []
 ---
 
 <BaseLayout title={title} description={description} image={heroImage?.src}>
@@ -171,6 +175,8 @@ const relatedLinks = RELATED_CALCS[id.replace('calcs/', '').replace('.mdx', '')]
 			<slot />
 		</div>
 	</article>
+
+	<EquipmentWidget items={equipment} />
 
 	{relatedLinks.length > 0 && (
 		<section class='mx-auto max-w-6xl px-6 py-12'>
