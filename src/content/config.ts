@@ -40,7 +40,15 @@ const calcs = defineCollection({
 			h1: z.string().max(80).optional(),
 			description: z.string(),
 			pretext: z.string(),
-			heroImage: image()
+			heroImage: image(),
+			faq: z
+				.array(
+					z.object({
+						q: z.string(),
+						a: z.string()
+					})
+				)
+				.optional()
 		})
 })
 

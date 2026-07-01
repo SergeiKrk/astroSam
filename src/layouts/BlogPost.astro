@@ -6,6 +6,7 @@ import Tag from '@/components/Tag'
 import type { MarkdownHeading } from 'astro'
 import { Image } from 'astro:assets'
 import { fade } from 'astro:transitions'
+import JsonLD from '@/components/JsonLD'
 
 type Props = {
 	id: CollectionEntry<'blog'>['id']
@@ -26,6 +27,22 @@ const articleDate = pubDate.toISOString()
 	image={heroImage?.src}
 	articleDate={articleDate}
 >
+	<JsonLD
+		type='Article'
+		data={{
+			headline: title,
+			description: description,
+			image: heroImage?.src ? `https://samogoncalc.ru${heroImage.src}` : undefined,
+			datePublished: articleDate,
+			author: { '@type': 'Person', name: 'SergeiKrk' },
+			publisher: {
+				'@type': 'Organization',
+				name: 'SamogonCalc',
+				logo: { '@type': 'ImageObject', url: 'https://samogoncalc.ru/favicon.ico' }
+			}
+		}}
+		slot='head'
+	/>
 	<article class='min-w-full md:py-4 sm:max-w-none md:max-w-none'>
 		<header class='mb-3 flex flex-col justify-center items-center gap-6'>
 			<div class='flex flex-col gap-2'>

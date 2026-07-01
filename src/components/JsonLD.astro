@@ -1,0 +1,26 @@
+---
+// Schema.org JSON-LD structured data
+export interface Props {
+	type: 'Organization' | 'WebApplication' | 'FAQPage' | 'FAQ' | 'HowTo' | 'Article'
+	data: Record<string, any>
+}
+
+const { type, data } = Astro.props
+
+// Build context based on type
+const contexts: Record<string, string> = {
+	Organization: 'https://schema.org',
+	WebApplication: 'https://schema.org',
+	FAQ: 'https://schema.org',
+	HowTo: 'https://schema.org',
+	Article: 'https://schema.org',
+}
+
+const jsonLd = {
+	'@context': contexts[type] || 'https://schema.org',
+	'@type': type,
+	...data,
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>

@@ -11,15 +11,32 @@ import { getEntry } from 'astro:content'
 import headImg from '../assets/images/kalkulyator-samogonshchika.png'
 import CalcIcon from '../components/icons/CalcIcon.astro'
 import RecipeIcon from '../components/icons/RecipeIcon.astro'
+import JsonLD from '@/components/JsonLD'
 const homepage = await getEntry('calcPages', 'home')
 const { title, description, titlePage, descriptionPage, urlSeo } = homepage.data
 
-const MAX_POSTS = 6 // max number of posts to show on the home page
-const posts = await getPosts(MAX_POSTS)
+const MAX_POSTS = 6 // сколько показывать сразу
+const allPosts = await getPosts() // все посты для lazy-load
+const posts = allPosts.slice(0, MAX_POSTS) // для обратной совместимости
 const calcs = await getCalcs()
 ---
 
 <BaseLayout title={title} description={description}>
+	<JsonLD 
+		type='Organization'
+		data={{
+			name: 'SamogonCalc',
+			url: 'https://samogoncalc.ru/',
+			logo: 'https://samogoncalc.ru/favicon.ico',
+			description: 'Набор быстрых онлайн-калькуляторов для винокуров и самогонщиков',
+			founder: { '@type': 'Person', name: 'SergeiKrk' },
+			sameAs: [
+				'https://t.me/samogonco',
+				'https://vk.com/samogoncalc'
+			]
+		}}
+		slot='head'
+	/>
 	<Hero headImg={headImg} titlePage={titlePage} descriptionPage={descriptionPage} urlSeo={urlSeo} />
 
 	<ListCalcs {calcs} />
@@ -59,7 +76,15 @@ const calcs = await getCalcs()
 		</div>
 		<ListCategories />
 		<div>
-			<ListPosts posts={posts} />
+			<ListPosts posts={allPosts} maxVisible={MAX_POSTS} containerId='recipes-grid' />
+		</div>
+		<div id='load-more-container' class='flex justify-center mt-8'>
+			<button
+				id='load-more-btn'
+				class='btn btn-outline btn-wide border-[#1ABC9C] text-[#1ABC9C] hover:bg-[#1ABC9C] hover:text-white dark:border-[#1ABC9C] dark:text-[#1ABC9C] dark:hover:bg-[#1ABC9C] dark:hover:text-gray-900 transition-colors font-medium'
+			>
+				Показать ещё рецепты 🍹
+			</button>
 		</div>
 	</div>
 
@@ -109,6 +134,23 @@ const calcs = await getCalcs()
 					offset: [0, 0.55, 0.75]
 				}
 			)
+		}
+
+		// Кнопка «Загрузить ещё рецепты»
+		const btn = document.getElementById('load-more-btn')
+		const container = document.getElementById('load-more-container')
+		if (btn) {
+			btn.addEventListener('click', () => {
+				const hidden = document.querySelectorAll('.load-more-item.hidden')
+				const toShow = Math.min(hidden.length, 6)
+				for (let i = 0; i < toShow; i++) {
+					hidden[i].classList.remove('hidden')
+				}
+				// Если больше скрытых нет — убираем кнопку
+				if (hidden.length <= 6) {
+					container?.remove()
+				}
+			})
 		}
 	})
 </script>

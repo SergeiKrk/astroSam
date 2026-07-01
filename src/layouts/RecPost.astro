@@ -69,12 +69,12 @@ const articleDate = pubDate.toISOString()
 								ingr.map((ingred) => (
 									<div class='relative rounded-2xl overflow-hidden'>
 										<Image
-											client:load
 											src={ingred.ingrImage}
 											format='avif'
 											quality={80}
 											width={300}
 											height={200}
+											loading='lazy'
 											class='h-full object-cover'
 											alt={`img ofgg ${title}`}
 										/>

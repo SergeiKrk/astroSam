@@ -2,6 +2,7 @@
 import BaseHead from '@/components/BaseHead'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import YaM from '@/components/YaM'
 import ProviderTheme from '@/components/ProviderTheme'
 import ProviderAnimations from '@/components/ProviderAnimations'
 import TwSizeIndicator from '@/components/TwSizeIndicator'
@@ -9,13 +10,15 @@ import { ViewTransitions } from 'astro:transitions'
 const { title, description, h1, image, articleDate, noindex } = Astro.props
 ---
 
-<html lang='en' class='scroll-smooth'>
+<html lang='ru' class='scroll-smooth'>
 	<head>
 		<BaseHead title={title} description={description} ogImage={image} articleDate={articleDate} noindex={noindex} />
 		<ProviderTheme />
 		<ProviderAnimations />
 		<ViewTransitions />
 		<meta name='yandex-verification' content='edfa58d760f1a977' />
+		<YaM />
+		<slot name='head' />
 	</head>
 
 	<body class='bg-white text-stone-950 dark:bg-gray-800 dark:text-white'>

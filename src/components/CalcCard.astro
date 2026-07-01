@@ -13,14 +13,15 @@ const {
 >
 	<a class='relative overflow-hidden' href={`/${slug}/`}>
 		<div class='text-center hover:bg-[#1abc9c] hover:rounded-lg'>
-			<Image
-				transition:name={`img${title}`}
-				src={heroImage}
-				width={360}
-				height={360}
-				format='webp'
-				quality='mid'
-				alt={`img of ${title}`}
+					<Image
+						transition:name={`img${title}`}
+						src={heroImage}
+						width={360}
+						height={360}
+						format='webp'
+						quality='mid'
+						loading='lazy'
+						alt={`img of ${title}`}
 			/>
 		</div>
 		<div

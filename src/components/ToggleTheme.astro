@@ -34,11 +34,6 @@
 <script is:inline>
 	const button = document.getElementById('toggle-theme')
 
-	function setButtonPresssed() {
-		const bodyThemeIsDark = document.documentElement.classList.contains('dark')
-		button.checked = bodyThemeIsDark
-	}
-
 	button.addEventListener('change', (e) => {
 		let isPressed = e.currentTarget.checked
 		let themeChangeEvent = new CustomEvent('theme-change', {
@@ -49,6 +44,4 @@
 		// dispatch event -> ThemeProvider.astro
 		document.dispatchEvent(themeChangeEvent)
 	})
-
-	setButtonPresssed()
 </script>

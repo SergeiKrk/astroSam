@@ -9,6 +9,13 @@
 			)
 		}
 
+		function syncButton() {
+			const btn = document.getElementById('toggle-theme')
+			if (btn) {
+				btn.checked = document.documentElement.classList.contains('dark')
+			}
+		}
+
 		function setTheme(newTheme: any) {
 			const html = document.documentElement
 			const isDark = newTheme === 'dark'
@@ -17,11 +24,16 @@
 			html.classList.toggle('light', !isDark)
 
 			localStorage.setItem('theme', newTheme)
+			
+			// Синхронизируем кнопку после установки темы
+			syncButton()
 		}
 
 		// set initial theme
 		setTheme(getTheme())
-		document.addEventListener('astro:after-swap', () => setTheme(getTheme()))
+		document.addEventListener('astro:after-swap', () => {
+			setTheme(getTheme())
+		})
 
 		document.addEventListener('theme-change', (e) => {
 			setTheme(e.detail.theme)

@@ -17,6 +17,7 @@ import VodkaCalc from '@/calc/VodkaCalc.jsx'
 import Zamena from '@/calc/Zamena.jsx'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import SubscribeTelegram from '@/components/SubscribeTelegram'
+import JsonLD from '@/components/JsonLD'
 
 type Props = {
 	id: CollectionEntry<'calcs'>['id']
@@ -24,10 +25,38 @@ type Props = {
 }
 
 const { data, id } = Astro.props
-const { title, description, h1, heroImage, pretext } = data
+const { title, description, h1, heroImage, pretext, faq } = data
 ---
 
 <BaseLayout title={title} description={description} image={heroImage?.src}>
+		<JsonLD
+			type='WebApplication'
+			data={{
+				name: title,
+				url: `https://samogoncalc.ru/${id}/`,
+				description: description,
+				applicationCategory: 'CalculatorApplication',
+				operatingSystem: 'All',
+				offers: { '@type': 'Offer', price: '0', priceCurrency: 'RUB' }
+			}}
+			slot='head'
+		/>
+		{faq && faq.length > 0 && (
+			<JsonLD
+				type='FAQPage'
+				data={{
+					mainEntity: faq.map((item: { q: string; a: string }) => ({
+						'@type': 'Question',
+						name: item.q,
+						acceptedAnswer: {
+							'@type': 'Answer',
+							text: item.a
+						}
+					}))
+				}}
+				slot='head'
+			/>
+		)}
 	<Hero headImg={heroImage} titlePage={title} h1={h1} descriptionPage={description} urlSeo={id} />
 
 	<Breadcrumbs

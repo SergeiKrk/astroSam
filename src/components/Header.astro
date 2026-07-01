@@ -22,7 +22,7 @@ import kalkulyatorZamenySaharaGlyukozoj from '../assets/images/kalkulyator-zamen
 const SOCIALNETWORKS = [
 	{
 		name: 'Telegram',
-		url: 'https://telegram.me/samogonco',
+		url: 'tg://resolve?domain=samogonco',
 		icon: TelegramIcon
 	}
 ]
@@ -191,6 +191,7 @@ const itemNavInfo = [
 											<Image
 												format='webp'
 												quality='low'
+												loading='lazy'
 												src={item.icon}
 												alt={item.name}
 												width={40}

@@ -12,15 +12,16 @@ const {
 
 <article class='grid grid-rows-[300px_auto] md:grid-rows-[300px_220px] min-h-full group'>
 	<a class='relative overflow-hidden' href={`/post/${slug}/`}>
-		<Image
-			src={heroImage}
-			width={600}
-			height={200}
-			transition:name={`img${title}`}
-			format='webp'
-			quality='mid'
-			class='h-full min-w-full object-cover hover:scale-[120%] transition-all duration-200 rounded-2xl'
-			alt={`img of ${title}`}
+			<Image
+				src={heroImage}
+				width={600}
+				height={200}
+				transition:name={`img${title}`}
+				format='webp'
+				quality='mid'
+				loading='lazy'
+				class='h-full min-w-full object-cover hover:scale-[120%] transition-all duration-200 rounded-2xl'
+				alt={`img of ${title}`}
 		/>
 	</a>
 

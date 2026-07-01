@@ -1,0 +1,30 @@
+# 301 редиректы со старых URL калькуляторов на новые
+Redirect 301 /razbavleniya-vodoj/ https://samogoncalc.ru/kalkulyator-razbavleniya-samogona-vodoj/
+Redirect 301 /razbavleniya-samogona-vodoj/ https://samogoncalc.ru/kalkulyator-razbavleniya-samogona-vodoj/
+Redirect 301 /absolyutnogo-spirta/ https://samogoncalc.ru/kalkulyator-absolyutnogo-spirta/
+Redirect 301 /drobnoj-peregonki/ https://samogoncalc.ru/kalkulyator-drobnoj-peregonki/
+Redirect 301 /otbor-golov/ https://samogoncalc.ru/kalkulyator-otbor-golov/
+Redirect 301 /sebestoimosti-samogona/ https://samogoncalc.ru/kalkulyator-sebestoimosti-samogona/
+Redirect 301 /saharnoj-bragi/ https://samogoncalc.ru/kalkulyator-saharnoj-bragi/
+Redirect 301 /smeshivaniya-spirtov/ https://samogoncalc.ru/kalkulyator-smeshivaniya-spirtov/
+Redirect 301 /spirta-ot-temperatury/ https://samogoncalc.ru/kalkulyator-spirta-ot-temperatury/
+Redirect 301 /vodki-iz-spirta/ https://samogoncalc.ru/kalkulyator-vodki-iz-spirta/
+Redirect 301 /zameny-sahara-glyukozoj/ https://samogoncalc.ru/kalkulyator-zameny-sahara-glyukozoj/
+
+# Кэширование
+<IfModule mod_headers.c>
+  # Статика с хешами — кеш на час
+  <FilesMatch "\.(css|js|webp|avif|png|jpg|svg|woff2|ico)$">
+    Header set Cache-Control "max-age=3600, public"
+  </FilesMatch>
+
+  # HTML — без кеша (чтобы деплой сразу был виден)
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  # Sitemap
+  <FilesMatch "sitemap">
+    Header set Cache-Control "max-age=86400, public"
+  </FilesMatch>
+</IfModule>
