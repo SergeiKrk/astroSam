@@ -32,11 +32,11 @@ import { AstroFont } from 'astro-font'
 <!-- Canonical URL -->
 <link rel='canonical' href={canonicalURL} />
 
+<!-- Preload hero image for LCP -->
+{ogImage && <link rel='preload' as='image' href={ogImage} />}
+
 <!-- Primary Meta Tags -->
 <title>{siteTitle}</title>
-
-<!-- ViewTransitions  -->
-<ViewTransitions />
 
 <!-- SEO -->
 <meta name='title' content={siteTitle} />

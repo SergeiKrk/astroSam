@@ -13,9 +13,9 @@ Redirect 301 /zameny-sahara-glyukozoj/ https://samogoncalc.ru/kalkulyator-zameny
 
 # Кэширование
 <IfModule mod_headers.c>
-  # Статика с хешами — кеш на час
+  # Статика с хешами — кеш на год (имена с хешами никогда не меняются)
   <FilesMatch "\.(css|js|webp|avif|png|jpg|svg|woff2|ico)$">
-    Header set Cache-Control "max-age=3600, public"
+    Header set Cache-Control "max-age=31536000, public, immutable"
   </FilesMatch>
 
   # HTML — без кеша (чтобы деплой сразу был виден)

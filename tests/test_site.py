@@ -76,8 +76,8 @@ if os.path.exists(htaccess_path):
     with open(htaccess_path, 'r') as f:
         ht = f.read()
 
-    # Cache-Control для статики
-    if ('Cache-Control' in ht and 'max-age=3600' in ht) or ('ExpiresActive' in ht):
+    # Cache-Control для статики (max-age должен быть >= 3600)
+    if ('Cache-Control' in ht and ('max-age=3600' in ht or 'max-age=31536000' in ht)) or ('ExpiresActive' in ht):
         ok("Cache-Control/Expires для статики")
     else:
         fail("Кеширование статики не найдено")
