@@ -32,6 +32,12 @@ import headImg from '../assets/images/404.png'
       Видимо, она испарилась при перегонке или ушла в сивушные масла
     </p>
 
+    <!-- Pagefind search -->
+    <div class='bg-white/10 rounded-2xl p-8 mb-10'>
+      <h2 class='text-2xl font-bold mb-4'>🔍 Поищите нужное</h2>
+      <div id='search-404' class='text-left'></div>
+    </div>
+
     <!-- Useful links -->
     <div class='bg-white/10 rounded-2xl p-8 mb-10 text-left'>
       <h2 class='text-2xl font-bold mb-6 text-center'>🍶 Популярные калькуляторы</h2>
@@ -54,6 +60,12 @@ import headImg from '../assets/images/404.png'
         <a href='/kalkulyator-sebestoimosti-samogona' class='block bg-white/15 hover:bg-white/25 rounded-lg px-4 py-3 transition text-left'>
           💰 Себестоимость самогона
         </a>
+        <a href='/kalkulyator-vodki-iz-spirta' class='block bg-white/15 hover:bg-white/25 rounded-lg px-4 py-3 transition text-left'>
+          🍸 Калькулятор водки
+        </a>
+        <a href='/post/limonchello' class='block bg-white/15 hover:bg-white/25 rounded-lg px-4 py-3 transition text-left'>
+          🍋 Рецепт лимончелло
+        </a>
       </div>
     </div>
 
@@ -66,3 +78,52 @@ import headImg from '../assets/images/404.png'
 </div>
 
 </BaseLayout>
+
+<script>
+  // Initialize pagefind search on 404 page
+  import '@pagefind/default-ui/css/ui.css'
+  
+  const onIdle = window.requestIdleCallback || ((cb: () => void) => setTimeout(cb, 1))
+  onIdle(async () => {
+    try {
+      const { PagefindUI } = await import('@pagefind/default-ui')
+      new PagefindUI({
+        element: '#search-404',
+        baseUrl: import.meta.env.BASE_URL,
+        bundlePath: import.meta.env.BASE_URL.replace(/\/$/, '') + '/pagefind/',
+        showImages: false
+      })
+    } catch (e) {
+      document.querySelector('#search-404')!.innerHTML =
+        '<p class="text-center py-4 text-white/70">🔍 Поиск недоступен</p>'
+    }
+  })
+</script>
+
+<style is:global>
+  #search-404 {
+    --pagefind-ui-primary: #1ABC9C;
+    --pagefind-ui-text: #ffffff;
+    --pagefind-ui-background: transparent;
+    --pagefind-ui-border: rgba(255,255,255,0.3);
+    --pagefind-ui-tag: rgba(255,255,255,0.15);
+    --pagefind-ui-font: inherit;
+  }
+  #search-404 .pagefind-ui__search-input {
+    background: rgba(255,255,255,0.15) !important;
+    border-color: rgba(255,255,255,0.3) !important;
+    color: white !important;
+    font-size: 1.1rem !important;
+    padding: 12px 16px !important;
+    border-radius: 12px !important;
+  }
+  #search-404 .pagefind-ui__search-input::placeholder {
+    color: rgba(255,255,255,0.6) !important;
+  }
+  #search-404 .pagefind-ui__result-link {
+    color: white !important;
+  }
+  #search-404 .pagefind-ui__result-excerpt {
+    color: rgba(255,255,255,0.8) !important;
+  }
+</style>

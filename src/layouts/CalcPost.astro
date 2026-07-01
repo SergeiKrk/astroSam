@@ -26,6 +26,71 @@ type Props = {
 
 const { data, id } = Astro.props
 const { title, description, h1, heroImage, pretext, faq } = data
+
+// Related calculators mapping
+const RELATED_CALCS = {
+	'kalkulyator-absolyutnogo-spirta': [
+		{ slug: 'kalkulyator-saharnoj-bragi', title: 'Калькулятор браги' },
+		{ slug: 'kalkulyator-otbor-golov', title: 'Калькулятор отбора голов' },
+		{ slug: 'kalkulyator-drobnoj-peregonki', title: 'Дробная перегонка' },
+	],
+	'kalkulyator-drobnoj-peregonki': [
+		{ slug: 'kalkulyator-otbor-golov', title: 'Калькулятор отбора голов' },
+		{ slug: 'razbavlenie-samogona-vodoj-posle-pervoj-peregonki', title: 'Разбавление после первого перегона' },
+		{ slug: 'kalkulyator-absolyutnogo-spirta', title: 'Абсолютный спирт' },
+	],
+	'kalkulyator-otbor-golov': [
+		{ slug: 'kalkulyator-drobnoj-peregonki', title: 'Дробная перегонка' },
+		{ slug: 'kalkulyator-absolyutnogo-spirta', title: 'Абсолютный спирт' },
+		{ slug: 'kalkulyator-razbavleniya-samogona-vodoj', title: 'Разбавление самогона' },
+	],
+	'kalkulyator-razbavleniya-samogona-vodoj': [
+		{ slug: 'kalkulyator-vodki-iz-spirta', title: 'Калькулятор водки' },
+		{ slug: 'razbavlenie-samogona-vodoj-posle-pervoj-peregonki', title: 'Разбавление после первого перегона' },
+		{ slug: 'kalkulyator-spirta-ot-temperatury', title: 'Спирт от температуры' },
+	],
+	'kalkulyator-saharnoj-bragi': [
+		{ slug: 'kalkulyator-absolyutnogo-spirta', title: 'Абсолютный спирт' },
+		{ slug: 'kalkulyator-sebestoimosti-samogona', title: 'Себестоимость самогона' },
+		{ slug: 'kalkulyator-zameny-sahara-glyukozoj', title: 'Замена сахара декстрозой' },
+	],
+	'kalkulyator-sebestoimosti-samogona': [
+		{ slug: 'primernaya-stoimost-samogona', title: 'Примерная стоимость' },
+		{ slug: 'kalkulyator-saharnoj-bragi', title: 'Калькулятор браги' },
+		{ slug: 'kalkulyator-absolyutnogo-spirta', title: 'Абсолютный спирт' },
+	],
+	'kalkulyator-smeshivaniya-spirtov': [
+		{ slug: 'kalkulyator-razbavleniya-samogona-vodoj', title: 'Разбавление самогона' },
+		{ slug: 'kalkulyator-vodki-iz-spirta', title: 'Калькулятор водки' },
+		{ slug: 'kalkulyator-spirta-ot-temperatury', title: 'Спирт от температуры' },
+	],
+	'kalkulyator-spirta-ot-temperatury': [
+		{ slug: 'kalkulyator-razbavleniya-samogona-vodoj', title: 'Разбавление самогона' },
+		{ slug: 'kalkulyator-absolyutnogo-spirta', title: 'Абсолютный спирт' },
+		{ slug: 'kalkulyator-smeshivaniya-spirtov', title: 'Смешивание спиртов' },
+	],
+	'kalkulyator-vodki-iz-spirta': [
+		{ slug: 'kalkulyator-razbavleniya-samogona-vodoj', title: 'Разбавление самогона' },
+		{ slug: 'kalkulyator-smeshivaniya-spirtov', title: 'Смешивание спиртов' },
+		{ slug: 'kalkulyator-spirta-ot-temperatury', title: 'Спирт от температуры' },
+	],
+	'kalkulyator-zameny-sahara-glyukozoj': [
+		{ slug: 'kalkulyator-saharnoj-bragi', title: 'Калькулятор браги' },
+		{ slug: 'kalkulyator-sebestoimosti-samogona', title: 'Себестоимость самогона' },
+		{ slug: 'primernaya-stoimost-samogona', title: 'Примерная стоимость' },
+	],
+	'primernaya-stoimost-samogona': [
+		{ slug: 'kalkulyator-sebestoimosti-samogona', title: 'Себестоимость самогона' },
+		{ slug: 'kalkulyator-saharnoj-bragi', title: 'Калькулятор браги' },
+		{ slug: 'kalkulyator-absolyutnogo-spirta', title: 'Абсолютный спирт' },
+	],
+	'razbavlenie-samogona-vodoj-posle-pervoj-peregonki': [
+		{ slug: 'kalkulyator-drobnoj-peregonki', title: 'Дробная перегонка' },
+		{ slug: 'kalkulyator-razbavleniya-samogona-vodoj', title: 'Разбавление самогона' },
+		{ slug: 'kalkulyator-absolyutnogo-spirta', title: 'Абсолютный спирт' },
+	],
+}
+const relatedLinks = RELATED_CALCS[id.replace('calcs/', '').replace('.mdx', '')] || []
 ---
 
 <BaseLayout title={title} description={description} image={heroImage?.src}>
@@ -106,5 +171,25 @@ const { title, description, h1, heroImage, pretext, faq } = data
 			<slot />
 		</div>
 	</article>
+
+	{relatedLinks.length > 0 && (
+		<section class='mx-auto max-w-6xl px-6 py-12'>
+			<h2 class='text-2xl font-bold text-center mb-8 text-stone-800 dark:text-white'>
+				🔗 Связанные калькуляторы
+			</h2>
+			<div class='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
+				{relatedLinks.map(link => (
+					<a href={`/${link.slug}/`}
+						class='block p-5 rounded-xl border border-stone-200 dark:border-stone-700 
+						       hover:border-[#1ABC9C] dark:hover:border-[#1ABC9C] 
+						       hover:shadow-md transition-all duration-200
+						       bg-white dark:bg-gray-800'>
+						<span class='text-[#1ABC9C] font-semibold'>{link.title}</span>
+					</a>
+				))}
+			</div>
+		</section>
+	)}
+
 	<SubscribeTelegram />
 </BaseLayout>

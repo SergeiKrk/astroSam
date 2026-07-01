@@ -12,10 +12,6 @@ const { title, description, h1, image, articleDate, noindex } = Astro.props
 
 <html lang='ru' class='scroll-smooth'>
 		<head>
-			<!-- Defer CSS to prevent render-blocking -->
-			<script is:inline>
-				(function(){var o=new MutationObserver(function(){var l=document.querySelectorAll('link[rel="stylesheet"][href*="/_astro/"]:not([data-css-deferred])');for(var i=0;i<l.length;i++){l[i].setAttribute('data-css-deferred','1');l[i].media='print';l[i].onload=function(){this.media='all'}}});o.observe(document.documentElement,{childList:true,subtree:true})})()
-			</script>
 		<BaseHead title={title} description={description} ogImage={image} articleDate={articleDate} noindex={noindex} />
 		<ProviderTheme />
 		<ProviderAnimations />
