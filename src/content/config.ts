@@ -52,6 +52,25 @@ const calcs = defineCollection({
 		})
 })
 
+const sovety = defineCollection({
+	// Same schema as blog — советы и обзоры оборудования
+	schema: ({ image }) =>
+		z.object({
+			title: z.string().max(80),
+			h1: z.string().max(80),
+			description: z.string(),
+			status: z.string().optional(),
+			pubDate: z
+				.string()
+				.or(z.date())
+				.transform((val) => new Date(val)),
+			heroImage: image(),
+			category: z.enum(CATEGORIES),
+			tags: z.array(z.string()),
+			draft: z.boolean().default(false)
+		})
+})
+
 const page = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: ({ image }) =>
@@ -65,4 +84,4 @@ const page = defineCollection({
 		})
 })
 
-export const collections = { blog, calcs, page }
+export const collections = { blog, calcs, page, sovety }

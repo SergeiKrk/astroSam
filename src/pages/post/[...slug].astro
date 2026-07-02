@@ -7,6 +7,7 @@ import TableOfContents from '@/components/TableOfContents'
 import ShareButtons from '@/components/ShareButtons'
 import { getPosts } from '@/utils'
 import SButton from '@/components/mdx/SButton'
+import Carousel from '@/components/Carousel'
 import Disqus from '@/components/Disqus'
 import { disqusConfig } from '@/data/disqus.config'
 
@@ -80,7 +81,7 @@ const disqusEnabled = disqusConfig.enabled
 		<!-- post -->
 		<article class='max-w-full w-full'>
 			<div class='prose prose-lg md:prose-xl dark:prose-invert mb-12 min-w-full'>
-				<Content components={{ pre: Code, SButton }} />
+				<Content components={{ pre: Code, SButton, Carousel }} />
 			</div>
 
 			<div class='my-12'>

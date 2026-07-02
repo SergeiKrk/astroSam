@@ -10,6 +10,7 @@ Redirect 301 /smeshivaniya-spirtov/ https://samogoncalc.ru/kalkulyator-smeshivan
 Redirect 301 /spirta-ot-temperatury/ https://samogoncalc.ru/kalkulyator-spirta-ot-temperatury/
 Redirect 301 /vodki-iz-spirta/ https://samogoncalc.ru/kalkulyator-vodki-iz-spirta/
 Redirect 301 /zameny-sahara-glyukozoj/ https://samogoncalc.ru/kalkulyator-zameny-sahara-glyukozoj/
+Redirect 301 /post/startovyj-nabor-samogonshika/ https://samogoncalc.ru/sovety-i-oborudovanie/startovyj-nabor-samogonshika/
 
 # Кастомная страница 404
 ErrorDocument 404 /404.html

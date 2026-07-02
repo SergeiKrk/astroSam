@@ -1,0 +1,112 @@
+---
+// Carousel.astro — слайдер картинок с реферальной ссылкой
+// Показывает visible картинок одновременно, листает по одной
+export interface Props {
+  images: string[]       // пути к картинкам
+  link: string           // реферальная ссылка
+  title?: string         // заголовок слайдера
+  visible?: number       // сколько картинок показывать (default 3)
+}
+
+const { images, link, title, visible = 3 } = Astro.props
+// Max visible: 1 on mobile, 2 on tablet, N on desktop — handled by CSS classes
+---
+
+<div class="my-8">
+  {title && <h3 class="text-lg font-semibold mb-3">{title}</h3>}
+  <a href={link} target="_blank" rel="nofollow sponsored" class="block group">
+    <div
+      class="carousel-container relative overflow-hidden rounded-xl border border-stone-200 dark:border-stone-700 bg-stone-50 dark:bg-stone-900"
+      data-visible={visible}
+    >
+      <div class="carousel-track flex transition-transform duration-300 ease-in-out">
+        {images.map((img, i) => (
+          <div
+            class="carousel-slide flex-shrink-0"
+            style={`flex: 0 0 calc(100% / ${visible}); max-width: calc(100% / ${visible})`}
+          >
+            <img
+              src={img}
+              alt={`Фото ${i + 1}`}
+              loading="lazy"
+              class="w-full h-56 md:h-72 object-contain bg-white dark:bg-stone-800 p-2"
+            />
+          </div>
+        ))}
+      </div>
+      {images.length > visible && (
+        <>
+          <button
+            type="button"
+            class="carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-stone-800/80 rounded-full w-10 h-10 flex items-center justify-center shadow opacity-0 group-hover:opacity-100 transition-opacity z-10"
+            aria-label="Предыдущий"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button
+            type="button"
+            class="carousel-next absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-stone-800/80 rounded-full w-10 h-10 flex items-center justify-center shadow opacity-0 group-hover:opacity-100 transition-opacity z-10"
+            aria-label="Следующий"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <div class="carousel-dots-container absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          </div>
+        </>
+      )}
+    </div>
+  </a>
+</div>
+
+<script>
+  document.querySelectorAll('.carousel-container').forEach(container => {
+    const track = container.querySelector('.carousel-track') as HTMLElement
+    const slides = container.querySelectorAll('.carousel-slide')
+    const dotsContainer = container.querySelector('.carousel-dots-container')
+    const prev = container.querySelector('.carousel-prev')
+    const next = container.querySelector('.carousel-next')
+    const visible = parseInt(container.getAttribute('data-visible') || '3')
+
+    if (!track || slides.length <= visible) return
+
+    const totalPages = Math.ceil(slides.length / visible)
+    let current = 0
+
+    // Создаём точки — по одной на страницу
+    if (dotsContainer) {
+      for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement('button')
+        dot.type = 'button'
+        dot.className = 'carousel-dot w-2.5 h-2.5 rounded-full bg-stone-300 dark:bg-stone-600 transition-all'
+        dot.setAttribute('aria-label', `Страница ${i + 1}`)
+        dot.addEventListener('click', (e) => { e.preventDefault(); goTo(i) })
+        dotsContainer.appendChild(dot)
+      }
+    }
+
+    const dots = dotsContainer?.querySelectorAll('.carousel-dot') || []
+
+    function goTo(page: number) {
+      current = ((page % totalPages) + totalPages) % totalPages
+      const slideWidth = 100 / visible
+      track.style.transform = `translateX(-${current * visible * slideWidth}%)`
+
+      dots.forEach((d, i) => {
+        if (i === current) {
+          d.classList.add('!bg-[#1ABC9C]', '!w-6')
+          d.classList.remove('bg-stone-300', 'dark:bg-stone-600')
+        } else {
+          d.classList.remove('!bg-[#1ABC9C]', '!w-6')
+          d.classList.add('bg-stone-300', 'dark:bg-stone-600')
+        }
+      })
+    }
+
+    prev?.addEventListener('click', (e) => { e.preventDefault(); goTo(current - 1) })
+    next?.addEventListener('click', (e) => { e.preventDefault(); goTo(current + 1) })
+
+    // Автопрокрутка
+    setInterval(() => goTo(current + 1), 4000)
+    goTo(0)
+  })
+</script>

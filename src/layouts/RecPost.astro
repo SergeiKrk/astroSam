@@ -1,5 +1,4 @@
 ---
-import type { CollectionEntry } from 'astro:content'
 import BaseLayout from '@/layouts/BaseLayout'
 import Tag from '@/components/Tag'
 import type { MarkdownHeading } from 'astro'
@@ -9,12 +8,21 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import SubscribeTelegram from '@/components/SubscribeTelegram'
 
 type Props = {
-	id: CollectionEntry<'blog'>['id']
-	data: CollectionEntry<'blog'>['data']
+	id: string
+	data: {
+		title: string
+		h1: string
+		description: string
+		pubDate: Date
+		heroImage: any
+		tags: string[]
+		ingr?: { name: string; mass?: string; value?: string; ingrImage: any; info?: string }[]
+	}
 	headings: MarkdownHeading[]
+	wide?: boolean
 }
 
-const { data } = Astro.props
+const { data, wide = false } = Astro.props
 const { title, h1, description, pubDate, heroImage, tags, ingr } = data
 
 const articleDate = pubDate.toISOString()
@@ -35,7 +43,7 @@ const articleDate = pubDate.toISOString()
 	/>
 	<article class='min-w-full md:py-4 sm:max-w-none md:max-w-none mt-16 md:mt-12'>
 		<div class='mb-3 flex xl:flex-row flex-col gap-6'>
-			<div class='xl:basis-1/3 top-[65px] xl:sticky self-start'>
+			<div class={wide ? 'xl:basis-2/5 top-[65px] xl:sticky self-start' : 'xl:basis-1/3 top-[65px] xl:sticky self-start'}>
 				{
 					heroImage && (
 						<div class='transition relative rounded-2xl overflow-hidden mx-4 my-4'>
@@ -107,11 +115,16 @@ const articleDate = pubDate.toISOString()
 					</div>
 				</div>
 			</div>
-			<div class='flex flex-col gap-2'>
+			<div class={wide ? 'flex flex-col gap-2 xl:basis-2/5' : 'flex flex-col gap-2'}>
 				<div class='mx-4'>
 					<slot />
 				</div>
 			</div>
+			{wide && (
+				<div class='xl:basis-1/5 hidden xl:block top-24 self-start xl:sticky'>
+					<slot name='sidebar' />
+				</div>
+			)}
 		</div>
 	</article>
 	<SubscribeTelegram />
@@ -124,7 +137,7 @@ const articleDate = pubDate.toISOString()
 			observer: IntersectionObserver
 		) {
 			entries.forEach((entry) => {
-				const index = document.querySelector(`aside a[href="#${entry.target.id}"]`)
+								const index = document.querySelector(`nav a[href="#${entry.target.id}"], aside a[href="#${entry.target.id}"]`)
 
 				if (entry.isIntersecting) {
 					index?.classList.remove('bg-slate-200', 'dark:bg-slate-800')
