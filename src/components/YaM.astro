@@ -26,6 +26,16 @@
 			trackLinks: true,
 			accurateTrackBounce: true
 		})
+
+		// Отслеживание партнёрских ссылок на Яндекс.Маркет
+		document.addEventListener('click', function(e) {
+			var link = e.target.closest('a[href*="market.yandex.ru"]')
+			if (!link) return
+			var code = (link.href.match(/\/cc\/(\w+)/) || [])[1] || ''
+			var isSlider = !!link.closest('.carousel-container')
+			var goal = isSlider ? 'partner-slider' : 'partner-link'
+			ym(87466855, 'reachGoal', goal, { partner_code: code })
+		})
 	}
 
 	if (document.readyState === 'complete') {
