@@ -28,7 +28,7 @@
 		"format:check": "prettier --plugin-search-dir=. --check .",
 		"format": "prettier --plugin-search-dir=. --write .",
 		"lint": "eslint .",
-		"postbuild": "pagefind --site dist && cp -r dist/pagefind public/pagefind",
+		"postbuild": "pagefind --site dist",
 		"test:validate": "node tests/validate.mjs",
 		"test": "npm run build && node tests/validate.mjs"
 	},
