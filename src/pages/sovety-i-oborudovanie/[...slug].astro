@@ -33,16 +33,6 @@ const { Content, headings } = await sovet.render()
 		100% { transform: translateX(0); }
 	}
 	.animate-slide { animation: slide 1s infinite; }
-
-	/* Более тёмный текст на мобильных */
-	@media (max-width: 767px) {
-		.prose {
-			color: #1a1a2e;
-		}
-		.dark .prose {
-			color: #e2e8f0;
-		}
-	}
 </style>
 
 <RecPost id={sovet.id} data={sovet.data} headings={headings} wide={true}>
